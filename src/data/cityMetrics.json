@@ -4,7 +4,7 @@
     "city": "Abilene",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 150,
+    "totalSearchVolume": 170,
     "averageCpcUsd": 25.84,
     "latitude": 32.454514,
     "longitude": -99.738147
@@ -14,7 +14,7 @@
     "city": "Akron",
     "state": "Ohio",
     "stateCode": "OH",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 30,
     "averageCpcUsd": 50.6,
     "latitude": 41.080456,
     "longitude": -81.521429
@@ -24,8 +24,8 @@
     "city": "Albany",
     "state": "New York",
     "stateCode": "NY",
-    "totalSearchVolume": 80,
-    "averageCpcUsd": 92.93,
+    "totalSearchVolume": 100,
+    "averageCpcUsd": 77.06,
     "latitude": 42.665745,
     "longitude": -73.798353
   },
@@ -34,8 +34,8 @@
     "city": "Albuquerque",
     "state": "New Mexico",
     "stateCode": "NM",
-    "totalSearchVolume": 290,
-    "averageCpcUsd": 13.26,
+    "totalSearchVolume": 670,
+    "averageCpcUsd": 13.38,
     "latitude": 35.10478,
     "longitude": -106.646809
   },
@@ -44,7 +44,7 @@
     "city": "Alexandria",
     "state": "Virginia",
     "stateCode": "VA",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 70,
     "averageCpcUsd": 46.45,
     "latitude": 38.819251,
     "longitude": -77.08367
@@ -54,7 +54,7 @@
     "city": "Allen",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 60,
+    "totalSearchVolume": 80,
     "averageCpcUsd": null,
     "latitude": 33.107224,
     "longitude": -96.674676
@@ -74,8 +74,8 @@
     "city": "Amarillo",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 90,
-    "averageCpcUsd": 73.37,
+    "totalSearchVolume": 190,
+    "averageCpcUsd": 84.3,
     "latitude": 35.199903,
     "longitude": -101.830194
   },
@@ -84,7 +84,7 @@
     "city": "Anaheim",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 80,
+    "totalSearchVolume": 130,
     "averageCpcUsd": null,
     "latitude": 33.855502,
     "longitude": -117.758657
@@ -94,7 +94,7 @@
     "city": "Anchorage",
     "state": "Alaska",
     "stateCode": "AK",
-    "totalSearchVolume": 60,
+    "totalSearchVolume": 80,
     "averageCpcUsd": 8.64,
     "latitude": 61.17425,
     "longitude": -149.284329
@@ -104,7 +104,7 @@
     "city": "Ann Arbor",
     "state": "Michigan",
     "stateCode": "MI",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 50,
     "averageCpcUsd": 86.51,
     "latitude": 42.276147,
     "longitude": -83.73086
@@ -114,7 +114,7 @@
     "city": "Antioch",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 37.978336,
     "longitude": -121.796064
@@ -124,7 +124,7 @@
     "city": "Arlington",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 110,
+    "totalSearchVolume": 160,
     "averageCpcUsd": 97.74,
     "latitude": 32.700708,
     "longitude": -97.124691
@@ -144,7 +144,7 @@
     "city": "Athens",
     "state": "Georgia",
     "stateCode": "GA",
-    "totalSearchVolume": 70,
+    "totalSearchVolume": 160,
     "averageCpcUsd": 24.21,
     "latitude": 33.949597,
     "longitude": -83.370088
@@ -154,8 +154,8 @@
     "city": "Atlanta",
     "state": "Georgia",
     "stateCode": "GA",
-    "totalSearchVolume": 590,
-    "averageCpcUsd": 49.18,
+    "totalSearchVolume": 780,
+    "averageCpcUsd": 53.19,
     "latitude": 33.762909,
     "longitude": -84.422675
   },
@@ -164,8 +164,8 @@
     "city": "Augusta",
     "state": "Georgia",
     "stateCode": "GA",
-    "totalSearchVolume": 120,
-    "averageCpcUsd": 12.97,
+    "totalSearchVolume": 220,
+    "averageCpcUsd": 12.33,
     "latitude": 33.365531,
     "longitude": -82.073422
   },
@@ -174,7 +174,7 @@
     "city": "Aurora",
     "state": "Colorado",
     "stateCode": "CO",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 70,
     "averageCpcUsd": 74.33,
     "latitude": 39.709537,
     "longitude": -104.720509
@@ -184,7 +184,7 @@
     "city": "Aurora",
     "state": "Illinois",
     "stateCode": "IL",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 41.763455,
     "longitude": -88.290099
@@ -194,7 +194,7 @@
     "city": "Austin",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 1200,
+    "totalSearchVolume": 1230,
     "averageCpcUsd": 114.45,
     "latitude": 30.298622,
     "longitude": -97.754134
@@ -204,7 +204,7 @@
     "city": "Bakersfield",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 300,
+    "totalSearchVolume": 830,
     "averageCpcUsd": 78.41,
     "latitude": 35.353171,
     "longitude": -119.037919
@@ -215,7 +215,7 @@
     "state": "Maryland",
     "stateCode": "MD",
     "totalSearchVolume": 230,
-    "averageCpcUsd": 77.26,
+    "averageCpcUsd": 90.66,
     "latitude": 39.300032,
     "longitude": -76.610476
   },
@@ -224,8 +224,8 @@
     "city": "Baton Rouge",
     "state": "Louisiana",
     "stateCode": "LA",
-    "totalSearchVolume": 90,
-    "averageCpcUsd": 11.68,
+    "totalSearchVolume": 140,
+    "averageCpcUsd": 10.96,
     "latitude": 30.442174,
     "longitude": -91.130894
   },
@@ -234,7 +234,7 @@
     "city": "Beaumont",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 50,
     "averageCpcUsd": 56.6,
     "latitude": 30.084912,
     "longitude": -94.14533
@@ -244,7 +244,7 @@
     "city": "Bellevue",
     "state": "Washington",
     "stateCode": "WA",
-    "totalSearchVolume": 60,
+    "totalSearchVolume": 100,
     "averageCpcUsd": null,
     "latitude": 47.597837,
     "longitude": -122.15648
@@ -254,7 +254,7 @@
     "city": "Bend",
     "state": "Oregon",
     "stateCode": "OR",
-    "totalSearchVolume": 50,
+    "totalSearchVolume": 60,
     "averageCpcUsd": 45.39,
     "latitude": 44.056683,
     "longitude": -121.307991
@@ -264,7 +264,7 @@
     "city": "Berkeley",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 60,
     "averageCpcUsd": null,
     "latitude": 37.865673,
     "longitude": -122.298725
@@ -274,7 +274,7 @@
     "city": "Billings",
     "state": "Montana",
     "stateCode": "MT",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 90,
     "averageCpcUsd": 4.93,
     "latitude": 45.788538,
     "longitude": -108.552475
@@ -284,8 +284,8 @@
     "city": "Birmingham",
     "state": "Alabama",
     "stateCode": "AL",
-    "totalSearchVolume": 90,
-    "averageCpcUsd": 44.16,
+    "totalSearchVolume": 110,
+    "averageCpcUsd": 37.03,
     "latitude": 33.527174,
     "longitude": -86.797036
   },
@@ -294,7 +294,7 @@
     "city": "Boca Raton",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 50,
+    "totalSearchVolume": 80,
     "averageCpcUsd": null,
     "latitude": 26.37269,
     "longitude": -80.103711
@@ -304,8 +304,8 @@
     "city": "Boise",
     "state": "Idaho",
     "stateCode": "ID",
-    "totalSearchVolume": 160,
-    "averageCpcUsd": 51.8,
+    "totalSearchVolume": 310,
+    "averageCpcUsd": 50.96,
     "latitude": 43.59805,
     "longitude": -116.231596
   },
@@ -314,7 +314,7 @@
     "city": "Boston",
     "state": "Massachusetts",
     "stateCode": "MA",
-    "totalSearchVolume": 90,
+    "totalSearchVolume": 150,
     "averageCpcUsd": null,
     "latitude": 42.338551,
     "longitude": -71.018253
@@ -324,7 +324,7 @@
     "city": "Boulder",
     "state": "Colorado",
     "stateCode": "CO",
-    "totalSearchVolume": 100,
+    "totalSearchVolume": 190,
     "averageCpcUsd": null,
     "latitude": 40.024431,
     "longitude": -105.251251
@@ -334,7 +334,7 @@
     "city": "Bridgeport",
     "state": "Connecticut",
     "stateCode": "CT",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 41.187393,
     "longitude": -73.195757
@@ -344,7 +344,7 @@
     "city": "Brockton",
     "state": "Massachusetts",
     "stateCode": "MA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 42.082543,
     "longitude": -71.024638
@@ -364,7 +364,7 @@
     "city": "Brownsville",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 25.989404,
     "longitude": -97.480625
@@ -374,7 +374,7 @@
     "city": "Buckeye",
     "state": "Arizona",
     "stateCode": "AZ",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 30,
     "averageCpcUsd": 137.13,
     "latitude": 33.431573,
     "longitude": -112.641626
@@ -384,8 +384,8 @@
     "city": "Buffalo",
     "state": "New York",
     "stateCode": "NY",
-    "totalSearchVolume": 470,
-    "averageCpcUsd": 79.66,
+    "totalSearchVolume": 690,
+    "averageCpcUsd": 77.64,
     "latitude": 42.892492,
     "longitude": -78.859686
   },
@@ -394,7 +394,7 @@
     "city": "Burbank",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 60,
+    "totalSearchVolume": 100,
     "averageCpcUsd": null,
     "latitude": 34.190079,
     "longitude": -118.326405
@@ -404,7 +404,7 @@
     "city": "Cambridge",
     "state": "Massachusetts",
     "stateCode": "MA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 42.376043,
     "longitude": -71.11868
@@ -414,7 +414,7 @@
     "city": "Cape Coral",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 26.643192,
     "longitude": -81.997364
@@ -424,7 +424,7 @@
     "city": "Carlsbad",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 60,
+    "totalSearchVolume": 100,
     "averageCpcUsd": null,
     "latitude": 33.129284,
     "longitude": -117.284183
@@ -434,7 +434,7 @@
     "city": "Carmel",
     "state": "Indiana",
     "stateCode": "IN",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 30,
     "averageCpcUsd": 61.3,
     "latitude": 39.965479,
     "longitude": -86.148369
@@ -444,7 +444,7 @@
     "city": "Carrollton",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 32.989386,
     "longitude": -96.89994
@@ -454,7 +454,7 @@
     "city": "Cary",
     "state": "North Carolina",
     "stateCode": "NC",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 60,
     "averageCpcUsd": null,
     "latitude": 35.781302,
     "longitude": -78.823444
@@ -464,8 +464,8 @@
     "city": "Cedar Rapids",
     "state": "Iowa",
     "stateCode": "IA",
-    "totalSearchVolume": 70,
-    "averageCpcUsd": 22.5,
+    "totalSearchVolume": 30,
+    "averageCpcUsd": 22.25,
     "latitude": 41.96419,
     "longitude": -91.67917
   },
@@ -474,7 +474,7 @@
     "city": "Centennial",
     "state": "Colorado",
     "stateCode": "CO",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 39.590856,
     "longitude": -104.863754
@@ -484,7 +484,7 @@
     "city": "Chandler",
     "state": "Arizona",
     "stateCode": "AZ",
-    "totalSearchVolume": 120,
+    "totalSearchVolume": 170,
     "averageCpcUsd": 169.1,
     "latitude": 33.282765,
     "longitude": -111.851819
@@ -494,7 +494,7 @@
     "city": "Charleston",
     "state": "South Carolina",
     "stateCode": "SC",
-    "totalSearchVolume": 250,
+    "totalSearchVolume": 590,
     "averageCpcUsd": 75.55,
     "latitude": 32.828017,
     "longitude": -79.972896
@@ -504,8 +504,8 @@
     "city": "Charlotte",
     "state": "North Carolina",
     "stateCode": "NC",
-    "totalSearchVolume": 240,
-    "averageCpcUsd": 31.94,
+    "totalSearchVolume": 650,
+    "averageCpcUsd": 34.65,
     "latitude": 35.209045,
     "longitude": -80.83099
   },
@@ -514,8 +514,8 @@
     "city": "Chattanooga",
     "state": "Tennessee",
     "stateCode": "TN",
-    "totalSearchVolume": 150,
-    "averageCpcUsd": 29.48,
+    "totalSearchVolume": 230,
+    "averageCpcUsd": 29.03,
     "latitude": 35.065958,
     "longitude": -85.248386
   },
@@ -524,7 +524,7 @@
     "city": "Chesapeake",
     "state": "Virginia",
     "stateCode": "VA",
-    "totalSearchVolume": 50,
+    "totalSearchVolume": 80,
     "averageCpcUsd": 10.28,
     "latitude": 36.679376,
     "longitude": -76.301788
@@ -534,8 +534,8 @@
     "city": "Chicago",
     "state": "Illinois",
     "stateCode": "IL",
-    "totalSearchVolume": 600,
-    "averageCpcUsd": 54.18,
+    "totalSearchVolume": 970,
+    "averageCpcUsd": 54.75,
     "latitude": 41.837045,
     "longitude": -87.684939
   },
@@ -544,7 +544,7 @@
     "city": "Chico",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 30,
     "averageCpcUsd": 5.93,
     "latitude": 39.758951,
     "longitude": -121.81772
@@ -554,7 +554,7 @@
     "city": "Chula Vista",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 150,
+    "totalSearchVolume": 210,
     "averageCpcUsd": null,
     "latitude": 32.62767,
     "longitude": -117.01517
@@ -564,7 +564,7 @@
     "city": "Cincinnati",
     "state": "Ohio",
     "stateCode": "OH",
-    "totalSearchVolume": 590,
+    "totalSearchVolume": 870,
     "averageCpcUsd": 41.28,
     "latitude": 39.140183,
     "longitude": -84.505829
@@ -574,7 +574,7 @@
     "city": "Clarksville",
     "state": "Tennessee",
     "stateCode": "TN",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 60,
     "averageCpcUsd": 12.27,
     "latitude": 36.56643,
     "longitude": -87.345216
@@ -584,7 +584,7 @@
     "city": "Clearwater",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 100,
+    "totalSearchVolume": 120,
     "averageCpcUsd": 131.43,
     "latitude": 27.979419,
     "longitude": -82.771256
@@ -594,8 +594,8 @@
     "city": "Cleveland",
     "state": "Ohio",
     "stateCode": "OH",
-    "totalSearchVolume": 360,
-    "averageCpcUsd": 59.45,
+    "totalSearchVolume": 320,
+    "averageCpcUsd": 53.05,
     "latitude": 41.478462,
     "longitude": -81.679435
   },
@@ -614,7 +614,7 @@
     "city": "Clovis",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 36.827809,
     "longitude": -119.681843
@@ -624,7 +624,7 @@
     "city": "College Station",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 20,
     "averageCpcUsd": null,
     "latitude": 30.58516,
     "longitude": -96.29636
@@ -634,8 +634,8 @@
     "city": "Colorado Springs",
     "state": "Colorado",
     "stateCode": "CO",
-    "totalSearchVolume": 3000,
-    "averageCpcUsd": 130.68,
+    "totalSearchVolume": 2400,
+    "averageCpcUsd": 133.08,
     "latitude": 38.867255,
     "longitude": -104.760749
   },
@@ -644,8 +644,8 @@
     "city": "Columbia",
     "state": "Missouri",
     "stateCode": "MO",
-    "totalSearchVolume": 20,
-    "averageCpcUsd": 28.55,
+    "totalSearchVolume": 60,
+    "averageCpcUsd": 16.64,
     "latitude": 38.94729,
     "longitude": -92.326387
   },
@@ -654,8 +654,8 @@
     "city": "Columbia",
     "state": "South Carolina",
     "stateCode": "SC",
-    "totalSearchVolume": 100,
-    "averageCpcUsd": 26.23,
+    "totalSearchVolume": 180,
+    "averageCpcUsd": 25.89,
     "latitude": 34.040519,
     "longitude": -80.906099
   },
@@ -664,7 +664,7 @@
     "city": "Columbus",
     "state": "Georgia",
     "stateCode": "GA",
-    "totalSearchVolume": 120,
+    "totalSearchVolume": 140,
     "averageCpcUsd": 82.5,
     "latitude": 32.510191,
     "longitude": -84.874946
@@ -674,8 +674,8 @@
     "city": "Columbus",
     "state": "Ohio",
     "stateCode": "OH",
-    "totalSearchVolume": 820,
-    "averageCpcUsd": 54.78,
+    "totalSearchVolume": 1060,
+    "averageCpcUsd": 55.82,
     "latitude": 39.985531,
     "longitude": -82.985594
   },
@@ -684,7 +684,7 @@
     "city": "Concord",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 40,
     "averageCpcUsd": 105.38,
     "latitude": 37.972184,
     "longitude": -122.001587
@@ -694,7 +694,7 @@
     "city": "Concord",
     "state": "North Carolina",
     "stateCode": "NC",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 35.392094,
     "longitude": -80.63551
@@ -704,7 +704,7 @@
     "city": "Conroe",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 150,
+    "totalSearchVolume": 430,
     "averageCpcUsd": 78.4,
     "latitude": 30.328717,
     "longitude": -95.4846
@@ -714,7 +714,7 @@
     "city": "Coral Springs",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 26.270722,
     "longitude": -80.259301
@@ -724,7 +724,7 @@
     "city": "Corona",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 33.861969,
     "longitude": -117.565495
@@ -734,8 +734,8 @@
     "city": "Corpus Christi",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 120,
-    "averageCpcUsd": 104.35,
+    "totalSearchVolume": 200,
+    "averageCpcUsd": 101.5,
     "latitude": 27.754252,
     "longitude": -97.173385
   },
@@ -744,7 +744,7 @@
     "city": "Costa Mesa",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 60,
     "averageCpcUsd": null,
     "latitude": 33.665905,
     "longitude": -117.912336
@@ -754,8 +754,8 @@
     "city": "Dallas",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 810,
-    "averageCpcUsd": 136.8,
+    "totalSearchVolume": 1780,
+    "averageCpcUsd": 132.55,
     "latitude": 32.793333,
     "longitude": -96.766513
   },
@@ -764,7 +764,7 @@
     "city": "Daly City",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 37.701684,
     "longitude": -122.464968
@@ -774,7 +774,7 @@
     "city": "Davenport",
     "state": "Iowa",
     "stateCode": "IA",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 30,
     "averageCpcUsd": 27.82,
     "latitude": 41.55682,
     "longitude": -90.603948
@@ -784,7 +784,7 @@
     "city": "Davie",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 60,
+    "totalSearchVolume": 70,
     "averageCpcUsd": null,
     "latitude": 26.079169,
     "longitude": -80.283013
@@ -794,7 +794,7 @@
     "city": "Dayton",
     "state": "Ohio",
     "stateCode": "OH",
-    "totalSearchVolume": 360,
+    "totalSearchVolume": 330,
     "averageCpcUsd": 36.83,
     "latitude": 39.784743,
     "longitude": -84.199632
@@ -804,7 +804,7 @@
     "city": "Dearborn",
     "state": "Michigan",
     "stateCode": "MI",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 42.313057,
     "longitude": -83.211488
@@ -814,7 +814,7 @@
     "city": "Deltona",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 28.905121,
     "longitude": -81.210978
@@ -824,7 +824,7 @@
     "city": "Denton",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 140,
+    "totalSearchVolume": 260,
     "averageCpcUsd": 89.96,
     "latitude": 33.217449,
     "longitude": -97.141346
@@ -834,8 +834,8 @@
     "city": "Denver",
     "state": "Colorado",
     "stateCode": "CO",
-    "totalSearchVolume": 1140,
-    "averageCpcUsd": 97.74,
+    "totalSearchVolume": 1860,
+    "averageCpcUsd": 100.88,
     "latitude": 39.76185,
     "longitude": -104.881105
   },
@@ -844,8 +844,8 @@
     "city": "Des Moines",
     "state": "Iowa",
     "stateCode": "IA",
-    "totalSearchVolume": 60,
-    "averageCpcUsd": 48.63,
+    "totalSearchVolume": 100,
+    "averageCpcUsd": 46.17,
     "latitude": 41.57259,
     "longitude": -93.610243
   },
@@ -854,7 +854,7 @@
     "city": "Detroit",
     "state": "Michigan",
     "stateCode": "MI",
-    "totalSearchVolume": 120,
+    "totalSearchVolume": 110,
     "averageCpcUsd": 45.96,
     "latitude": 42.383037,
     "longitude": -83.102237
@@ -864,7 +864,7 @@
     "city": "Downey",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 33.938237,
     "longitude": -118.130856
@@ -874,7 +874,7 @@
     "city": "Durham",
     "state": "North Carolina",
     "stateCode": "NC",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 80,
     "averageCpcUsd": 25.49,
     "latitude": 35.977928,
     "longitude": -78.898109
@@ -884,7 +884,7 @@
     "city": "Edinburg",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 40,
     "averageCpcUsd": 24.55,
     "latitude": 26.318374,
     "longitude": -98.15348
@@ -894,8 +894,8 @@
     "city": "Edison",
     "state": "New Jersey",
     "stateCode": "NJ",
-    "totalSearchVolume": 30,
-    "averageCpcUsd": null,
+    "totalSearchVolume": 50,
+    "averageCpcUsd": 53.7,
     "latitude": 40.504396,
     "longitude": -74.348843
   },
@@ -904,7 +904,7 @@
     "city": "El Cajon",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 60,
     "averageCpcUsd": null,
     "latitude": 32.801673,
     "longitude": -116.960468
@@ -924,8 +924,8 @@
     "city": "El Paso",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 290,
-    "averageCpcUsd": 45.06,
+    "totalSearchVolume": 1080,
+    "averageCpcUsd": 41.95,
     "latitude": 31.84778,
     "longitude": -106.431106
   },
@@ -934,7 +934,7 @@
     "city": "Elgin",
     "state": "Illinois",
     "stateCode": "IL",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 42.038963,
     "longitude": -88.325671
@@ -944,7 +944,7 @@
     "city": "Elizabeth",
     "state": "New Jersey",
     "stateCode": "NJ",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 60,
     "averageCpcUsd": null,
     "latitude": 40.666367,
     "longitude": -74.193503
@@ -954,7 +954,7 @@
     "city": "Elk Grove",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 38.414621,
     "longitude": -121.384961
@@ -964,7 +964,7 @@
     "city": "Escondido",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 270,
+    "totalSearchVolume": 400,
     "averageCpcUsd": null,
     "latitude": 33.133053,
     "longitude": -117.074043
@@ -974,7 +974,7 @@
     "city": "Eugene",
     "state": "Oregon",
     "stateCode": "OR",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 44.056848,
     "longitude": -123.119019
@@ -984,7 +984,7 @@
     "city": "Evansville",
     "state": "Indiana",
     "stateCode": "IN",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 50,
     "averageCpcUsd": 11.94,
     "latitude": 37.987737,
     "longitude": -87.534705
@@ -994,7 +994,7 @@
     "city": "Everett",
     "state": "Washington",
     "stateCode": "WA",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 60,
     "averageCpcUsd": null,
     "latitude": 47.965413,
     "longitude": -122.189895
@@ -1004,7 +1004,7 @@
     "city": "Fairfield",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 150,
+    "totalSearchVolume": 180,
     "averageCpcUsd": null,
     "latitude": 38.261965,
     "longitude": -122.032389
@@ -1014,7 +1014,7 @@
     "city": "Fargo",
     "state": "North Dakota",
     "stateCode": "ND",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 90,
     "averageCpcUsd": 28.85,
     "latitude": 46.8647,
     "longitude": -96.82908
@@ -1024,8 +1024,8 @@
     "city": "Fayetteville",
     "state": "Arkansas",
     "stateCode": "AR",
-    "totalSearchVolume": 60,
-    "averageCpcUsd": 56.38,
+    "totalSearchVolume": 90,
+    "averageCpcUsd": 54.3,
     "latitude": 36.071455,
     "longitude": -94.166564
   },
@@ -1034,7 +1034,7 @@
     "city": "Fayetteville",
     "state": "North Carolina",
     "stateCode": "NC",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 120,
     "averageCpcUsd": null,
     "latitude": 35.082766,
     "longitude": -78.973515
@@ -1044,7 +1044,7 @@
     "city": "Federal Way",
     "state": "Washington",
     "stateCode": "WA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 47.311596,
     "longitude": -122.337757
@@ -1054,7 +1054,7 @@
     "city": "Fishers",
     "state": "Indiana",
     "stateCode": "IN",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 39.96183,
     "longitude": -85.968364
@@ -1064,7 +1064,7 @@
     "city": "Fontana",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 60,
     "averageCpcUsd": 135.2,
     "latitude": 34.109686,
     "longitude": -117.462888
@@ -1074,7 +1074,7 @@
     "city": "Fort Collins",
     "state": "Colorado",
     "stateCode": "CO",
-    "totalSearchVolume": 140,
+    "totalSearchVolume": 330,
     "averageCpcUsd": 41.62,
     "latitude": 40.548216,
     "longitude": -105.064833
@@ -1084,7 +1084,7 @@
     "city": "Fort Lauderdale",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 320,
+    "totalSearchVolume": 330,
     "averageCpcUsd": 131.68,
     "latitude": 26.141227,
     "longitude": -80.146731
@@ -1094,7 +1094,7 @@
     "city": "Fort Wayne",
     "state": "Indiana",
     "stateCode": "IN",
-    "totalSearchVolume": 80,
+    "totalSearchVolume": 90,
     "averageCpcUsd": 23.58,
     "latitude": 41.088193,
     "longitude": -85.142791
@@ -1104,7 +1104,7 @@
     "city": "Fort Worth",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 430,
+    "totalSearchVolume": 230,
     "averageCpcUsd": 100.97,
     "latitude": 32.781954,
     "longitude": -97.348573
@@ -1114,7 +1114,7 @@
     "city": "Fremont",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 100,
+    "totalSearchVolume": 130,
     "averageCpcUsd": null,
     "latitude": 37.49446,
     "longitude": -121.94115
@@ -1124,8 +1124,8 @@
     "city": "Fresno",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 260,
-    "averageCpcUsd": 42.33,
+    "totalSearchVolume": 470,
+    "averageCpcUsd": 48.22,
     "latitude": 36.782684,
     "longitude": -119.793359
   },
@@ -1134,7 +1134,7 @@
     "city": "Frisco",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 170,
+    "totalSearchVolume": 180,
     "averageCpcUsd": null,
     "latitude": 33.155427,
     "longitude": -96.822596
@@ -1144,7 +1144,7 @@
     "city": "Fullerton",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 90,
+    "totalSearchVolume": 100,
     "averageCpcUsd": null,
     "latitude": 33.885716,
     "longitude": -117.928025
@@ -1154,7 +1154,7 @@
     "city": "Gainesville",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 60,
+    "totalSearchVolume": 170,
     "averageCpcUsd": null,
     "latitude": 29.679537,
     "longitude": -82.346793
@@ -1174,7 +1174,7 @@
     "city": "Garland",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 60,
     "averageCpcUsd": 73.72,
     "latitude": 32.909826,
     "longitude": -96.630334
@@ -1184,7 +1184,7 @@
     "city": "Georgetown",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 70,
     "averageCpcUsd": null,
     "latitude": 30.668136,
     "longitude": -97.698744
@@ -1194,7 +1194,7 @@
     "city": "Gilbert",
     "state": "Arizona",
     "stateCode": "AZ",
-    "totalSearchVolume": 210,
+    "totalSearchVolume": 390,
     "averageCpcUsd": 136.99,
     "latitude": 33.310345,
     "longitude": -111.743121
@@ -1204,7 +1204,7 @@
     "city": "Glendale",
     "state": "Arizona",
     "stateCode": "AZ",
-    "totalSearchVolume": 150,
+    "totalSearchVolume": 170,
     "averageCpcUsd": null,
     "latitude": 33.533111,
     "longitude": -112.189901
@@ -1214,7 +1214,7 @@
     "city": "Glendale",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 80,
+    "totalSearchVolume": 90,
     "averageCpcUsd": null,
     "latitude": 34.181393,
     "longitude": -118.24583
@@ -1224,7 +1224,7 @@
     "city": "Goodyear",
     "state": "Arizona",
     "stateCode": "AZ",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 50,
     "averageCpcUsd": 176.95,
     "latitude": 33.254031,
     "longitude": -112.366472
@@ -1234,7 +1234,7 @@
     "city": "Grand Prairie",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 32.67893,
     "longitude": -97.020743
@@ -1244,8 +1244,8 @@
     "city": "Grand Rapids",
     "state": "Michigan",
     "stateCode": "MI",
-    "totalSearchVolume": 110,
-    "averageCpcUsd": 41.67,
+    "totalSearchVolume": 260,
+    "averageCpcUsd": 42.5,
     "latitude": 42.961156,
     "longitude": -85.65557
   },
@@ -1254,7 +1254,7 @@
     "city": "Greeley",
     "state": "Colorado",
     "stateCode": "CO",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 60,
     "averageCpcUsd": null,
     "latitude": 40.414034,
     "longitude": -104.771043
@@ -1264,8 +1264,8 @@
     "city": "Green Bay",
     "state": "Wisconsin",
     "stateCode": "WI",
-    "totalSearchVolume": 40,
-    "averageCpcUsd": 23.72,
+    "totalSearchVolume": 70,
+    "averageCpcUsd": 25.22,
     "latitude": 44.521542,
     "longitude": -87.986568
   },
@@ -1274,8 +1274,8 @@
     "city": "Greensboro",
     "state": "North Carolina",
     "stateCode": "NC",
-    "totalSearchVolume": 140,
-    "averageCpcUsd": 29.79,
+    "totalSearchVolume": 480,
+    "averageCpcUsd": 20.02,
     "latitude": 36.09485,
     "longitude": -79.823624
   },
@@ -1284,7 +1284,7 @@
     "city": "Gresham",
     "state": "Oregon",
     "stateCode": "OR",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 45.502319,
     "longitude": -122.441609
@@ -1294,7 +1294,7 @@
     "city": "Hampton",
     "state": "Virginia",
     "stateCode": "VA",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 50,
     "averageCpcUsd": 47.28,
     "latitude": 37.047961,
     "longitude": -76.297293
@@ -1304,7 +1304,7 @@
     "city": "Hartford",
     "state": "Connecticut",
     "stateCode": "CT",
-    "totalSearchVolume": 70,
+    "totalSearchVolume": 170,
     "averageCpcUsd": 14.06,
     "latitude": 41.765933,
     "longitude": -72.681579
@@ -1314,7 +1314,7 @@
     "city": "Hayward",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 70,
     "averageCpcUsd": null,
     "latitude": 37.626826,
     "longitude": -122.104015
@@ -1324,7 +1324,7 @@
     "city": "Henderson",
     "state": "Nevada",
     "stateCode": "NV",
-    "totalSearchVolume": 440,
+    "totalSearchVolume": 480,
     "averageCpcUsd": null,
     "latitude": 36.008958,
     "longitude": -115.0268
@@ -1334,7 +1334,7 @@
     "city": "Hesperia",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 20,
     "averageCpcUsd": null,
     "latitude": 34.397038,
     "longitude": -117.315198
@@ -1344,7 +1344,7 @@
     "city": "Hialeah",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 25.869941,
     "longitude": -80.302865
@@ -1354,7 +1354,7 @@
     "city": "High Point",
     "state": "North Carolina",
     "stateCode": "NC",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 60,
     "averageCpcUsd": 15.94,
     "latitude": 35.990803,
     "longitude": -79.992713
@@ -1364,7 +1364,7 @@
     "city": "Hillsboro",
     "state": "Oregon",
     "stateCode": "OR",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 45.526798,
     "longitude": -122.935395
@@ -1374,7 +1374,7 @@
     "city": "Hollywood",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 50,
+    "totalSearchVolume": 90,
     "averageCpcUsd": null,
     "latitude": 26.030967,
     "longitude": -80.164609
@@ -1384,7 +1384,7 @@
     "city": "Honolulu",
     "state": "Hawaii",
     "stateCode": "HI",
-    "totalSearchVolume": 60,
+    "totalSearchVolume": 130,
     "averageCpcUsd": 10.63,
     "latitude": 21.324347,
     "longitude": -157.84764
@@ -1394,8 +1394,8 @@
     "city": "Houston",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 850,
-    "averageCpcUsd": 86.34,
+    "totalSearchVolume": 2210,
+    "averageCpcUsd": 88.64,
     "latitude": 29.785743,
     "longitude": -95.388806
   },
@@ -1404,7 +1404,7 @@
     "city": "Huntington Beach",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 60,
     "averageCpcUsd": null,
     "latitude": 33.698007,
     "longitude": -118.003834
@@ -1414,7 +1414,7 @@
     "city": "Huntsville",
     "state": "Alabama",
     "stateCode": "AL",
-    "totalSearchVolume": 80,
+    "totalSearchVolume": 170,
     "averageCpcUsd": 17.07,
     "latitude": 34.69772,
     "longitude": -86.67667
@@ -1424,7 +1424,7 @@
     "city": "Independence",
     "state": "Missouri",
     "stateCode": "MO",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 50,
     "averageCpcUsd": 46.13,
     "latitude": 39.085469,
     "longitude": -94.352082
@@ -1434,8 +1434,8 @@
     "city": "Indianapolis",
     "state": "Indiana",
     "stateCode": "IN",
-    "totalSearchVolume": 390,
-    "averageCpcUsd": 52.05,
+    "totalSearchVolume": 640,
+    "averageCpcUsd": 56.73,
     "latitude": 39.776664,
     "longitude": -86.145935
   },
@@ -1444,7 +1444,7 @@
     "city": "Inglewood",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 33.956068,
     "longitude": -118.344274
@@ -1454,7 +1454,7 @@
     "city": "Irvine",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 90,
+    "totalSearchVolume": 130,
     "averageCpcUsd": 96.86,
     "latitude": 33.678399,
     "longitude": -117.771254
@@ -1464,7 +1464,7 @@
     "city": "Irving",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 80,
+    "totalSearchVolume": 90,
     "averageCpcUsd": null,
     "latitude": 32.857748,
     "longitude": -96.970022
@@ -1474,8 +1474,8 @@
     "city": "Jackson",
     "state": "Mississippi",
     "stateCode": "MS",
-    "totalSearchVolume": 60,
-    "averageCpcUsd": 101.56,
+    "totalSearchVolume": 30,
+    "averageCpcUsd": 143.78,
     "latitude": 32.315834,
     "longitude": -90.21285
   },
@@ -1484,8 +1484,8 @@
     "city": "Jacksonville",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 380,
-    "averageCpcUsd": 198.51,
+    "totalSearchVolume": 890,
+    "averageCpcUsd": 207.87,
     "latitude": 30.336864,
     "longitude": -81.661603
   },
@@ -1494,7 +1494,7 @@
     "city": "Jersey City",
     "state": "New Jersey",
     "stateCode": "NJ",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 90,
     "averageCpcUsd": null,
     "latitude": 40.711417,
     "longitude": -74.06476
@@ -1504,7 +1504,7 @@
     "city": "Joliet",
     "state": "Illinois",
     "stateCode": "IL",
-    "totalSearchVolume": 60,
+    "totalSearchVolume": 80,
     "averageCpcUsd": null,
     "latitude": 41.516866,
     "longitude": -88.147963
@@ -1514,7 +1514,7 @@
     "city": "Jurupa Valley",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 20,
     "averageCpcUsd": null,
     "latitude": 34.002591,
     "longitude": -117.467612
@@ -1524,8 +1524,8 @@
     "city": "Kansas City",
     "state": "Kansas",
     "stateCode": "KS",
-    "totalSearchVolume": 100,
-    "averageCpcUsd": 21.84,
+    "totalSearchVolume": 190,
+    "averageCpcUsd": 17.84,
     "latitude": 39.122539,
     "longitude": -94.741781
   },
@@ -1534,8 +1534,8 @@
     "city": "Kansas City",
     "state": "Missouri",
     "stateCode": "MO",
-    "totalSearchVolume": 300,
-    "averageCpcUsd": 28.44,
+    "totalSearchVolume": 650,
+    "averageCpcUsd": 25.4,
     "latitude": 39.125155,
     "longitude": -94.550313
   },
@@ -1544,7 +1544,7 @@
     "city": "Kent",
     "state": "Washington",
     "stateCode": "WA",
-    "totalSearchVolume": 80,
+    "totalSearchVolume": 100,
     "averageCpcUsd": null,
     "latitude": 47.390008,
     "longitude": -122.213528
@@ -1554,7 +1554,7 @@
     "city": "Killeen",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 50,
     "averageCpcUsd": 61.26,
     "latitude": 31.077669,
     "longitude": -97.731952
@@ -1564,7 +1564,7 @@
     "city": "Knoxville",
     "state": "Tennessee",
     "stateCode": "TN",
-    "totalSearchVolume": 260,
+    "totalSearchVolume": 480,
     "averageCpcUsd": 86.77,
     "latitude": 35.97068,
     "longitude": -83.94927
@@ -1574,7 +1574,7 @@
     "city": "Lafayette",
     "state": "Louisiana",
     "stateCode": "LA",
-    "totalSearchVolume": 400,
+    "totalSearchVolume": 430,
     "averageCpcUsd": 8.1,
     "latitude": 30.2056,
     "longitude": -92.028058
@@ -1584,7 +1584,7 @@
     "city": "Lakeland",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 100,
+    "totalSearchVolume": 240,
     "averageCpcUsd": null,
     "latitude": 28.055496,
     "longitude": -81.954772
@@ -1594,7 +1594,7 @@
     "city": "Lakewood",
     "state": "Colorado",
     "stateCode": "CO",
-    "totalSearchVolume": 80,
+    "totalSearchVolume": 110,
     "averageCpcUsd": null,
     "latitude": 39.698939,
     "longitude": -105.117573
@@ -1604,7 +1604,7 @@
     "city": "Lakewood",
     "state": "New Jersey",
     "stateCode": "NJ",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 20,
     "averageCpcUsd": null,
     "latitude": 40.093975,
     "longitude": -74.211478
@@ -1614,8 +1614,8 @@
     "city": "Lancaster",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 30,
-    "averageCpcUsd": 49.66,
+    "totalSearchVolume": 60,
+    "averageCpcUsd": null,
     "latitude": 34.693558,
     "longitude": -118.175305
   },
@@ -1624,7 +1624,7 @@
     "city": "Lansing",
     "state": "Michigan",
     "stateCode": "MI",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 30,
     "averageCpcUsd": 94.25,
     "latitude": 42.714341,
     "longitude": -84.560889
@@ -1634,7 +1634,7 @@
     "city": "Laredo",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 30,
     "averageCpcUsd": 49.08,
     "latitude": 27.560379,
     "longitude": -99.489181
@@ -1644,7 +1644,7 @@
     "city": "Las Cruces",
     "state": "New Mexico",
     "stateCode": "NM",
-    "totalSearchVolume": 130,
+    "totalSearchVolume": 150,
     "averageCpcUsd": 23.99,
     "latitude": 32.326444,
     "longitude": -106.789695
@@ -1654,8 +1654,8 @@
     "city": "Las Vegas",
     "state": "Nevada",
     "stateCode": "NV",
-    "totalSearchVolume": 6050,
-    "averageCpcUsd": 88.13,
+    "totalSearchVolume": 5340,
+    "averageCpcUsd": 76.34,
     "latitude": 36.233499,
     "longitude": -115.264037
   },
@@ -1664,7 +1664,7 @@
     "city": "League City",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 29.490064,
     "longitude": -95.109093
@@ -1674,7 +1674,7 @@
     "city": "Lee's Summit",
     "state": "Missouri",
     "stateCode": "MO",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 38.921601,
     "longitude": -94.384763
@@ -1684,7 +1684,7 @@
     "city": "Lewisville",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 100,
+    "totalSearchVolume": 160,
     "averageCpcUsd": null,
     "latitude": 33.050725,
     "longitude": -96.974623
@@ -1694,8 +1694,8 @@
     "city": "Lexington",
     "state": "Kentucky",
     "stateCode": "KY",
-    "totalSearchVolume": 230,
-    "averageCpcUsd": 20.98,
+    "totalSearchVolume": 340,
+    "averageCpcUsd": 22.43,
     "latitude": 38.040678,
     "longitude": -84.458272
   },
@@ -1704,7 +1704,7 @@
     "city": "Lincoln",
     "state": "Nebraska",
     "stateCode": "NE",
-    "totalSearchVolume": 190,
+    "totalSearchVolume": 310,
     "averageCpcUsd": 47.4,
     "latitude": 40.810284,
     "longitude": -96.674856
@@ -1714,7 +1714,7 @@
     "city": "Little Rock",
     "state": "Arkansas",
     "stateCode": "AR",
-    "totalSearchVolume": 90,
+    "totalSearchVolume": 150,
     "averageCpcUsd": null,
     "latitude": 34.725393,
     "longitude": -92.358556
@@ -1724,7 +1724,7 @@
     "city": "Long Beach",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 100,
+    "totalSearchVolume": 200,
     "averageCpcUsd": null,
     "latitude": 33.780791,
     "longitude": -118.16818
@@ -1734,8 +1734,8 @@
     "city": "Los Angeles",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 2560,
-    "averageCpcUsd": 123.56,
+    "totalSearchVolume": 3050,
+    "averageCpcUsd": 158.03,
     "latitude": 34.019394,
     "longitude": -118.410825
   },
@@ -1744,8 +1744,8 @@
     "city": "Louisville",
     "state": "Kentucky",
     "stateCode": "KY",
-    "totalSearchVolume": 360,
-    "averageCpcUsd": 14.91,
+    "totalSearchVolume": 580,
+    "averageCpcUsd": 14.34,
     "latitude": 38.224728,
     "longitude": -85.740614
   },
@@ -1754,7 +1754,7 @@
     "city": "Lowell",
     "state": "Massachusetts",
     "stateCode": "MA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 42.638995,
     "longitude": -71.32102
@@ -1764,7 +1764,7 @@
     "city": "Lubbock",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 60,
+    "totalSearchVolume": 100,
     "averageCpcUsd": 61.84,
     "latitude": 33.561901,
     "longitude": -101.888883
@@ -1774,7 +1774,7 @@
     "city": "Lynn",
     "state": "Massachusetts",
     "stateCode": "MA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 20,
     "averageCpcUsd": null,
     "latitude": 42.474762,
     "longitude": -70.96203
@@ -1784,8 +1784,8 @@
     "city": "Macon",
     "state": "Georgia",
     "stateCode": "GA",
-    "totalSearchVolume": 70,
-    "averageCpcUsd": 19.61,
+    "totalSearchVolume": 120,
+    "averageCpcUsd": 16.98,
     "latitude": 32.80899,
     "longitude": -83.69406
   },
@@ -1794,8 +1794,8 @@
     "city": "Madison",
     "state": "Wisconsin",
     "stateCode": "WI",
-    "totalSearchVolume": 100,
-    "averageCpcUsd": 47.29,
+    "totalSearchVolume": 320,
+    "averageCpcUsd": 42.39,
     "latitude": 43.087815,
     "longitude": -89.429856
   },
@@ -1804,7 +1804,7 @@
     "city": "Manchester",
     "state": "New Hampshire",
     "stateCode": "NH",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 70,
     "averageCpcUsd": null,
     "latitude": 42.984941,
     "longitude": -71.444131
@@ -1814,7 +1814,7 @@
     "city": "McAllen",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 70,
     "averageCpcUsd": 25.65,
     "latitude": 26.224966,
     "longitude": -98.246083
@@ -1824,7 +1824,7 @@
     "city": "McKinney",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 150,
+    "totalSearchVolume": 250,
     "averageCpcUsd": 134.31,
     "latitude": 33.201125,
     "longitude": -96.664161
@@ -1835,7 +1835,7 @@
     "state": "Tennessee",
     "stateCode": "TN",
     "totalSearchVolume": 190,
-    "averageCpcUsd": 8.33,
+    "averageCpcUsd": 7.31,
     "latitude": 35.109164,
     "longitude": -89.968511
   },
@@ -1844,7 +1844,7 @@
     "city": "Menifee",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 33.689858,
     "longitude": -117.184383
@@ -1854,7 +1854,7 @@
     "city": "Meridian",
     "state": "Idaho",
     "stateCode": "ID",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 30,
     "averageCpcUsd": 24.47,
     "latitude": 43.61149,
     "longitude": -116.400662
@@ -1864,8 +1864,8 @@
     "city": "Mesa",
     "state": "Arizona",
     "stateCode": "AZ",
-    "totalSearchVolume": 170,
-    "averageCpcUsd": 202.23,
+    "totalSearchVolume": 270,
+    "averageCpcUsd": 202.59,
     "latitude": 33.399355,
     "longitude": -111.715968
   },
@@ -1874,7 +1874,7 @@
     "city": "Mesquite",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 32.75955,
     "longitude": -96.584164
@@ -1884,8 +1884,8 @@
     "city": "Miami",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 430,
-    "averageCpcUsd": 55.43,
+    "totalSearchVolume": 700,
+    "averageCpcUsd": 55.23,
     "latitude": 25.775163,
     "longitude": -80.208615
   },
@@ -1894,7 +1894,7 @@
     "city": "Miami Gardens",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 25.948892,
     "longitude": -80.243585
@@ -1904,7 +1904,7 @@
     "city": "Midland",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 50,
+    "totalSearchVolume": 60,
     "averageCpcUsd": 39.09,
     "latitude": 32.024642,
     "longitude": -102.113467
@@ -1914,8 +1914,8 @@
     "city": "Milwaukee",
     "state": "Wisconsin",
     "stateCode": "WI",
-    "totalSearchVolume": 190,
-    "averageCpcUsd": 54.07,
+    "totalSearchVolume": 420,
+    "averageCpcUsd": 56.32,
     "latitude": 43.063348,
     "longitude": -87.966695
   },
@@ -1924,8 +1924,8 @@
     "city": "Minneapolis",
     "state": "Minnesota",
     "stateCode": "MN",
-    "totalSearchVolume": 630,
-    "averageCpcUsd": 64.25,
+    "totalSearchVolume": 780,
+    "averageCpcUsd": 63.99,
     "latitude": 44.963324,
     "longitude": -93.26832
   },
@@ -1934,7 +1934,7 @@
     "city": "Miramar",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 25.972529,
     "longitude": -80.338582
@@ -1944,7 +1944,7 @@
     "city": "Mobile",
     "state": "Alabama",
     "stateCode": "AL",
-    "totalSearchVolume": 70,
+    "totalSearchVolume": 80,
     "averageCpcUsd": 19.58,
     "latitude": 30.668246,
     "longitude": -88.107853
@@ -1954,7 +1954,7 @@
     "city": "Modesto",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 90,
+    "totalSearchVolume": 150,
     "averageCpcUsd": 34.47,
     "latitude": 37.637533,
     "longitude": -121.003049
@@ -1964,7 +1964,7 @@
     "city": "Montgomery",
     "state": "Alabama",
     "stateCode": "AL",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 60,
     "averageCpcUsd": 8.82,
     "latitude": 32.348503,
     "longitude": -86.267307
@@ -1974,7 +1974,7 @@
     "city": "Moreno Valley",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 33.923253,
     "longitude": -117.205685
@@ -1984,7 +1984,7 @@
     "city": "Murfreesboro",
     "state": "Tennessee",
     "stateCode": "TN",
-    "totalSearchVolume": 80,
+    "totalSearchVolume": 90,
     "averageCpcUsd": 252.42,
     "latitude": 35.853915,
     "longitude": -86.421224
@@ -1994,7 +1994,7 @@
     "city": "Murrieta",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 33.573214,
     "longitude": -117.191007
@@ -2004,7 +2004,7 @@
     "city": "Nampa",
     "state": "Idaho",
     "stateCode": "ID",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 43.586441,
     "longitude": -116.56389
@@ -2014,7 +2014,7 @@
     "city": "Naperville",
     "state": "Illinois",
     "stateCode": "IL",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 41.749173,
     "longitude": -88.162019
@@ -2024,8 +2024,8 @@
     "city": "Nashville",
     "state": "Tennessee",
     "stateCode": "TN",
-    "totalSearchVolume": 180,
-    "averageCpcUsd": 153.82,
+    "totalSearchVolume": 130,
+    "averageCpcUsd": 125.03,
     "latitude": 36.1718,
     "longitude": -86.785002
   },
@@ -2034,7 +2034,7 @@
     "city": "New Bedford",
     "state": "Massachusetts",
     "stateCode": "MA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 41.661303,
     "longitude": -70.937913
@@ -2044,7 +2044,7 @@
     "city": "New Braunfels",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 50,
     "averageCpcUsd": 170.32,
     "latitude": 29.699306,
     "longitude": -98.115127
@@ -2054,7 +2054,7 @@
     "city": "New Haven",
     "state": "Connecticut",
     "stateCode": "CT",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 41.310809,
     "longitude": -72.924953
@@ -2064,8 +2064,8 @@
     "city": "New Orleans",
     "state": "Louisiana",
     "stateCode": "LA",
-    "totalSearchVolume": 310,
-    "averageCpcUsd": 51.22,
+    "totalSearchVolume": 500,
+    "averageCpcUsd": 49.33,
     "latitude": 30.05342,
     "longitude": -89.934502
   },
@@ -2074,8 +2074,8 @@
     "city": "New York",
     "state": "New York",
     "stateCode": "NY",
-    "totalSearchVolume": 1480,
-    "averageCpcUsd": 28.47,
+    "totalSearchVolume": 1430,
+    "averageCpcUsd": 27.95,
     "latitude": 40.662712,
     "longitude": -73.938677
   },
@@ -2084,7 +2084,7 @@
     "city": "Newark",
     "state": "New Jersey",
     "stateCode": "NJ",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 80,
     "averageCpcUsd": null,
     "latitude": 40.72422,
     "longitude": -74.172574
@@ -2094,7 +2094,7 @@
     "city": "Newport News",
     "state": "Virginia",
     "stateCode": "VA",
-    "totalSearchVolume": 50,
+    "totalSearchVolume": 100,
     "averageCpcUsd": 42.59,
     "latitude": 37.076136,
     "longitude": -76.52198
@@ -2104,7 +2104,7 @@
     "city": "Norfolk",
     "state": "Virginia",
     "stateCode": "VA",
-    "totalSearchVolume": 50,
+    "totalSearchVolume": 80,
     "averageCpcUsd": 10.22,
     "latitude": 36.923015,
     "longitude": -76.244641
@@ -2114,7 +2114,7 @@
     "city": "Norman",
     "state": "Oklahoma",
     "stateCode": "OK",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 35.240569,
     "longitude": -97.345299
@@ -2124,7 +2124,7 @@
     "city": "North Charleston",
     "state": "South Carolina",
     "stateCode": "SC",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 32.917881,
     "longitude": -80.065
@@ -2134,7 +2134,7 @@
     "city": "North Las Vegas",
     "state": "Nevada",
     "stateCode": "NV",
-    "totalSearchVolume": 310,
+    "totalSearchVolume": 350,
     "averageCpcUsd": null,
     "latitude": 36.289865,
     "longitude": -115.089181
@@ -2144,7 +2144,7 @@
     "city": "Oakland",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 170,
+    "totalSearchVolume": 320,
     "averageCpcUsd": 58.11,
     "latitude": 37.769846,
     "longitude": -122.22569
@@ -2154,7 +2154,7 @@
     "city": "Oceanside",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 50,
+    "totalSearchVolume": 80,
     "averageCpcUsd": null,
     "latitude": 33.224601,
     "longitude": -117.306291
@@ -2164,8 +2164,8 @@
     "city": "Odessa",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 40,
-    "averageCpcUsd": 75.28,
+    "totalSearchVolume": 90,
+    "averageCpcUsd": 60.03,
     "latitude": 31.880461,
     "longitude": -102.345314
   },
@@ -2174,8 +2174,8 @@
     "city": "Oklahoma City",
     "state": "Oklahoma",
     "stateCode": "OK",
-    "totalSearchVolume": 470,
-    "averageCpcUsd": 49.26,
+    "totalSearchVolume": 1260,
+    "averageCpcUsd": 48.74,
     "latitude": 35.467079,
     "longitude": -97.513657
   },
@@ -2184,7 +2184,7 @@
     "city": "Olathe",
     "state": "Kansas",
     "stateCode": "KS",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 38.882031,
     "longitude": -94.820054
@@ -2194,8 +2194,8 @@
     "city": "Omaha",
     "state": "Nebraska",
     "stateCode": "NE",
-    "totalSearchVolume": 220,
-    "averageCpcUsd": 173.66,
+    "totalSearchVolume": 370,
+    "averageCpcUsd": 126.72,
     "latitude": 41.262705,
     "longitude": -96.053475
   },
@@ -2204,7 +2204,7 @@
     "city": "Ontario",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 160,
+    "totalSearchVolume": 90,
     "averageCpcUsd": null,
     "latitude": 34.037042,
     "longitude": -117.605956
@@ -2214,7 +2214,7 @@
     "city": "Orange",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 120,
+    "totalSearchVolume": 100,
     "averageCpcUsd": 75.9,
     "latitude": 33.786971,
     "longitude": -117.861265
@@ -2224,8 +2224,8 @@
     "city": "Orlando",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 520,
-    "averageCpcUsd": 104.08,
+    "totalSearchVolume": 810,
+    "averageCpcUsd": 103.79,
     "latitude": 28.472818,
     "longitude": -81.320242
   },
@@ -2235,7 +2235,7 @@
     "state": "Kansas",
     "stateCode": "KS",
     "totalSearchVolume": 60,
-    "averageCpcUsd": 15.49,
+    "averageCpcUsd": null,
     "latitude": 38.889042,
     "longitude": -94.690584
   },
@@ -2244,7 +2244,7 @@
     "city": "Oxnard",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 34.199436,
     "longitude": -119.207515
@@ -2254,7 +2254,7 @@
     "city": "Palm Bay",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 27.954802,
     "longitude": -80.664962
@@ -2264,7 +2264,7 @@
     "city": "Palm Coast",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 29.536837,
     "longitude": -81.242627
@@ -2274,7 +2274,7 @@
     "city": "Palmdale",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 34.591038,
     "longitude": -118.105403
@@ -2284,7 +2284,7 @@
     "city": "Pasadena",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 150,
+    "totalSearchVolume": 140,
     "averageCpcUsd": null,
     "latitude": 34.160602,
     "longitude": -118.137954
@@ -2294,7 +2294,7 @@
     "city": "Pasadena",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 29.654996,
     "longitude": -95.151055
@@ -2304,7 +2304,7 @@
     "city": "Paterson",
     "state": "New Jersey",
     "stateCode": "NJ",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 40.914766,
     "longitude": -74.162829
@@ -2314,7 +2314,7 @@
     "city": "Pearland",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 60,
     "averageCpcUsd": null,
     "latitude": 29.555732,
     "longitude": -95.323012
@@ -2324,7 +2324,7 @@
     "city": "Pembroke Pines",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 26.014716,
     "longitude": -80.340171
@@ -2334,7 +2334,7 @@
     "city": "Peoria",
     "state": "Arizona",
     "stateCode": "AZ",
-    "totalSearchVolume": 80,
+    "totalSearchVolume": 100,
     "averageCpcUsd": null,
     "latitude": 33.786186,
     "longitude": -112.308042
@@ -2344,7 +2344,7 @@
     "city": "Peoria",
     "state": "Illinois",
     "stateCode": "IL",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 120,
     "averageCpcUsd": null,
     "latitude": 40.751641,
     "longitude": -89.617198
@@ -2354,8 +2354,8 @@
     "city": "Philadelphia",
     "state": "Pennsylvania",
     "stateCode": "PA",
-    "totalSearchVolume": 290,
-    "averageCpcUsd": 21.78,
+    "totalSearchVolume": 720,
+    "averageCpcUsd": 17.73,
     "latitude": 40.009376,
     "longitude": -75.133346
   },
@@ -2364,8 +2364,8 @@
     "city": "Phoenix",
     "state": "Arizona",
     "stateCode": "AZ",
-    "totalSearchVolume": 2350,
-    "averageCpcUsd": 165,
+    "totalSearchVolume": 3080,
+    "averageCpcUsd": 163.5,
     "latitude": 33.572154,
     "longitude": -112.090132
   },
@@ -2374,8 +2374,8 @@
     "city": "Pittsburgh",
     "state": "Pennsylvania",
     "stateCode": "PA",
-    "totalSearchVolume": 210,
-    "averageCpcUsd": 105.24,
+    "totalSearchVolume": 560,
+    "averageCpcUsd": 89.72,
     "latitude": 40.439936,
     "longitude": -79.975676
   },
@@ -2384,7 +2384,7 @@
     "city": "Plano",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 330,
+    "totalSearchVolume": 570,
     "averageCpcUsd": 216.88,
     "latitude": 33.050769,
     "longitude": -96.747944
@@ -2404,7 +2404,7 @@
     "city": "Pomona",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 60,
     "averageCpcUsd": null,
     "latitude": 34.058494,
     "longitude": -117.761091
@@ -2414,7 +2414,7 @@
     "city": "Pompano Beach",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 50,
+    "totalSearchVolume": 60,
     "averageCpcUsd": 178.52,
     "latitude": 26.241622,
     "longitude": -80.133851
@@ -2424,7 +2424,7 @@
     "city": "Port St. Lucie",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 50,
     "averageCpcUsd": 84.44,
     "latitude": 27.280554,
     "longitude": -80.388261
@@ -2434,8 +2434,8 @@
     "city": "Portland",
     "state": "Oregon",
     "stateCode": "OR",
-    "totalSearchVolume": 140,
-    "averageCpcUsd": 57.5,
+    "totalSearchVolume": 240,
+    "averageCpcUsd": 49.71,
     "latitude": 45.536951,
     "longitude": -122.649971
   },
@@ -2444,7 +2444,7 @@
     "city": "Providence",
     "state": "Rhode Island",
     "stateCode": "RI",
-    "totalSearchVolume": 60,
+    "totalSearchVolume": 100,
     "averageCpcUsd": null,
     "latitude": 41.823056,
     "longitude": -71.418784
@@ -2454,7 +2454,7 @@
     "city": "Provo",
     "state": "Utah",
     "stateCode": "UT",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 40.245312,
     "longitude": -111.645057
@@ -2464,7 +2464,7 @@
     "city": "Pueblo",
     "state": "Colorado",
     "stateCode": "CO",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 60,
     "averageCpcUsd": null,
     "latitude": 38.269228,
     "longitude": -104.610816
@@ -2474,7 +2474,7 @@
     "city": "Quincy",
     "state": "Massachusetts",
     "stateCode": "MA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 42.261006,
     "longitude": -71.008988
@@ -2484,8 +2484,8 @@
     "city": "Raleigh",
     "state": "North Carolina",
     "stateCode": "NC",
-    "totalSearchVolume": 320,
-    "averageCpcUsd": 73.36,
+    "totalSearchVolume": 470,
+    "averageCpcUsd": 75.18,
     "latitude": 35.831868,
     "longitude": -78.641042
   },
@@ -2494,8 +2494,8 @@
     "city": "Rancho Cucamonga",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 90,
-    "averageCpcUsd": 417.45,
+    "totalSearchVolume": 70,
+    "averageCpcUsd": null,
     "latitude": 34.130306,
     "longitude": -117.566067
   },
@@ -2504,7 +2504,7 @@
     "city": "Reno",
     "state": "Nevada",
     "stateCode": "NV",
-    "totalSearchVolume": 120,
+    "totalSearchVolume": 250,
     "averageCpcUsd": 16.21,
     "latitude": 39.549097,
     "longitude": -119.849907
@@ -2514,7 +2514,7 @@
     "city": "Renton",
     "state": "Washington",
     "stateCode": "WA",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 70,
     "averageCpcUsd": null,
     "latitude": 47.47919,
     "longitude": -122.194613
@@ -2524,7 +2524,7 @@
     "city": "Rialto",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 34.117427,
     "longitude": -117.389211
@@ -2534,7 +2534,7 @@
     "city": "Richardson",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 60,
     "averageCpcUsd": null,
     "latitude": 32.972291,
     "longitude": -96.708069
@@ -2544,7 +2544,7 @@
     "city": "Richmond",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 37.952278,
     "longitude": -122.360609
@@ -2554,8 +2554,8 @@
     "city": "Richmond",
     "state": "Virginia",
     "stateCode": "VA",
-    "totalSearchVolume": 170,
-    "averageCpcUsd": 12.42,
+    "totalSearchVolume": 250,
+    "averageCpcUsd": 12.45,
     "latitude": 37.531399,
     "longitude": -77.476009
   },
@@ -2564,7 +2564,7 @@
     "city": "Rio Rancho",
     "state": "New Mexico",
     "stateCode": "NM",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 35.28507,
     "longitude": -106.698867
@@ -2574,8 +2574,8 @@
     "city": "Riverside",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 110,
-    "averageCpcUsd": 176.17,
+    "totalSearchVolume": 90,
+    "averageCpcUsd": null,
     "latitude": 33.938143,
     "longitude": -117.393168
   },
@@ -2584,8 +2584,8 @@
     "city": "Rochester",
     "state": "Minnesota",
     "stateCode": "MN",
-    "totalSearchVolume": 30,
-    "averageCpcUsd": 38.7,
+    "totalSearchVolume": 50,
+    "averageCpcUsd": null,
     "latitude": 44.014299,
     "longitude": -92.478592
   },
@@ -2594,8 +2594,8 @@
     "city": "Rochester",
     "state": "New York",
     "stateCode": "NY",
-    "totalSearchVolume": 120,
-    "averageCpcUsd": 73.47,
+    "totalSearchVolume": 400,
+    "averageCpcUsd": 68.12,
     "latitude": 43.169927,
     "longitude": -77.616891
   },
@@ -2604,7 +2604,7 @@
     "city": "Rockford",
     "state": "Illinois",
     "stateCode": "IL",
-    "totalSearchVolume": 120,
+    "totalSearchVolume": 220,
     "averageCpcUsd": 37.79,
     "latitude": 42.2593,
     "longitude": -89.063478
@@ -2614,7 +2614,7 @@
     "city": "Roseville",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 80,
     "averageCpcUsd": 111.04,
     "latitude": 38.770296,
     "longitude": -121.319634
@@ -2624,7 +2624,7 @@
     "city": "Round Rock",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 30.526146,
     "longitude": -97.663532
@@ -2634,8 +2634,8 @@
     "city": "Sacramento",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 360,
-    "averageCpcUsd": 100.57,
+    "totalSearchVolume": 630,
+    "averageCpcUsd": 96.88,
     "latitude": 38.567694,
     "longitude": -121.468161
   },
@@ -2644,7 +2644,7 @@
     "city": "Saint Paul",
     "state": "Minnesota",
     "stateCode": "MN",
-    "totalSearchVolume": 70,
+    "totalSearchVolume": 80,
     "averageCpcUsd": 86.02,
     "latitude": 44.948901,
     "longitude": -93.104063
@@ -2654,7 +2654,7 @@
     "city": "Salem",
     "state": "Oregon",
     "stateCode": "OR",
-    "totalSearchVolume": 50,
+    "totalSearchVolume": 70,
     "averageCpcUsd": 42.95,
     "latitude": 44.9239,
     "longitude": -123.023007
@@ -2664,8 +2664,8 @@
     "city": "Salinas",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 60,
-    "averageCpcUsd": 51.65,
+    "totalSearchVolume": 50,
+    "averageCpcUsd": 63.84,
     "latitude": 36.690217,
     "longitude": -121.633793
   },
@@ -2674,8 +2674,8 @@
     "city": "Salt Lake City",
     "state": "Utah",
     "stateCode": "UT",
-    "totalSearchVolume": 170,
-    "averageCpcUsd": 58.2,
+    "totalSearchVolume": 320,
+    "averageCpcUsd": 56.39,
     "latitude": 40.776928,
     "longitude": -111.930991
   },
@@ -2684,7 +2684,7 @@
     "city": "San Angelo",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 40,
     "averageCpcUsd": 23.41,
     "latitude": 31.441078,
     "longitude": -100.450499
@@ -2694,8 +2694,8 @@
     "city": "San Antonio",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 800,
-    "averageCpcUsd": 180.73,
+    "totalSearchVolume": 1430,
+    "averageCpcUsd": 186.41,
     "latitude": 29.462809,
     "longitude": -98.524635
   },
@@ -2704,7 +2704,7 @@
     "city": "San Bernardino",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 60,
+    "totalSearchVolume": 130,
     "averageCpcUsd": 151.71,
     "latitude": 34.14114,
     "longitude": -117.294635
@@ -2714,8 +2714,8 @@
     "city": "San Diego",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 1350,
-    "averageCpcUsd": 132.43,
+    "totalSearchVolume": 1630,
+    "averageCpcUsd": 147.94,
     "latitude": 32.830391,
     "longitude": -117.120923
   },
@@ -2724,8 +2724,8 @@
     "city": "San Francisco",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 240,
-    "averageCpcUsd": 106.63,
+    "totalSearchVolume": 400,
+    "averageCpcUsd": 113.63,
     "latitude": 37.727239,
     "longitude": -123.032229
   },
@@ -2734,8 +2734,8 @@
     "city": "San Jose",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 650,
-    "averageCpcUsd": 103.63,
+    "totalSearchVolume": 980,
+    "averageCpcUsd": 104.21,
     "latitude": 37.296011,
     "longitude": -121.814552
   },
@@ -2744,7 +2744,7 @@
     "city": "San Mateo",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 37.56031,
     "longitude": -122.3106
@@ -2754,7 +2754,7 @@
     "city": "Sandy Springs",
     "state": "Georgia",
     "stateCode": "GA",
-    "totalSearchVolume": 50,
+    "totalSearchVolume": 80,
     "averageCpcUsd": 55.18,
     "latitude": 33.931501,
     "longitude": -84.368886
@@ -2764,7 +2764,7 @@
     "city": "Santa Ana",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 80,
+    "totalSearchVolume": 110,
     "averageCpcUsd": 104.01,
     "latitude": 33.736332,
     "longitude": -117.8829
@@ -2774,7 +2774,7 @@
     "city": "Santa Clara",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 60,
     "averageCpcUsd": null,
     "latitude": 37.364621,
     "longitude": -121.967973
@@ -2794,7 +2794,7 @@
     "city": "Santa Maria",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 50,
     "averageCpcUsd": 48.6,
     "latitude": 34.933076,
     "longitude": -120.443559
@@ -2804,8 +2804,8 @@
     "city": "Santa Rosa",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 410,
-    "averageCpcUsd": 100.57,
+    "totalSearchVolume": 680,
+    "averageCpcUsd": 101.53,
     "latitude": 38.445824,
     "longitude": -122.706181
   },
@@ -2814,8 +2814,8 @@
     "city": "Savannah",
     "state": "Georgia",
     "stateCode": "GA",
-    "totalSearchVolume": 210,
-    "averageCpcUsd": 142.56,
+    "totalSearchVolume": 390,
+    "averageCpcUsd": 138.31,
     "latitude": 32.012457,
     "longitude": -81.194157
   },
@@ -2824,7 +2824,7 @@
     "city": "Scottsdale",
     "state": "Arizona",
     "stateCode": "AZ",
-    "totalSearchVolume": 310,
+    "totalSearchVolume": 380,
     "averageCpcUsd": null,
     "latitude": 33.684272,
     "longitude": -111.861448
@@ -2834,8 +2834,8 @@
     "city": "Seattle",
     "state": "Washington",
     "stateCode": "WA",
-    "totalSearchVolume": 250,
-    "averageCpcUsd": 59.24,
+    "totalSearchVolume": 460,
+    "averageCpcUsd": 64.87,
     "latitude": 47.619335,
     "longitude": -122.351538
   },
@@ -2844,8 +2844,8 @@
     "city": "Shreveport",
     "state": "Louisiana",
     "stateCode": "LA",
-    "totalSearchVolume": 240,
-    "averageCpcUsd": 107.61,
+    "totalSearchVolume": 270,
+    "averageCpcUsd": 70.1,
     "latitude": 32.466879,
     "longitude": -93.792193
   },
@@ -2854,7 +2854,7 @@
     "city": "Simi Valley",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 34.266887,
     "longitude": -118.748458
@@ -2864,8 +2864,8 @@
     "city": "Sioux Falls",
     "state": "South Dakota",
     "stateCode": "SD",
-    "totalSearchVolume": 530,
-    "averageCpcUsd": 8.71,
+    "totalSearchVolume": 580,
+    "averageCpcUsd": 9.48,
     "latitude": 43.540696,
     "longitude": -96.731962
   },
@@ -2874,7 +2874,7 @@
     "city": "South Bend",
     "state": "Indiana",
     "stateCode": "IN",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 40,
     "averageCpcUsd": 17.48,
     "latitude": 41.676643,
     "longitude": -86.268809
@@ -2884,8 +2884,8 @@
     "city": "Sparks",
     "state": "Nevada",
     "stateCode": "NV",
-    "totalSearchVolume": 10,
-    "averageCpcUsd": null,
+    "totalSearchVolume": 40,
+    "averageCpcUsd": 15.95,
     "latitude": 39.574341,
     "longitude": -119.715154
   },
@@ -2894,8 +2894,8 @@
     "city": "Spokane",
     "state": "Washington",
     "stateCode": "WA",
-    "totalSearchVolume": 170,
-    "averageCpcUsd": 38.04,
+    "totalSearchVolume": 270,
+    "averageCpcUsd": 37.52,
     "latitude": 47.666935,
     "longitude": -117.433322
   },
@@ -2904,7 +2904,7 @@
     "city": "Spokane Valley",
     "state": "Washington",
     "stateCode": "WA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 47.663353,
     "longitude": -117.23278
@@ -2914,7 +2914,7 @@
     "city": "Springfield",
     "state": "Illinois",
     "stateCode": "IL",
-    "totalSearchVolume": 60,
+    "totalSearchVolume": 100,
     "averageCpcUsd": 21.88,
     "latitude": 39.791063,
     "longitude": -89.644572
@@ -2924,7 +2924,7 @@
     "city": "Springfield",
     "state": "Massachusetts",
     "stateCode": "MA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 60,
     "averageCpcUsd": null,
     "latitude": 42.115454,
     "longitude": -72.539978
@@ -2934,8 +2934,8 @@
     "city": "Springfield",
     "state": "Missouri",
     "stateCode": "MO",
-    "totalSearchVolume": 380,
-    "averageCpcUsd": 9.68,
+    "totalSearchVolume": 210,
+    "averageCpcUsd": 10.24,
     "latitude": 37.194157,
     "longitude": -93.292642
   },
@@ -2945,7 +2945,7 @@
     "state": "Utah",
     "stateCode": "UT",
     "totalSearchVolume": 40,
-    "averageCpcUsd": 16.16,
+    "averageCpcUsd": null,
     "latitude": 37.077006,
     "longitude": -113.576534
   },
@@ -2954,8 +2954,8 @@
     "city": "St. Louis",
     "state": "Missouri",
     "stateCode": "MO",
-    "totalSearchVolume": 270,
-    "averageCpcUsd": 34.33,
+    "totalSearchVolume": 620,
+    "averageCpcUsd": 33.75,
     "latitude": 38.635699,
     "longitude": -90.244582
   },
@@ -2964,8 +2964,8 @@
     "city": "St. Petersburg",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 290,
-    "averageCpcUsd": 58.44,
+    "totalSearchVolume": 240,
+    "averageCpcUsd": null,
     "latitude": 27.762727,
     "longitude": -82.644131
   },
@@ -2974,7 +2974,7 @@
     "city": "Stamford",
     "state": "Connecticut",
     "stateCode": "CT",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 41.079611,
     "longitude": -73.54608
@@ -2984,7 +2984,7 @@
     "city": "Sterling Heights",
     "state": "Michigan",
     "stateCode": "MI",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 42.581206,
     "longitude": -83.030316
@@ -2994,7 +2994,7 @@
     "city": "Stockton",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 250,
+    "totalSearchVolume": 290,
     "averageCpcUsd": 100.8,
     "latitude": 37.976553,
     "longitude": -121.308598
@@ -3004,7 +3004,7 @@
     "city": "Suffolk",
     "state": "Virginia",
     "stateCode": "VA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 36.697157,
     "longitude": -76.634781
@@ -3014,7 +3014,7 @@
     "city": "Sugar Land",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 29.592764,
     "longitude": -95.633801
@@ -3024,7 +3024,7 @@
     "city": "Sunnyvale",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 20,
     "averageCpcUsd": null,
     "latitude": 37.385797,
     "longitude": -122.026316
@@ -3034,7 +3034,7 @@
     "city": "Sunrise",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 26.171601,
     "longitude": -80.261633
@@ -3044,7 +3044,7 @@
     "city": "Surprise",
     "state": "Arizona",
     "stateCode": "AZ",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 60,
     "averageCpcUsd": null,
     "latitude": 33.670801,
     "longitude": -112.452546
@@ -3054,7 +3054,7 @@
     "city": "Syracuse",
     "state": "New York",
     "stateCode": "NY",
-    "totalSearchVolume": 90,
+    "totalSearchVolume": 200,
     "averageCpcUsd": 74.15,
     "latitude": 43.040998,
     "longitude": -76.143554
@@ -3064,7 +3064,7 @@
     "city": "Tacoma",
     "state": "Washington",
     "stateCode": "WA",
-    "totalSearchVolume": 170,
+    "totalSearchVolume": 400,
     "averageCpcUsd": 105.88,
     "latitude": 47.252199,
     "longitude": -122.459832
@@ -3074,8 +3074,8 @@
     "city": "Tallahassee",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 50,
-    "averageCpcUsd": 25.55,
+    "totalSearchVolume": 80,
+    "averageCpcUsd": 24.38,
     "latitude": 30.453529,
     "longitude": -84.252272
   },
@@ -3084,8 +3084,8 @@
     "city": "Tampa",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 550,
-    "averageCpcUsd": 66.48,
+    "totalSearchVolume": 400,
+    "averageCpcUsd": 67.6,
     "latitude": 27.970086,
     "longitude": -82.479673
   },
@@ -3094,7 +3094,7 @@
     "city": "Temecula",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 33.493073,
     "longitude": -117.131734
@@ -3104,7 +3104,7 @@
     "city": "Tempe",
     "state": "Arizona",
     "stateCode": "AZ",
-    "totalSearchVolume": 270,
+    "totalSearchVolume": 460,
     "averageCpcUsd": 79.37,
     "latitude": 33.388414,
     "longitude": -111.931782
@@ -3114,7 +3114,7 @@
     "city": "Thornton",
     "state": "Colorado",
     "stateCode": "CO",
-    "totalSearchVolume": 60,
+    "totalSearchVolume": 70,
     "averageCpcUsd": 73,
     "latitude": 39.920433,
     "longitude": -104.941413
@@ -3124,7 +3124,7 @@
     "city": "Thousand Oaks",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 34.19329,
     "longitude": -118.874235
@@ -3134,8 +3134,8 @@
     "city": "Toledo",
     "state": "Ohio",
     "stateCode": "OH",
-    "totalSearchVolume": 40,
-    "averageCpcUsd": 52.28,
+    "totalSearchVolume": 70,
+    "averageCpcUsd": 61.61,
     "latitude": 41.664071,
     "longitude": -83.581861
   },
@@ -3144,7 +3144,7 @@
     "city": "Topeka",
     "state": "Kansas",
     "stateCode": "KS",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 80,
     "averageCpcUsd": 9.17,
     "latitude": 39.034673,
     "longitude": -95.696191
@@ -3164,7 +3164,7 @@
     "city": "Tracy",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 37.727396,
     "longitude": -121.452195
@@ -3174,8 +3174,8 @@
     "city": "Tucson",
     "state": "Arizona",
     "stateCode": "AZ",
-    "totalSearchVolume": 450,
-    "averageCpcUsd": 101.25,
+    "totalSearchVolume": 200,
+    "averageCpcUsd": 119.06,
     "latitude": 32.153036,
     "longitude": -110.870773
   },
@@ -3184,8 +3184,8 @@
     "city": "Tulsa",
     "state": "Oklahoma",
     "stateCode": "OK",
-    "totalSearchVolume": 200,
-    "averageCpcUsd": 40.85,
+    "totalSearchVolume": 380,
+    "averageCpcUsd": 42.18,
     "latitude": 36.127949,
     "longitude": -95.902316
   },
@@ -3194,7 +3194,7 @@
     "city": "Tuscaloosa",
     "state": "Alabama",
     "stateCode": "AL",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 33.234404,
     "longitude": -87.5283
@@ -3204,7 +3204,7 @@
     "city": "Tyler",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 40,
+    "totalSearchVolume": 120,
     "averageCpcUsd": null,
     "latitude": 32.317334,
     "longitude": -95.306399
@@ -3214,7 +3214,7 @@
     "city": "Vacaville",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 40,
     "averageCpcUsd": 59.2,
     "latitude": 38.358621,
     "longitude": -121.968601
@@ -3224,7 +3224,7 @@
     "city": "Vallejo",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 38.106909,
     "longitude": -122.262339
@@ -3234,7 +3234,7 @@
     "city": "Vancouver",
     "state": "Washington",
     "stateCode": "WA",
-    "totalSearchVolume": 80,
+    "totalSearchVolume": 250,
     "averageCpcUsd": 28.68,
     "latitude": 45.637156,
     "longitude": -122.596567
@@ -3244,7 +3244,7 @@
     "city": "Ventura",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 50,
     "averageCpcUsd": null,
     "latitude": 34.26778,
     "longitude": -119.254206
@@ -3254,7 +3254,7 @@
     "city": "Victorville",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 30,
+    "totalSearchVolume": 70,
     "averageCpcUsd": null,
     "latitude": 34.527735,
     "longitude": -117.353579
@@ -3264,8 +3264,8 @@
     "city": "Virginia Beach",
     "state": "Virginia",
     "stateCode": "VA",
-    "totalSearchVolume": 180,
-    "averageCpcUsd": 23.48,
+    "totalSearchVolume": 400,
+    "averageCpcUsd": 22.9,
     "latitude": 36.779525,
     "longitude": -76.029142
   },
@@ -3274,8 +3274,8 @@
     "city": "Visalia",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 120,
-    "averageCpcUsd": 53.44,
+    "totalSearchVolume": 90,
+    "averageCpcUsd": 75.55,
     "latitude": 36.32921,
     "longitude": -119.326984
   },
@@ -3284,7 +3284,7 @@
     "city": "Waco",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 30,
     "averageCpcUsd": 11.37,
     "latitude": 31.557994,
     "longitude": -97.18975
@@ -3304,7 +3304,7 @@
     "city": "Washington",
     "state": "District of Columbia",
     "stateCode": "DC",
-    "totalSearchVolume": 580,
+    "totalSearchVolume": 600,
     "averageCpcUsd": 43.54,
     "latitude": 38.904243,
     "longitude": -77.016524
@@ -3314,7 +3314,7 @@
     "city": "Waterbury",
     "state": "Connecticut",
     "stateCode": "CT",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 41.5585,
     "longitude": -73.036685
@@ -3324,7 +3324,7 @@
     "city": "West Covina",
     "state": "California",
     "stateCode": "CA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 34.055941,
     "longitude": -117.909937
@@ -3334,7 +3334,7 @@
     "city": "West Jordan",
     "state": "Utah",
     "stateCode": "UT",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 40.602666,
     "longitude": -112.001255
@@ -3344,8 +3344,8 @@
     "city": "West Palm Beach",
     "state": "Florida",
     "stateCode": "FL",
-    "totalSearchVolume": 190,
-    "averageCpcUsd": 156.44,
+    "totalSearchVolume": 270,
+    "averageCpcUsd": 169.9,
     "latitude": 26.745114,
     "longitude": -80.127038
   },
@@ -3354,7 +3354,7 @@
     "city": "West Valley City",
     "state": "Utah",
     "stateCode": "UT",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 30,
     "averageCpcUsd": null,
     "latitude": 40.688493,
     "longitude": -112.011759
@@ -3364,7 +3364,7 @@
     "city": "Westminster",
     "state": "Colorado",
     "stateCode": "CO",
-    "totalSearchVolume": 80,
+    "totalSearchVolume": 100,
     "averageCpcUsd": 70.22,
     "latitude": 39.880122,
     "longitude": -105.061513
@@ -3374,8 +3374,8 @@
     "city": "Wichita",
     "state": "Kansas",
     "stateCode": "KS",
-    "totalSearchVolume": 190,
-    "averageCpcUsd": 7.41,
+    "totalSearchVolume": 110,
+    "averageCpcUsd": 9.46,
     "latitude": 37.690638,
     "longitude": -97.345836
   },
@@ -3384,7 +3384,7 @@
     "city": "Wichita Falls",
     "state": "Texas",
     "stateCode": "TX",
-    "totalSearchVolume": 60,
+    "totalSearchVolume": 90,
     "averageCpcUsd": 59.89,
     "latitude": 33.906654,
     "longitude": -98.525848
@@ -3394,8 +3394,8 @@
     "city": "Wilmington",
     "state": "North Carolina",
     "stateCode": "NC",
-    "totalSearchVolume": 110,
-    "averageCpcUsd": 74.83,
+    "totalSearchVolume": 330,
+    "averageCpcUsd": 62.72,
     "latitude": 34.209225,
     "longitude": -77.885767
   },
@@ -3404,7 +3404,7 @@
     "city": "Winston-Salem",
     "state": "North Carolina",
     "stateCode": "NC",
-    "totalSearchVolume": 150,
+    "totalSearchVolume": 250,
     "averageCpcUsd": 14.92,
     "latitude": 36.102863,
     "longitude": -80.260829
@@ -3414,7 +3414,7 @@
     "city": "Woodbridge",
     "state": "New Jersey",
     "stateCode": "NJ",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 30,
     "averageCpcUsd": 59.77,
     "latitude": 40.561262,
     "longitude": -74.292377
@@ -3424,7 +3424,7 @@
     "city": "Worcester",
     "state": "Massachusetts",
     "stateCode": "MA",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 60,
     "averageCpcUsd": null,
     "latitude": 42.269478,
     "longitude": -71.807783
@@ -3434,7 +3434,7 @@
     "city": "Yonkers",
     "state": "New York",
     "stateCode": "NY",
-    "totalSearchVolume": 10,
+    "totalSearchVolume": 40,
     "averageCpcUsd": null,
     "latitude": 40.945862,
     "longitude": -73.867446
@@ -3444,7 +3444,7 @@
     "city": "Yuma",
     "state": "Arizona",
     "stateCode": "AZ",
-    "totalSearchVolume": 20,
+    "totalSearchVolume": 30,
     "averageCpcUsd": 19.58,
     "latitude": 32.516286,
     "longitude": -114.521782

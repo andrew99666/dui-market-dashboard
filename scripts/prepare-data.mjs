@@ -234,7 +234,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === scriptPath) {
     readFile(path.join(projectRoot, 'data', 'source', 'city-metrics.csv'), 'utf8'),
     Promise.resolve(censusEntry.getData().toString('utf8'))
   ]);
-  const manifestPath = path.join(projectRoot, 'data', 'handoff', 'dui-expanded-deduplication-manifest.json');
+  const manifestPath = path.join(projectRoot, 'data', 'handoff', 'dui-seven-keyword-manifest.json');
   if (!existsSync(manifestPath)) throw new Error('Deduplication manifest is required to prepare dashboard data');
   const deduplicationManifest = JSON.parse(await readFile(manifestPath, 'utf8'));
   const places = parseCensusPlaces(censusText);
@@ -249,12 +249,14 @@ if (process.argv[1] && path.resolve(process.argv[1]) === scriptPath) {
     refreshedAt,
     cpcThresholdUsd: 60,
     volumeThreshold: 600,
-    keywordCount: 144,
+    keywordCount: deduplicationManifest.keywordCount ?? 144,
     sourceLabel: 'Google Ads Keyword Planner historical metrics',
     rawMetricRecordCount: deduplicationManifest.inputRecordCount,
     retainedMetricRecordCount: deduplicationManifest.retainedRecordCount,
     duplicateMetricRecordCount: deduplicationManifest.duplicateRecordCount,
-    methodology: 'The deduplication rule uses exact raw Google Ads metric fingerprints: within each city, rows with identical average monthly searches and low/high top-of-page bid micros are counted once. Average CPC is the average retained midpoint for rows with positive low and high top-of-page bid ranges.'
+    methodology: deduplicationManifest.aggregationMode === 'all'
+      ? `Total search volume is the sum of all returned metrics for the ${deduplicationManifest.keywordCount} requested keyword variants; no metric deduplication is applied. Average CPC is the average midpoint for rows with positive low and high top-of-page bid ranges.`
+      : 'The deduplication rule uses exact raw Google Ads metric fingerprints: within each city, rows with identical average monthly searches and low/high top-of-page bid micros are counted once. Average CPC is the average retained midpoint for rows with positive low and high top-of-page bid ranges.'
   };
   const outputDirectory = path.join(projectRoot, 'src', 'data');
   await mkdir(outputDirectory, { recursive: true });

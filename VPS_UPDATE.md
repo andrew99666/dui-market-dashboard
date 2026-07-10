@@ -20,8 +20,8 @@ Deploy every file from `dist/`, including all hashed files in `dist/assets/`; th
 
 The refreshed data handoff is committed in:
 
-- `data/handoff/dui-expanded-deduplicated-city-metrics.csv`
-- `data/handoff/dui-expanded-keyword-metrics-audit.csv`
-- `data/handoff/dui-expanded-deduplication-manifest.json`
+- `data/handoff/dui-seven-keyword-city-metrics.csv`
+- `data/handoff/dui-seven-keyword-metrics-audit.csv`
+- `data/handoff/dui-seven-keyword-manifest.json`
 
 Do not copy Google Ads credentials, developer tokens, OAuth refresh tokens, or local `google-ads.yaml` files to the VPS. The deployed dashboard is static and does not need Google Ads access.

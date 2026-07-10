@@ -74,9 +74,22 @@ DUI_EXPANDED_KEYWORD_TEMPLATES = [
         f"{base_phrase} {{city_state_full}}",
     )
 ]
+DUI_REPLACEMENT_KEYWORD_TEMPLATES = [
+    "dui attorney near me",
+    "dwi lawyer {city}",
+    "dwi lawyer {city_state}",
+    "dui attorney {city}",
+    "dui attorney {city_state}",
+    "good dui lawyers near me",
+    "dui defense attorney near me",
+]
+KEYWORD_TEMPLATES_BY_SET = {
+    "dui-expanded": DUI_EXPANDED_KEYWORD_TEMPLATES,
+    "dui-replacement": DUI_REPLACEMENT_KEYWORD_TEMPLATES,
+}
 
 
-def build_keywords(city: dict[str, str]) -> list[str]:
+def build_keywords(city: dict[str, str], keyword_set: str = "dui-expanded") -> list[str]:
     city_name = city["City"].strip()
     state_code = city["ST"].strip()
     state_name = city["State"].strip()
@@ -86,7 +99,7 @@ def build_keywords(city: dict[str, str]) -> list[str]:
             city_state=f"{city_name} {state_code}",
             city_state_full=f"{city_name} {state_name}",
         )
-        for template in DUI_EXPANDED_KEYWORD_TEMPLATES
+        for template in KEYWORD_TEMPLATES_BY_SET[keyword_set]
     ]
 
 
@@ -185,10 +198,12 @@ def fetch_with_retry(
     raise RuntimeError("retry loop exited unexpectedly")
 
 
-def request_for(client, customer_id: str, city: dict[str, str], google_ads_service):
+def request_for(
+    client, customer_id: str, city: dict[str, str], google_ads_service, keyword_set: str
+):
     request = client.get_type("GenerateKeywordHistoricalMetricsRequest")
     request.customer_id = customer_id
-    request.keywords.extend(build_keywords(city))
+    request.keywords.extend(build_keywords(city, keyword_set))
     request.language = ENGLISH_LANGUAGE_CONSTANT
     request.geo_target_constants.append(
         google_ads_service.geo_target_constant_path(city["GAds Code"])
@@ -203,6 +218,7 @@ def collect_raw_metrics(
     city_rows: list[dict[str, str]],
     request_delay_seconds: float = DEFAULT_REQUEST_DELAY_SECONDS,
     *,
+    keyword_set: str = "dui-expanded",
     sleeper: Callable[[float], None] = time.sleep,
     fetch_with_retry_fn: Callable[[Callable[[], object]], object] = fetch_with_retry,
 ) -> list[dict[str, str | int | None]]:
@@ -218,7 +234,7 @@ def collect_raw_metrics(
         )
         response = fetch_with_retry_fn(
             lambda: service.generate_keyword_historical_metrics(
-                request=request_for(client, customer_id, city, google_ads_service)
+                request=request_for(client, customer_id, city, google_ads_service, keyword_set)
             )
         )
         for result in response.results:
@@ -272,7 +288,7 @@ def write_raw_metrics_csv(
 
 def parse_args(arguments: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Collect raw Google Ads historical metrics for the 144 DUI keyword variants."
+        description="Collect raw Google Ads historical metrics for the configured DUI keyword set."
     )
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG_PATH)
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT_PATH)
@@ -281,6 +297,7 @@ def parse_args(arguments: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--city", default=None)
     parser.add_argument("--state", default=None)
     parser.add_argument("--customer-id", default=None)
+    parser.add_argument("--keyword-set", choices=KEYWORD_TEMPLATES_BY_SET, default="dui-expanded")
     args = parser.parse_args(arguments)
     if (args.city is None) != (args.state is None):
         parser.error("--city and --state must be supplied together")
@@ -292,7 +309,7 @@ def main() -> None:
     city_rows = read_city_rows(args.input, args.city, args.state, args.limit)
     customer_id = resolve_customer_id(args.customer_id, args.config)
     client = load_google_ads_client(args.config)
-    rows = collect_raw_metrics(client, customer_id, city_rows)
+    rows = collect_raw_metrics(client, customer_id, city_rows, keyword_set=args.keyword_set)
     write_raw_metrics_csv(args.output, rows)
     print(f"Wrote {len(rows)} rows to {args.output}", file=sys.stderr)
 

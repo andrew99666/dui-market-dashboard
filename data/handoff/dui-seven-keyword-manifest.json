@@ -1,0 +1,10 @@
+{
+  "refreshedAt": "2026-07-10",
+  "inputRecordCount": 2415,
+  "retainedRecordCount": 2415,
+  "duplicateRecordCount": 0,
+  "cityCount": 345,
+  "keywordCount": 7,
+  "aggregationMode": "all",
+  "methodology": "All returned keyword metric rows are counted once without metric deduplication; average CPC uses known bid midpoints."
+}

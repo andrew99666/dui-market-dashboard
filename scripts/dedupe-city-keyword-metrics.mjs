@@ -127,13 +127,22 @@ function readOptions(argv) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(options['--refreshed-at'])) {
     throw new Error('Expected --refreshed-at YYYY-MM-DD');
   }
+  if (options['--mode'] && !['deduplicate', 'all'].includes(options['--mode'])) {
+    throw new Error('Expected --mode deduplicate or all');
+  }
+  if (options['--keyword-count'] && (!Number.isInteger(Number(options['--keyword-count'])) || Number(options['--keyword-count']) < 1)) {
+    throw new Error('Expected --keyword-count to be a positive integer');
+  }
   return options;
 }
 
 async function runCli() {
   const options = readOptions(process.argv.slice(2));
   const rawRows = parseRawKeywordMetrics(await readFile(options['--raw'], 'utf8'));
-  const auditRows = deduplicateKeywordMetrics(rawRows);
+  const aggregationMode = options['--mode'] ?? 'deduplicate';
+  const auditRows = aggregationMode === 'all'
+    ? rawRows.map((row) => ({ ...row, fingerprint: metricFingerprint(row), retained: true, duplicateOfKeyword: '' }))
+    : deduplicateKeywordMetrics(rawRows);
   const summaryRows = aggregateCityMetrics(auditRows);
   const retainedRecordCount = auditRows.filter((row) => row.retained).length;
   const duplicateRecordCount = auditRows.length - retainedRecordCount;
@@ -164,7 +173,11 @@ async function runCli() {
       retainedRecordCount,
       duplicateRecordCount,
       cityCount: summaryRows.length,
-      methodology: 'Within each city, identical raw average monthly searches and low/high top-of-page bid micros are counted once; average CPC uses retained known bid midpoints.'
+      keywordCount: Number(options['--keyword-count'] ?? 144),
+      aggregationMode,
+      methodology: aggregationMode === 'all'
+        ? 'All returned keyword metric rows are counted once without metric deduplication; average CPC uses known bid midpoints.'
+        : 'Within each city, identical raw average monthly searches and low/high top-of-page bid micros are counted once; average CPC uses retained known bid midpoints.'
     }, null, 2)}\n`)
   ]);
 }
