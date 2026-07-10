@@ -47,6 +47,11 @@ describe('parseMetricCsv', () => {
       'City,State,Total Search Volume,Average CPC',
       'Irvine,California,450,-1'
     ].join('\n'))).toThrow('Invalid average CPC');
+
+    expect(() => parseMetricCsv([
+      'City,State,Total Search Volume,Average CPC',
+      'Irvine,California,,96.86'
+    ].join('\n'))).toThrow('Invalid total search volume');
   });
 });
 
@@ -74,6 +79,8 @@ describe('parseCensusPlaces', () => {
 
   it('rejects invalid Census coordinates', () => {
     expect(() => parseCensusPlaces(censusFixture.replace('33.6846', '93')))
+      .toThrow('Invalid Census coordinates');
+    expect(() => parseCensusPlaces(censusFixture.replace('33.6846', '')))
       .toThrow('Invalid Census coordinates');
   });
 });
@@ -198,5 +205,22 @@ describe('generated data', () => {
       sourceLabel: 'Google Ads Keyword Planner historical metrics',
       methodology: 'Total search volume is the sum across the 144 keyword variants and average CPC is the average of each keyword\'s low/high top-of-page bid midpoint where bid data exists.'
     });
+  });
+
+  it('reconciles every canonical CSV row to generated metrics', async () => {
+    const [sourceFile, generatedFile] = await Promise.all([
+      readFile(new URL('../data/source/city-metrics.csv', import.meta.url), 'utf8'),
+      readFile(new URL('../src/data/cityMetrics.json', import.meta.url), 'utf8')
+    ]);
+    const sourceRows = parseMetricCsv(sourceFile);
+    const generatedRows = JSON.parse(generatedFile);
+    const generatedByKey = new Map(
+      generatedRows.map((row) => [`${row.city}|${row.state}`, row])
+    );
+
+    expect(sourceRows).toHaveLength(345);
+    for (const source of sourceRows) {
+      expect(generatedByKey.get(`${source.city}|${source.state}`)).toMatchObject(source);
+    }
   });
 });

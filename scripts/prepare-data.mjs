@@ -70,12 +70,13 @@ export function parseMetricCsv(text) {
   return parse(text, { bom: true, columns: true, skip_empty_lines: true, trim: true }).map((row) => {
     const city = row.City?.trim();
     const state = row.State?.trim();
-    const totalSearchVolume = Number(row['Total Search Volume']);
+    const volumeValue = row['Total Search Volume'];
+    const totalSearchVolume = Number(volumeValue);
     const cpcValue = row['Average CPC'];
     const averageCpcUsd = cpcValue === '' || cpcValue == null ? null : Number(cpcValue);
 
     if (!city || !state) throw new Error('Metric city and state are required');
-    if (!Number.isFinite(totalSearchVolume) || totalSearchVolume < 0) {
+    if (volumeValue == null || volumeValue.trim() === '' || !Number.isFinite(totalSearchVolume) || totalSearchVolume < 0) {
       throw new Error(`Invalid total search volume for ${city}, ${state}`);
     }
     if (averageCpcUsd !== null && (!Number.isFinite(averageCpcUsd) || averageCpcUsd < 0)) {
@@ -94,7 +95,7 @@ export function parseCensusPlaces(text) {
 
       const latitude = Number(row.INTPTLAT);
       const longitude = Number(row.INTPTLONG);
-      if (!Number.isFinite(latitude) || !Number.isFinite(longitude) || Math.abs(latitude) > 90 || Math.abs(longitude) > 180) {
+      if (!row.INTPTLAT?.trim() || !row.INTPTLONG?.trim() || !Number.isFinite(latitude) || !Number.isFinite(longitude) || Math.abs(latitude) > 90 || Math.abs(longitude) > 180) {
         throw new Error(`Invalid Census coordinates for ${row.NAME}`);
       }
 
@@ -117,7 +118,7 @@ export function parseCensusCountySubdivisions(text) {
 
       const latitude = Number(row.INTPTLAT);
       const longitude = Number(row.INTPTLONG);
-      if (!Number.isFinite(latitude) || !Number.isFinite(longitude) || Math.abs(latitude) > 90 || Math.abs(longitude) > 180) {
+      if (!row.INTPTLAT?.trim() || !row.INTPTLONG?.trim() || !Number.isFinite(latitude) || !Number.isFinite(longitude) || Math.abs(latitude) > 90 || Math.abs(longitude) > 180) {
         throw new Error(`Invalid Census coordinates for ${row.NAME}`);
       }
 
