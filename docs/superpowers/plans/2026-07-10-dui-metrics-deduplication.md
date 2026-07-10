@@ -124,7 +124,8 @@ git commit -m "feat: add keyword metric deduplication engine"
 **Interfaces:**
 - Consumes data/source/city-geo-targets.csv, the existing 144 keyword templates, and an external google-ads.yaml path.
 - Produces raw CSV rows with City, State, State Code, Google Ads Code, Keyword, Average Monthly Searches, Low Top Of Page Bid Micros, and High Top Of Page Bid Micros.
-- CLI: python scripts/fetch_google_ads_keyword_metrics.py --config PATH --input data/source/city-geo-targets.csv --output data/source/dui-expanded-keyword-metrics-raw.csv --limit N.
+- CLI: python scripts/fetch_google_ads_keyword_metrics.py --config PATH --input data/source/city-geo-targets.csv --output data/source/dui-expanded-keyword-metrics-raw.csv [--limit N] [--city CITY --state STATE].
+- `--city` and `--state` form an exact, case-insensitive pair filter for a targeted verification run; require both when either is supplied.
 
 - [ ] **Step 1: Write a failing collector utility test**
 
@@ -195,7 +196,7 @@ git commit -m "feat: add raw Google Ads keyword metric collector"
 - [ ] **Step 1: Run the one-city Phoenix collection**
 
 ~~~powershell
-python scripts/fetch_google_ads_keyword_metrics.py --config $HOME\google-ads.yaml --input data/source/city-geo-targets.csv --output data/source/phoenix-keyword-metrics-raw.csv --limit 1
+python scripts/fetch_google_ads_keyword_metrics.py --config $HOME\google-ads.yaml --input data/source/city-geo-targets.csv --output data/source/phoenix-keyword-metrics-raw.csv --city Phoenix --state Arizona
 node scripts/dedupe-city-keyword-metrics.mjs --raw data/source/phoenix-keyword-metrics-raw.csv --summary data/handoff/phoenix-deduplicated-city-metrics.csv --audit data/handoff/phoenix-keyword-metrics-audit.csv --manifest data/handoff/phoenix-deduplication-manifest.json --refreshed-at 2026-07-10
 ~~~
 
@@ -238,6 +239,7 @@ git commit -m "data: deduplicate DUI keyword metrics"
 
 **Files:**
 - Modify: scripts/prepare-data.mjs
+- Modify: src/data/types.ts
 - Modify: src/data/datasetMetadata.json
 - Modify: tests/prepare-data.test.mjs
 - Modify: tests/dashboard-domain.test.ts
