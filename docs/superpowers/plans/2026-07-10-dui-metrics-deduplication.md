@@ -193,7 +193,7 @@ git commit -m "feat: add raw Google Ads keyword metric collector"
 - Consumes Task 2 raw CSV.
 - Produces exactly 345 canonical city/state totals plus audit and manifest files.
 
-- [ ] **Step 1: Run the one-city Phoenix collection**
+- [x] **Step 1: Run the one-city Phoenix collection**
 
 ~~~powershell
 python scripts/fetch_google_ads_keyword_metrics.py --config $HOME\google-ads.yaml --input data/source/city-geo-targets.csv --output data/source/phoenix-keyword-metrics-raw.csv --city Phoenix --state Arizona
@@ -202,7 +202,7 @@ node scripts/dedupe-city-keyword-metrics.mjs --raw data/source/phoenix-keyword-m
 
 Expected: Phoenix audit shows retained and removed records, and its summary is less than or equal to the current Phoenix total.
 
-- [ ] **Step 2: Inspect the Phoenix audit before the all-city run**
+- [x] **Step 2: Inspect the Phoenix audit before the all-city run**
 
 ~~~powershell
 Import-Csv data/handoff/phoenix-keyword-metrics-audit.csv | Group-Object Retained | Select-Object Name,Count
@@ -211,7 +211,7 @@ Get-Content data/handoff/phoenix-deduplication-manifest.json
 
 Expected: Every removed row names its retained keyword and every retained fingerprint appears once.
 
-- [ ] **Step 3: Run all city requests and generate artifacts**
+- [x] **Step 3: Run all city requests and generate artifacts**
 
 ~~~powershell
 python scripts/fetch_google_ads_keyword_metrics.py --config $HOME\google-ads.yaml --input data/source/city-geo-targets.csv --output data/source/dui-expanded-keyword-metrics-raw.csv
@@ -219,7 +219,7 @@ node scripts/dedupe-city-keyword-metrics.mjs --raw data/source/dui-expanded-keyw
 Copy-Item data/source/city-metrics.csv data/handoff/dui-expanded-deduplicated-city-metrics.csv
 ~~~
 
-- [ ] **Step 4: Reconcile city coverage and audit invariants**
+- [x] **Step 4: Reconcile city coverage and audit invariants**
 
 ~~~powershell
 (Import-Csv data/source/city-metrics.csv).Count
@@ -228,7 +228,7 @@ Import-Csv data/handoff/dui-expanded-keyword-metrics-audit.csv | Group-Object Ci
 
 Expected: 345; the invariant command returns no groups.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ~~~bash
 git add data/source/city-metrics.csv data/source/dui-expanded-keyword-metrics-raw.csv data/handoff
