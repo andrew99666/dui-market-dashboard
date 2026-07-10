@@ -195,7 +195,12 @@ describe('generated data', () => {
     expect(projectRoot).toBeTruthy();
     expect(metrics).toHaveLength(345);
     expect(new Set(metrics.map((metric) => `${metric.city}|${metric.state}`)).size).toBe(345);
-    expect(metrics.every((metric) => Number.isFinite(metric.latitude) && Number.isFinite(metric.longitude))).toBe(true);
+    expect(metrics.every((metric) => (
+      Number.isFinite(metric.latitude)
+      && Number.isFinite(metric.longitude)
+      && Math.abs(metric.latitude) <= 90
+      && Math.abs(metric.longitude) <= 180
+    ))).toBe(true);
     expect(metrics.filter((metric) => metric.averageCpcUsd !== null)).toHaveLength(197);
     expect(metadata).toEqual({
       refreshedAt: '2026-07-10',
