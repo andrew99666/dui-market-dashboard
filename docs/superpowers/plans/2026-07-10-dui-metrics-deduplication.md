@@ -127,7 +127,7 @@ git commit -m "feat: add keyword metric deduplication engine"
 - CLI: python scripts/fetch_google_ads_keyword_metrics.py --config PATH --input data/source/city-geo-targets.csv --output data/source/dui-expanded-keyword-metrics-raw.csv [--limit N] [--city CITY --state STATE].
 - `--city` and `--state` form an exact, case-insensitive pair filter for a targeted verification run; require both when either is supplied.
 
-- [ ] **Step 1: Write a failing collector utility test**
+- [x] **Step 1: Write a failing collector utility test**
 
 ~~~python
 def test_raw_metric_row_preserves_exact_google_values():
@@ -145,13 +145,13 @@ def test_raw_metric_row_preserves_exact_google_values():
     }
 ~~~
 
-- [ ] **Step 2: Run the test to verify it fails**
+- [x] **Step 2: Run the test to verify it fails**
 
 Run: python -m pytest tests/fetch_google_ads_keyword_metrics.test.py -q
 
 Expected: FAIL because raw_metric_row does not exist.
 
-- [ ] **Step 3: Implement sequential collection**
+- [x] **Step 3: Implement sequential collection**
 
 ~~~python
 for city in city_rows[:limit]:
@@ -167,13 +167,13 @@ for city in city_rows[:limit]:
 
 Copy the verified 345-city target mapping into data/source/city-geo-targets.csv. Keep credentials external and document that this collector is never run on the VPS.
 
-- [ ] **Step 4: Run collector tests to verify they pass**
+- [x] **Step 4: Run collector tests to verify they pass**
 
 Run: python -m pytest tests/fetch_google_ads_keyword_metrics.test.py -q
 
 Expected: PASS without a network call.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ~~~bash
 git add scripts/fetch_google_ads_keyword_metrics.py tests/fetch_google_ads_keyword_metrics.test.py data/source/city-geo-targets.csv docs/deployment.md
