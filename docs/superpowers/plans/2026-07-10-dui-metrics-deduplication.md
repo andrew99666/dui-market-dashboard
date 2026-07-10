@@ -251,7 +251,7 @@ git commit -m "data: deduplicate DUI keyword metrics"
 - Consumes Task 3 canonical cleaned CSV and manifest.
 - Produces bundled metric JSON with corrected city totals, metadata that states the dedupe method, and VPS instructions that build static assets only.
 
-- [ ] **Step 1: Write a failing reconciliation test**
+- [x] **Step 1: Write a failing reconciliation test**
 
 ~~~js
 it('reconciles cleaned city totals to the handoff summary and declares the dedupe method', async () => {
@@ -265,13 +265,13 @@ it('reconciles cleaned city totals to the handoff summary and declares the dedup
 });
 ~~~
 
-- [ ] **Step 2: Run the test to verify it fails**
+- [x] **Step 2: Run the test to verify it fails**
 
 Run: npm test -- tests/prepare-data.test.mjs
 
 Expected: FAIL because the summary and revised metadata do not exist.
 
-- [ ] **Step 3: Update metadata and UI expectations**
+- [x] **Step 3: Update metadata and UI expectations**
 
 Update prepare-data.mjs to read the manifest when present and write methodology that names exact raw Google Ads metric fingerprints. Regenerate data with:
 
@@ -281,7 +281,7 @@ npm run data:prepare -- --refreshed-at 2026-07-10
 
 Replace old hard-coded status totals and median expectations in dashboard and browser tests with values from the refreshed data and manifest. Keep classification-boundary tests unchanged.
 
-- [ ] **Step 4: Create VPS_UPDATE.md**
+- [x] **Step 4: Create VPS_UPDATE.md**
 
 ~~~markdown
 # VPS Dashboard Update
