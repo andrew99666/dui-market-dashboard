@@ -68,10 +68,13 @@ export function UsMap({ metrics, metadata, selected, onSelect }: UsMapProps) {
     const place = marker.metric ?? marker.place;
     if (!place || !marker.point) return;
     const rect = svgRef.current?.getBoundingClientRect();
-    const clientX = event && 'clientX' in event ? event.clientX : marker.point[0];
-    const clientY = event && 'clientY' in event ? event.clientY : marker.point[1];
-    const relativeX = rect && rect.width ? ((clientX - rect.left) / rect.width) * width : marker.point[0];
-    const relativeY = rect && rect.height ? ((clientY - rect.top) / rect.height) * height : marker.point[1];
+    const clientX = event && 'clientX' in event ? event.clientX : undefined;
+    const clientY = event && 'clientY' in event ? event.clientY : undefined;
+    const focusedX = marker.point[0] * transform.scale + transform.x;
+    const focusedY = marker.point[1] * transform.scale + transform.y;
+    const hasPointerCoordinates = typeof clientX === 'number' && typeof clientY === 'number';
+    const relativeX = hasPointerCoordinates && rect && rect.width ? ((clientX - rect.left) / rect.width) * width : focusedX;
+    const relativeY = hasPointerCoordinates && rect && rect.height ? ((clientY - rect.top) / rect.height) * height : focusedY;
     setTooltip({
       city: place.city,
       state: place.state,

@@ -96,6 +96,26 @@ describe('UsMap', () => {
     expect(screen.queryByRole('tooltip')).toBeNull();
   });
 
+  it('anchors a focused tooltip to the zoomed marker position', () => {
+    const selected = researchedMetrics.find((metric) => metric.city === 'Springfield' && metric.state === 'Illinois')!;
+    render(<UsMap metrics={researchedMetrics} metadata={metadata} selected={selected} onSelect={() => undefined} />);
+
+    const map = screen.getByTestId('us-map');
+    const marker = map.querySelector(`[data-place-id="${selected.placeId}"]`)!;
+    const shape = marker.querySelector('circle, rect, path')!;
+    const pointX = shape.tagName === 'rect' ? Number(shape.getAttribute('x')) + Number(shape.getAttribute('width')) / 2 : Number(shape.getAttribute('cx'));
+    const pointY = shape.tagName === 'rect' ? Number(shape.getAttribute('y')) + Number(shape.getAttribute('height')) / 2 : Number(shape.getAttribute('cy'));
+    const transform = map.querySelector('[data-map-viewport]')?.getAttribute('transform') ?? '';
+    const [, translateX, translateY, scale] = transform.match(/translate\(([-\d.]+) ([-\d.]+)\) scale\(([-\d.]+)\)/) ?? [];
+
+    fireEvent.focus(marker);
+
+    const tooltipTransform = screen.getByRole('tooltip').getAttribute('transform') ?? '';
+    const [, tooltipX, tooltipY] = tooltipTransform.match(/translate\(([-\d.]+) ([-\d.]+)\)/) ?? [];
+    expect(Number(tooltipX)).toBeCloseTo(Math.min(780, Math.max(8, Number(translateX) + pointX * Number(scale) + 12)));
+    expect(Number(tooltipY)).toBeCloseTo(Math.min(534, Math.max(8, Number(translateY) + pointY * Number(scale) + 12)));
+  });
+
   it('focuses shared researched selection at four times the national scale and adds an unresearched marker', () => {
     const researched = researchedMetrics.find((metric) => metric.city === 'Springfield' && metric.state === 'Illinois')!;
     const unresearched: UsPlace = { placeId: '99999', city: 'Test place', state: 'Illinois', stateCode: 'IL', latitude: 40.1, longitude: -89.3 };

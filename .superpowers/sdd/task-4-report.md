@@ -6,7 +6,8 @@
 - `src/components/UsMap.tsx`: adds visual legend shape swatches and an accessible Lucide reset icon with a native title tooltip.
 - `src/styles.css`: corrects table, summary, badge, and mobile-list status semantics; styles loading/error feedback, legend swatches, footer, and reduced-motion behavior.
 - `tests/app-shell.test.tsx`: covers deferred place-index loading/failure, autocomplete close-on-selection/Escape preservation, and roving tab navigation.
-- `tests/map.test.tsx`: covers legend swatches and the icon-only reset control.
+- `tests/dashboard-domain.test.ts`: covers researched-market precedence and Census city/state de-duplication.
+- `tests/map.test.tsx`: covers legend swatches, the icon-only reset control, and focused-tooltip positioning after zoom.
 - `vitest.config.ts`: restricts Vitest to `tests/` and uses a single controlled fork for stable `npm test` runs.
 - `package.json`, `package-lock.json`: adds Playwright and `npm run test:e2e`.
 - `playwright.config.ts`, `e2e/dashboard.spec.ts`, `e2e/dashboard.spec.ts-snapshots/*.png`: production-preview browser coverage for a configured 1440x900 desktop and 390x844 mobile viewport, map/table/search interactions, visual baselines, color semantics, keyboard access, console errors, and runtime request origin.
@@ -22,12 +23,14 @@
 - Review green: Escape now only closes the listbox and clears its active descendant, while the roving tablist moves focus and selects the corresponding panel.
 - Review red: the desktop Playwright assertion received the default `1280x720` viewport instead of `1440x900`; after adding visual assertions, Playwright also failed because the desktop baseline PNG was absent.
 - Review green: the configured desktop viewport is asserted as `1440x900`; `--update-snapshots` generated both committed PNG baselines and a normal browser run compared them successfully.
+- Final review red: identical Census city/state labels could shadow a researched market, and a focused marker used untransformed projection coordinates for its tooltip.
+- Final review green: Census-only matches now collapse by normalized city/state and never duplicate a researched city/state; focus tooltips derive their position from the current pan/zoom transform.
 
 ## Verification
 
-- `npm test`: passed, 4 files and 52 tests, using one Vitest fork.
+- `npm test`: passed, 4 files and 54 tests, using one Vitest fork.
 - `npm run lint`: passed with no lint output.
-- `npm run build`: passed. Initial application JavaScript is `430.68 kB` (`134.45 kB` gzip); the place index is emitted separately as `dist/assets/usPlaces-BxsTEMak.json` at `3,892.27 kB` (`667.83 kB` gzip) and fetched same-origin after initial render.
+- `npm run build`: passed. Initial application JavaScript is `430.99 kB` (`134.59 kB` gzip); the place index is emitted separately as `dist/assets/usPlaces-BxsTEMak.json` at `3,892.27 kB` (`667.83 kB` gzip) and fetched same-origin after initial render.
 - `npm run test:e2e`: passed, 6 Playwright tests against `vite preview` at `127.0.0.1:4173`, with an asserted `1440x900` desktop viewport and a `390x844` mobile override. Chromium was installed with `npx playwright install chromium`.
 - Browser assertions verify no console errors and no cross-origin runtime requests.
 
@@ -52,6 +55,8 @@ Both are committed Playwright `toHaveScreenshot` baselines. Tests wait for the p
 - Playwright covers both semantic interaction and layout evidence at 1440x900 and 390x844.
 - Escape leaves query, spotlight, state/status filters, and pagination untouched while closing only autocomplete state.
 - Dashboard tabs now follow the expected roving-focus behavior for ArrowLeft, ArrowRight, Home, and End.
+- Search preserves distinct same-name cities in different states while removing visually identical Census alternatives that would otherwise compete with a researched market.
+- Keyboard-focused map tooltips use the selected marker's rendered, transformed SVG position.
 
 ## Concerns
 

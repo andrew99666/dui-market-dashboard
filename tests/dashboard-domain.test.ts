@@ -93,6 +93,23 @@ describe('search suggestions', () => {
 
     expect(suggestions.map(({ source }) => source)).toEqual(['researched', 'census', 'census']);
   });
+
+  it('keeps researched markets authoritative and collapses duplicate Census city/state labels', () => {
+    const burbank = metric({ placeId: 'researched-burbank', city: 'Burbank', state: 'California', stateCode: 'CA' });
+    const duplicateBurbankPlaces = [
+      { placeId: 'census-burbank-1', city: 'Burbank', state: 'California', stateCode: 'CA', latitude: 34.18, longitude: -118.31 },
+      { placeId: 'census-burbank-2', city: 'Burbank', state: 'California', stateCode: 'CA', latitude: 34.19, longitude: -118.32 },
+    ];
+    const duplicateMountOlivePlaces = [
+      { placeId: 'census-mount-olive-1', city: 'Mount Olive', state: 'Alabama', stateCode: 'AL', latitude: 34.46, longitude: -86.88 },
+      { placeId: 'census-mount-olive-2', city: 'Mount Olive', state: 'Alabama', stateCode: 'AL', latitude: 34.47, longitude: -86.89 },
+    ];
+
+    expect(createSearchSuggestions('burbank', [burbank], duplicateBurbankPlaces)).toMatchObject([
+      { placeId: 'researched-burbank', source: 'researched' },
+    ]);
+    expect(createSearchSuggestions('mount olive', [], duplicateMountOlivePlaces)).toHaveLength(1);
+  });
 });
 
 describe('table data', () => {

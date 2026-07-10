@@ -65,19 +65,32 @@ export function createSearchSuggestions(query: string, metrics: CityMetric[], pl
   const normalized = normalizeSearch(query);
   if (!normalized) return [];
   const researchedIds = new Set(metrics.map(({ placeId }) => placeId));
+  const researchedCityStates = new Set(metrics.map(cityStateKey));
   const researched = metrics
     .filter((city) => matchesSearch(city, normalized))
     .map((metric) => ({ ...metric, source: 'researched' as const, metric }))
     .sort(byPlaceName);
+  const seenCensusCityStates = new Set<string>();
   const census = places
-    .filter((place) => !researchedIds.has(place.placeId) && matchesSearch(place, normalized))
+    .filter((place) => !researchedIds.has(place.placeId) && !researchedCityStates.has(cityStateKey(place)) && matchesSearch(place, normalized))
     .map((place) => ({ ...place, source: 'census' as const }))
-    .sort(byPlaceName);
+    .sort(byPlaceName)
+    .filter((place) => {
+      const key = cityStateKey(place);
+      if (seenCensusCityStates.has(key)) return false;
+      seenCensusCityStates.add(key);
+      return true;
+    });
   return [...researched, ...census].slice(0, 12);
 }
 
 function byPlaceName(left: UsPlace, right: UsPlace): number {
   return left.city.localeCompare(right.city) || left.state.localeCompare(right.state) || left.placeId.localeCompare(right.placeId);
+}
+
+function cityStateKey(place: UsPlace): string {
+  const city = normalizeSearch(place.city).replace(/[^a-z0-9]+/g, ' ').replace(/\s+/g, ' ').trim();
+  return `${city}|${place.stateCode.trim().toUpperCase()}`;
 }
 
 export function getTablePage(metrics: CityMetric[], metadata: DatasetMetadata, options: TableOptions = {}) {
