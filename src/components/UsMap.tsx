@@ -22,6 +22,13 @@ const statusLabels: Record<CityStatus, string> = {
   'low-volume': 'Low volume',
   'no-data': 'Selected no-data',
 };
+const legendAccessibleLabels: Record<CityStatus, string> = {
+  qualified: 'qualified',
+  'high-cpc': 'high cpc',
+  'unknown-cpc': 'unknown-cpc',
+  'low-volume': 'low-volume',
+  'no-data': 'selected no-data',
+};
 
 export interface UsMapProps {
   metrics: CityMetric[];
@@ -89,7 +96,7 @@ export function UsMap({ metrics, metadata, selected, onSelect }: UsMapProps) {
     <section className="us-map" aria-label="Interactive U.S. city map">
       <div className="map-controls" aria-label="Map controls">
         <div className="map-legend" aria-label="Marker status legend">
-          {statusOrder.map((status) => <button key={status} type="button" className={`legend-control legend-${status}`} aria-pressed={visibleStatuses.has(status)} aria-label={`Toggle ${status} markers`} onClick={() => setVisibleStatuses((current) => {
+          {statusOrder.map((status) => <button key={status} type="button" className={`legend-control legend-${status}`} aria-pressed={visibleStatuses.has(status)} aria-label={`Toggle ${legendAccessibleLabels[status]} markers`} onClick={() => setVisibleStatuses((current) => {
             const next = new Set(current);
             if (next.has(status)) next.delete(status); else next.add(status);
             return next;

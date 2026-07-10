@@ -37,7 +37,7 @@ describe('UsMap', () => {
     const before = map.querySelectorAll('[data-marker]').length;
     fireEvent.click(screen.getByRole('button', { name: 'Toggle qualified markers' }));
     expect(map.querySelectorAll('[data-marker]').length).toBe(before - researchedMetrics.filter((metric) => classifyCity(metric, metadata) === 'qualified').length);
-    fireEvent.click(screen.getByRole('button', { name: 'Toggle high-cpc markers' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Toggle high cpc markers' }));
     expect(map.querySelectorAll('[data-marker]').length).toBe(before - researchedMetrics.filter((metric) => ['qualified', 'high-cpc'].includes(classifyCity(metric, metadata))).length);
     fireEvent.click(screen.getByRole('button', { name: 'Toggle unknown-cpc markers' }));
     expect(map.querySelectorAll('[data-marker]').length).toBe(before - researchedMetrics.filter((metric) => ['qualified', 'high-cpc', 'unknown-cpc'].includes(classifyCity(metric, metadata))).length);
