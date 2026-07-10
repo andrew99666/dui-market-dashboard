@@ -139,6 +139,20 @@ def retry_seconds_from_error(error: Exception) -> int:
     return int(match.group(1)) if match else 5
 
 
+def is_quota_exhausted(
+    error: Exception, resource_exhausted_type: type[Exception]
+) -> bool:
+    if isinstance(error, resource_exhausted_type):
+        return True
+
+    import grpc
+
+    return (
+        isinstance(error, grpc.RpcError)
+        and error.code() == grpc.StatusCode.RESOURCE_EXHAUSTED
+    )
+
+
 def fetch_with_retry(
     fetcher: Callable[[], object],
     *,
@@ -154,7 +168,9 @@ def fetch_with_retry(
     for attempt in range(1, max_attempts + 1):
         try:
             return fetcher()
-        except resource_exhausted_type as error:
+        except Exception as error:
+            if not is_quota_exhausted(error, resource_exhausted_type):
+                raise
             if attempt == max_attempts:
                 raise
             delay_seconds = retry_seconds_from_error(error)
@@ -232,6 +248,12 @@ def load_default_customer_id(config_path: Path) -> str:
     return customer_id
 
 
+def resolve_customer_id(customer_id: str | None, config_path: Path) -> str:
+    if customer_id is not None:
+        return customer_id.replace("-", "").strip()
+    return load_default_customer_id(config_path)
+
+
 def load_google_ads_client(config_path: Path):
     from google.ads.googleads.client import GoogleAdsClient
 
@@ -258,6 +280,7 @@ def parse_args(arguments: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--city", default=None)
     parser.add_argument("--state", default=None)
+    parser.add_argument("--customer-id", default=None)
     args = parser.parse_args(arguments)
     if (args.city is None) != (args.state is None):
         parser.error("--city and --state must be supplied together")
@@ -267,7 +290,7 @@ def parse_args(arguments: list[str] | None = None) -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
     city_rows = read_city_rows(args.input, args.city, args.state, args.limit)
-    customer_id = load_default_customer_id(args.config)
+    customer_id = resolve_customer_id(args.customer_id, args.config)
     client = load_google_ads_client(args.config)
     rows = collect_raw_metrics(client, customer_id, city_rows)
     write_raw_metrics_csv(args.output, rows)

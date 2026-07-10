@@ -2,8 +2,10 @@ import csv
 from pathlib import Path
 from types import SimpleNamespace
 
+import grpc
 import pytest
 
+import scripts.fetch_google_ads_keyword_metrics as collector
 from scripts.fetch_google_ads_keyword_metrics import (
     DUI_EXPANDED_KEYWORD_TEMPLATES,
     build_keywords,
@@ -71,6 +73,19 @@ def test_city_state_filter_is_case_insensitive_and_precedes_limit(tmp_path: Path
 def test_parse_args_requires_city_and_state_together(arguments: list[str]):
     with pytest.raises(SystemExit):
         parse_args(arguments)
+
+
+def test_customer_id_argument_is_normalized_and_overrides_yaml_login_customer_id(
+    tmp_path: Path,
+):
+    config_path = tmp_path / "google-ads.yaml"
+    config_path.write_text("login_customer_id: '111-222-3333'\n", encoding="utf-8")
+
+    args = parse_args(
+        ["--config", str(config_path), "--customer-id", "999-888-7777"]
+    )
+
+    assert collector.resolve_customer_id(args.customer_id, args.config) == "9998887777"
 
 
 def test_collector_preserves_returned_metrics_and_uses_google_search_sequentially():
@@ -161,3 +176,30 @@ def test_retry_waits_after_resource_exhausted_without_google_client_import():
     ) == "metrics"
     assert attempts == 2
     assert waits == [7]
+
+
+def test_retry_waits_after_grpc_resource_exhausted():
+    class ResourceExhausted(Exception):
+        pass
+
+    class QuotaRpcError(grpc.RpcError):
+        def code(self):
+            return grpc.StatusCode.RESOURCE_EXHAUSTED
+
+    attempts = 0
+    waits = []
+
+    def fetcher():
+        nonlocal attempts
+        attempts += 1
+        if attempts == 1:
+            raise QuotaRpcError("Retry in 11 seconds")
+        return "metrics"
+
+    assert fetch_with_retry(
+        fetcher,
+        sleeper=waits.append,
+        resource_exhausted_type=ResourceExhausted,
+    ) == "metrics"
+    assert attempts == 2
+    assert waits == [11]
