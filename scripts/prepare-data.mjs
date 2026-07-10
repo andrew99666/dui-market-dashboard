@@ -254,7 +254,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === scriptPath) {
     rawMetricRecordCount: deduplicationManifest.inputRecordCount,
     retainedMetricRecordCount: deduplicationManifest.retainedRecordCount,
     duplicateMetricRecordCount: deduplicationManifest.duplicateRecordCount,
-    methodology: 'The deduplication rule uses exact raw Google Ads metric fingerprints: one unique tuple is counted per city for total search volume. Average CPC is the average retained midpoint for rows with positive low and high top-of-page bid ranges.'
+    methodology: 'The deduplication rule uses exact raw Google Ads metric fingerprints: within each city, rows with identical average monthly searches and low/high top-of-page bid micros are counted once. Average CPC is the average retained midpoint for rows with positive low and high top-of-page bid ranges.'
   };
   const outputDirectory = path.join(projectRoot, 'src', 'data');
   await mkdir(outputDirectory, { recursive: true });
