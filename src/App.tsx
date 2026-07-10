@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useMemo, useState } from 'react';
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight, Search, X } from 'lucide-react';
 
 import logo from './assets/tcb-rectangle.png';
@@ -32,6 +32,7 @@ const statusLabels: Record<CityStatus, string> = {
   'no-data': 'No data',
 };
 const summaryStatuses: Exclude<CityStatus, 'no-data'>[] = ['qualified', 'high-cpc', 'unknown-cpc', 'low-volume'];
+const tabs: Tab[] = ['table', 'map'];
 const states = [...new Map(researchedMetrics.map((metric) => [metric.stateCode, metric.state])).entries()]
   .sort((left, right) => left[1].localeCompare(right[1]));
 
@@ -50,6 +51,7 @@ export default function App() {
   const [page, setPage] = useState(1);
   const [selection, setSelection] = useState<Selection>();
   const [activeSuggestionIndex, setActiveSuggestionIndex] = useState<number | null>(null);
+  const tabRefs = useRef<Record<Tab, HTMLButtonElement | null>>({ table: null, map: null });
   const [suggestionsOpen, setSuggestionsOpen] = useState(false);
   const [places, setPlaces] = useState<UsPlace[]>([]);
   const [placeIndexState, setPlaceIndexState] = useState<PlaceIndexState>('loading');
@@ -79,26 +81,27 @@ export default function App() {
   }, []);
 
   const resetPage = () => setPage(1);
+  const closeSuggestions = () => {
+    setSuggestionsOpen(false);
+    setActiveSuggestionIndex(null);
+  };
   const updateQuery = (value: string) => { setQuery(value); setSuggestionsOpen(true); setActiveSuggestionIndex(null); resetPage(); };
   const selectPlace = (suggestion: SearchSuggestion) => {
     setSelection(suggestion);
     setQuery(suggestion.city);
-    setSuggestionsOpen(false);
-    setActiveSuggestionIndex(null);
+    closeSuggestions();
     resetPage();
   };
   const selectMapMetric = (metric: CityMetric) => {
     setSelection({ ...metric, source: 'researched', metric });
     setQuery(metric.city);
-    setSuggestionsOpen(false);
-    setActiveSuggestionIndex(null);
+    closeSuggestions();
     resetPage();
   };
   const clear = () => {
     setQuery('');
     setSelection(undefined);
-    setSuggestionsOpen(false);
-    setActiveSuggestionIndex(null);
+    closeSuggestions();
     setState('all');
     setStatus('all');
     resetPage();
@@ -106,6 +109,18 @@ export default function App() {
   const toggleSort = (column: SortColumn) => {
     setSort((current) => ({ column, direction: current.column === column && current.direction === 'desc' ? 'asc' : 'desc' }));
     resetPage();
+  };
+  const handleTabKey = (event: React.KeyboardEvent<HTMLButtonElement>, current: Tab) => {
+    const currentIndex = tabs.indexOf(current);
+    const nextTab = event.key === 'ArrowRight' ? tabs[(currentIndex + 1) % tabs.length]
+      : event.key === 'ArrowLeft' ? tabs[(currentIndex - 1 + tabs.length) % tabs.length]
+        : event.key === 'Home' ? tabs[0]
+          : event.key === 'End' ? tabs[tabs.length - 1]
+            : undefined;
+    if (!nextTab) return;
+    event.preventDefault();
+    setTab(nextTab);
+    tabRefs.current[nextTab]?.focus();
   };
   const selectedMetric = selection?.source === 'researched' ? selection.metric : undefined;
   const selectedStatus = classifyCity(selectedMetric, metadata);
@@ -123,8 +138,8 @@ export default function App() {
 
       <div className="dashboard-content">
         <div className="tabs" role="tablist" aria-label="Dashboard views">
-          <button id="city-table-tab" type="button" role="tab" aria-selected={tab === 'table'} aria-controls="city-table-panel" onClick={() => setTab('table')}>City Table</button>
-          <button id="map-tab" type="button" role="tab" aria-selected={tab === 'map'} aria-controls="map-panel" onClick={() => setTab('map')}>U.S. Map</button>
+          <button ref={(node) => { tabRefs.current.table = node; }} id="city-table-tab" type="button" role="tab" tabIndex={tab === 'table' ? 0 : -1} aria-selected={tab === 'table'} aria-controls="city-table-panel" onClick={() => setTab('table')} onKeyDown={(event) => handleTabKey(event, 'table')}>City Table</button>
+          <button ref={(node) => { tabRefs.current.map = node; }} id="map-tab" type="button" role="tab" tabIndex={tab === 'map' ? 0 : -1} aria-selected={tab === 'map'} aria-controls="map-panel" onClick={() => setTab('map')} onKeyDown={(event) => handleTabKey(event, 'map')}>U.S. Map</button>
         </div>
 
         <section className="search-panel" aria-label="City search and filters">
@@ -133,7 +148,8 @@ export default function App() {
             <span className="sr-only">Search cities</span>
             <input aria-label="Search cities" role="combobox" aria-autocomplete="list" aria-expanded={hasOpenSuggestions} aria-controls="city-suggestions" aria-activedescendant={activeSuggestionIndex === null ? undefined : `city-suggestion-${suggestions[activeSuggestionIndex].source}-${suggestions[activeSuggestionIndex].placeId}`} value={query} onFocus={() => setSuggestionsOpen(true)} onChange={(event) => updateQuery(event.target.value)} onKeyDown={(event) => {
               if (event.key === 'Escape') {
-                clear();
+                event.preventDefault();
+                closeSuggestions();
               } else if (event.key === 'ArrowDown' && suggestions.length) {
                 event.preventDefault();
                 setActiveSuggestionIndex((current) => current === null ? 0 : (current + 1) % suggestions.length);

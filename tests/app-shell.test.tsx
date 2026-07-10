@@ -115,6 +115,35 @@ describe('App shell', () => {
     expect(screen.queryByRole('listbox', { name: 'City suggestions' })).toBeNull();
   });
 
+  it('closes autocomplete with Escape without clearing the selected city or query', () => {
+    render(<App />);
+    const input = screen.getByRole('combobox', { name: 'Search cities' }) as HTMLInputElement;
+
+    fireEvent.change(input, { target: { value: 'Springfield' } });
+    fireEvent.click(screen.getByRole('option', { name: 'Springfield, Missouri' }));
+    fireEvent.focus(input);
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+    fireEvent.keyDown(input, { key: 'Escape' });
+
+    expect(input.value).toBe('Springfield');
+    expect(input.getAttribute('aria-activedescendant')).toBeNull();
+    expect(screen.queryByRole('listbox', { name: 'City suggestions' })).toBeNull();
+    expect(screen.getByRole('region', { name: 'Selected city spotlight' }).textContent).toContain('Springfield, Missouri');
+  });
+
+  it('keeps filters and page when Escape closes the empty autocomplete', () => {
+    render(<App />);
+    const input = screen.getByRole('combobox', { name: 'Search cities' });
+
+    fireEvent.click(screen.getByRole('button', { name: 'Qualified' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Next page' }));
+    fireEvent.focus(input);
+    fireEvent.keyDown(input, { key: 'Escape' });
+
+    expect(screen.getByRole('button', { name: 'Qualified' }).getAttribute('aria-pressed')).toBe('true');
+    expect(screen.getByText('Showing 26-43 of 43')).toBeTruthy();
+  });
+
   it('navigates autocomplete options with arrows and selects the active option with Enter', () => {
     render(<App />);
     const input = screen.getByRole('combobox', { name: 'Search cities' });
@@ -152,6 +181,26 @@ describe('App shell', () => {
     fireEvent.click(screen.getByRole('tab', { name: 'U.S. Map' }));
     expect(screen.getByRole('region', { name: 'Selected city spotlight' }).textContent).toContain('Springfield, Illinois');
     expect(screen.getByTestId('us-map').getAttribute('data-zoom-scale')).toBe('4');
+  });
+
+  it('moves tab focus and selection with ArrowLeft, ArrowRight, Home, and End', () => {
+    render(<App />);
+    const tableTab = screen.getByRole('tab', { name: 'City Table' });
+    const mapTab = screen.getByRole('tab', { name: 'U.S. Map' });
+
+    expect(tableTab.getAttribute('tabindex')).toBe('0');
+    expect(mapTab.getAttribute('tabindex')).toBe('-1');
+    tableTab.focus();
+    fireEvent.keyDown(tableTab, { key: 'ArrowRight' });
+    expect(document.activeElement).toBe(mapTab);
+    expect(mapTab.getAttribute('aria-selected')).toBe('true');
+    fireEvent.keyDown(mapTab, { key: 'Home' });
+    expect(document.activeElement).toBe(tableTab);
+    expect(tableTab.getAttribute('aria-selected')).toBe('true');
+    fireEvent.keyDown(tableTab, { key: 'End' });
+    expect(document.activeElement).toBe(mapTab);
+    fireEvent.keyDown(mapTab, { key: 'ArrowLeft' });
+    expect(document.activeElement).toBe(tableTab);
   });
 
   it('renders a selected no-data place on the map', async () => {

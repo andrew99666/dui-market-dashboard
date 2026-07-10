@@ -1,4 +1,4 @@
-import { expect, test, type Page, type TestInfo } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 
 let consoleErrors: string[] = [];
 let externalRequests: string[] = [];
@@ -29,7 +29,8 @@ test.afterEach(() => {
   expect(externalRequests).toEqual([]);
 });
 
-test('renders the compact desktop dashboard with correct initial counts and colors', async ({ page }, testInfo: TestInfo) => {
+test('renders the compact desktop dashboard with correct initial counts and colors', async ({ page }) => {
+  expect(page.viewportSize()).toEqual({ width: 1440, height: 900 });
   await expect(page.getByRole('heading', { name: 'DUI Market Opportunity Dashboard' })).toBeVisible();
   await expect(page.getByText('Data refreshed July 10, 2026')).toBeVisible();
   await expect(page.getByRole('tab', { name: 'City Table' })).toHaveAttribute('aria-selected', 'true');
@@ -46,8 +47,29 @@ test('renders the compact desktop dashboard with correct initial counts and colo
   expect(await page.locator('.summary-item.status-unknown-cpc').evaluate((element) => getComputedStyle(element).borderLeftColor)).toBe('rgb(154, 103, 0)');
   expect(await page.locator('.summary-item.status-low-volume').evaluate((element) => getComputedStyle(element).borderLeftColor)).toBe('rgb(23, 105, 170)');
 
-  await page.screenshot({ path: testInfo.outputPath('desktop-1440x900.png') });
+  await waitForPlaceIndex(page);
+  await expect(page).toHaveScreenshot('dashboard-desktop.png', { animations: 'disabled', caret: 'hide' });
   await assertNoViewportOverflow(page);
+});
+
+test('uses roving keyboard navigation for dashboard tabs', async ({ page }) => {
+  const tableTab = page.getByRole('tab', { name: 'City Table' });
+  const mapTab = page.getByRole('tab', { name: 'U.S. Map' });
+  await expect(tableTab).toHaveAttribute('tabindex', '0');
+  await expect(mapTab).toHaveAttribute('tabindex', '-1');
+
+  await tableTab.focus();
+  await tableTab.press('End');
+  await expect(mapTab).toBeFocused();
+  await expect(mapTab).toHaveAttribute('aria-selected', 'true');
+  await expect(page.getByRole('tabpanel', { name: 'U.S. Map' })).toBeVisible();
+  await mapTab.press('Home');
+  await expect(tableTab).toBeFocused();
+  await expect(tableTab).toHaveAttribute('aria-selected', 'true');
+  await tableTab.press('ArrowLeft');
+  await expect(mapTab).toBeFocused();
+  await mapTab.press('ArrowRight');
+  await expect(tableTab).toBeFocused();
 });
 
 test('searches, selects researched cities, and preserves the spotlight through view changes', async ({ page }) => {
@@ -61,6 +83,14 @@ test('searches, selects researched cities, and preserves the spotlight through v
   await search.focus();
   await search.press('ArrowDown');
   await search.press('Enter');
+  await expect(page.getByRole('region', { name: 'Selected city spotlight' })).toContainText('Springfield, Illinois');
+
+  await search.focus();
+  await search.press('ArrowDown');
+  await search.press('Escape');
+  await expect(search).toHaveValue('Springfield');
+  await expect(search).not.toHaveAttribute('aria-activedescendant');
+  await expect(page.getByRole('listbox', { name: 'City suggestions' })).toHaveCount(0);
   await expect(page.getByRole('region', { name: 'Selected city spotlight' })).toContainText('Springfield, Illinois');
 
   const mapTab = page.getByRole('tab', { name: 'U.S. Map' });
@@ -132,11 +162,11 @@ test('filters, sorts, paginates, and exposes a functional keyboard-accessible ma
 test.describe('mobile layout', () => {
   test.use({ viewport: { width: 390, height: 844 } });
 
-  test('keeps essential controls visible without clipping and captures the map', async ({ page }, testInfo: TestInfo) => {
+  test('keeps essential controls visible without clipping and matches the map layout', async ({ page }) => {
     await waitForPlaceIndex(page);
     await page.getByRole('tab', { name: 'U.S. Map' }).click();
     await expect(page.getByTestId('us-map')).toBeVisible();
-    await page.screenshot({ path: testInfo.outputPath('mobile-390x844.png') });
+    await expect(page).toHaveScreenshot('dashboard-mobile.png', { animations: 'disabled', caret: 'hide' });
     await assertNoViewportOverflow(page);
     expect(await page.locator('.app-header, .search-control, .map-controls').evaluateAll((elements) => elements.every((element) => {
       const bounds = element.getBoundingClientRect();
