@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "data:prepare": "node scripts/prepare-data.mjs",
+    "data:dedupe": "node scripts/dedupe-city-keyword-metrics.mjs",
     "dev": "vite",
     "test": "vitest run",
     "test:e2e": "playwright test",
