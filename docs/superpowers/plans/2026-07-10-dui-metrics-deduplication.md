@@ -33,7 +33,7 @@
 - Produces metricFingerprint(row), deduplicateKeywordMetrics(rows), aggregateCityMetrics(auditRows), and a CLI that writes summary, audit, and manifest files.
 - Each audit row has fingerprint, retained, and duplicateOfKeyword.
 
-- [ ] **Step 1: Write failing tests**
+- [x] **Step 1: Write failing tests**
 
 ~~~js
 it('retains one same-city metric fingerprint and records the removed keyword', () => {
@@ -71,13 +71,13 @@ it('sums retained volume and averages only retained known CPC midpoints', () => 
 });
 ~~~
 
-- [ ] **Step 2: Run the test to verify it fails**
+- [x] **Step 2: Run the test to verify it fails**
 
 Run: npm test -- tests/dedupe-city-keyword-metrics.test.mjs
 
 Expected: FAIL because scripts/dedupe-city-keyword-metrics.mjs does not exist.
 
-- [ ] **Step 3: Implement exact fingerprinting and aggregation**
+- [x] **Step 3: Implement exact fingerprinting and aggregation**
 
 ~~~js
 export function metricFingerprint(row) {
@@ -100,13 +100,13 @@ export function deduplicateKeywordMetrics(rows) {
 
 Implement CSV parsing/writing and CLI options --raw, --summary, --audit, --manifest, and --refreshed-at. Add data:dedupe to package.json.
 
-- [ ] **Step 4: Run the focused test to verify it passes**
+- [x] **Step 4: Run the focused test to verify it passes**
 
 Run: npm test -- tests/dedupe-city-keyword-metrics.test.mjs
 
 Expected: PASS with all fingerprint, null-CPC, city-boundary, and aggregation tests green.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ~~~bash
 git add scripts/dedupe-city-keyword-metrics.mjs tests/dedupe-city-keyword-metrics.test.mjs package.json
