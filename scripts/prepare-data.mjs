@@ -253,7 +253,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === scriptPath) {
   await mkdir(outputDirectory, { recursive: true });
   await Promise.all([
     writeFile(path.join(outputDirectory, 'cityMetrics.json'), `${JSON.stringify(cityMetrics, null, 2)}\n`),
-    writeFile(path.join(outputDirectory, 'usPlaces.json'), `${JSON.stringify(places, null, 2)}\n`),
+    writeFile(path.join(outputDirectory, 'usPlaces.json'), `${JSON.stringify(places)}\n`),
     writeFile(path.join(outputDirectory, 'datasetMetadata.json'), `${JSON.stringify(metadata, null, 2)}\n`)
   ]);
 }
