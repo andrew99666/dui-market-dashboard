@@ -5,7 +5,7 @@ import logo from './assets/tcb-rectangle.png';
 import metrics from './data/cityMetrics.json';
 import metadata from './data/datasetMetadata.json';
 import places from './data/usPlaces.json';
-import { MapPlaceholder } from './components/MapPlaceholder';
+import { UsMap } from './components/UsMap';
 import {
   classifyCity,
   createSearchSuggestions,
@@ -59,6 +59,12 @@ export default function App() {
   const selectPlace = (suggestion: SearchSuggestion) => {
     setSelection(suggestion);
     setQuery(suggestion.city);
+    setActiveSuggestionIndex(null);
+    resetPage();
+  };
+  const selectMapMetric = (metric: CityMetric) => {
+    setSelection({ ...metric, source: 'researched', metric });
+    setQuery(metric.city);
     setActiveSuggestionIndex(null);
     resetPage();
   };
@@ -164,7 +170,7 @@ export default function App() {
             <ul className="mobile-results" aria-label="City results">{table.rows.map((metric) => <li key={metric.placeId} className={`status-${classifyCity(metric, metadata)}`}><button type="button" onClick={() => selectPlace({ ...metric, source: 'researched', metric })}><strong>{metric.city}, {metric.state}</strong><span>{metric.totalSearchVolume.toLocaleString()} searches - {formatCpc(metric.averageCpcUsd)}</span><span className={`status-badge status-${classifyCity(metric, metadata)}`}>{statusLabels[classifyCity(metric, metadata)]}</span></button></li>)}</ul>
             <nav className="pagination" aria-label="Table pagination"><button type="button" className="icon-button" aria-label="Previous page" disabled={table.page === 1} onClick={() => setPage((current) => current - 1)}><ChevronLeft size={18} /></button><span>Page {table.page} of {table.pageCount}</span><button type="button" className="icon-button" aria-label="Next page" disabled={table.page === table.pageCount} onClick={() => setPage((current) => current + 1)}><ChevronRight size={18} /></button></nav>
           </section>
-        ) : <section id="map-panel" role="tabpanel" aria-labelledby="map-tab"><MapPlaceholder /></section>}
+        ) : <section id="map-panel" role="tabpanel" aria-labelledby="map-tab"><UsMap metrics={researchedMetrics} metadata={metadata} selected={selection} onSelect={selectMapMetric} /></section>}
       </div>
     </main>
   );

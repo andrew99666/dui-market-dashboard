@@ -99,7 +99,19 @@ describe('App shell', () => {
 
     fireEvent.click(screen.getByRole('tab', { name: 'U.S. Map' }));
     expect(screen.getByRole('region', { name: 'Selected city spotlight' }).textContent).toContain('Springfield, Illinois');
-    expect(screen.getByText('Map workspace is being prepared.')).toBeTruthy();
+    expect(screen.getByTestId('us-map').getAttribute('data-zoom-scale')).toBe('4');
+  });
+
+  it('renders a selected no-data place on the map', () => {
+    render(<App />);
+    const input = screen.getByRole('combobox', { name: 'Search cities' });
+
+    fireEvent.change(input, { target: { value: 'Aaronsburg' } });
+    fireEvent.click(screen.getAllByRole('option', { name: /Aaronsburg,/ })[0]);
+    fireEvent.click(screen.getByRole('tab', { name: 'U.S. Map' }));
+
+    expect(screen.getByTestId('us-map').getAttribute('data-zoom-scale')).toBe('4');
+    expect(screen.getByTestId('us-map').querySelectorAll('[data-marker="no-data"]')).toHaveLength(1);
   });
 
   it('uses semantic mobile row markup for the city list', () => {
