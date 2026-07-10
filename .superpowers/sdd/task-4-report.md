@@ -44,8 +44,10 @@ Both are committed Playwright `toHaveScreenshot` baselines. Tests wait for the p
 
 ## Commit
 
-- Task 4 commit SHA: pending final commit.
-- Review remediation commit SHA: pending final commit.
+- Task 4 delivery: `105b922` - `feat: harden dashboard browser delivery`.
+- Keyboard and visual-test remediation: `4a42a7b` - `fix: harden dashboard keyboard and visual tests`.
+- Final search and focus remediation: `b3c37cc` - `fix: resolve city search and map focus edge cases`.
+- Final coverage remediation: `fdd1cb8` - `test: cover city-state and map hover boundaries`.
 
 ## Self-Review
 
