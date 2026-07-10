@@ -296,7 +296,7 @@ npm run build
 
 Include the manifest path and a reminder to deploy every dist/assets file, including the hashed place-index JSON.
 
-- [ ] **Step 5: Verify, commit, and push**
+- [x] **Step 5: Verify, commit, and push**
 
 ~~~powershell
 npm test
