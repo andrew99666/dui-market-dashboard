@@ -42,12 +42,12 @@ describe('classifyCity', () => {
 describe('dashboard aggregates', () => {
   it('returns the expected researched status counts and known-CPC median', () => {
     expect(getStatusCounts(metrics, metadata)).toEqual({
-      qualified: 43,
-      'high-cpc': 84,
+      qualified: 3,
+      'high-cpc': 81,
       'unknown-cpc': 148,
-      'low-volume': 70,
+      'low-volume': 113,
     });
-    expect(getKnownCpcMedian(metrics)).toBe(54.29);
+    expect(getKnownCpcMedian(metrics)).toBe(52.28);
   });
 
   it('compares a selected city only against other known-CPC cities', () => {

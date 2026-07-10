@@ -208,7 +208,10 @@ describe('generated data', () => {
       volumeThreshold: 600,
       keywordCount: 144,
       sourceLabel: 'Google Ads Keyword Planner historical metrics',
-      methodology: 'Total search volume is the sum across the 144 keyword variants and average CPC is the average of each keyword\'s low/high top-of-page bid midpoint where bid data exists.'
+      rawMetricRecordCount: 49458,
+      retainedMetricRecordCount: 1185,
+      duplicateMetricRecordCount: 48273,
+      methodology: 'The deduplication rule uses exact raw Google Ads metric fingerprints: one unique tuple is counted per city for total search volume. Average CPC is the average retained midpoint for rows with positive low and high top-of-page bid ranges.'
     });
   });
 
@@ -227,5 +230,22 @@ describe('generated data', () => {
     for (const source of sourceRows) {
       expect(generatedByKey.get(`${source.city}|${source.state}`)).toMatchObject(source);
     }
+  });
+
+  it('reconciles cleaned city totals to the handoff summary and declares the dedupe method', async () => {
+    const [summaryFile, generatedFile, metadataFile] = await Promise.all([
+      readFile(new URL('../data/handoff/dui-expanded-deduplicated-city-metrics.csv', import.meta.url), 'utf8'),
+      readFile(new URL('../src/data/cityMetrics.json', import.meta.url), 'utf8'),
+      readFile(new URL('../src/data/datasetMetadata.json', import.meta.url), 'utf8')
+    ]);
+    const summary = parseMetricCsv(summaryFile);
+    const generated = JSON.parse(generatedFile);
+    const metadata = JSON.parse(metadataFile);
+
+    expect(summary).toHaveLength(345);
+    expect(generated.map(({ city, state, totalSearchVolume, averageCpcUsd }) => (
+      { city, state, totalSearchVolume, averageCpcUsd }
+    ))).toEqual(summary);
+    expect(metadata.methodology).toContain('exact raw Google Ads metric fingerprints');
   });
 });

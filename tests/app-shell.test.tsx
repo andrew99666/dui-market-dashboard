@@ -141,7 +141,7 @@ describe('App shell', () => {
     fireEvent.keyDown(input, { key: 'Escape' });
 
     expect(screen.getByRole('button', { name: 'Qualified' }).getAttribute('aria-pressed')).toBe('true');
-    expect(screen.getByText('Showing 26-43 of 43')).toBeTruthy();
+    expect(screen.getByText('Showing 1-3 of 3')).toBeTruthy();
   });
 
   it('navigates autocomplete options with arrows and selects the active option with Enter', () => {
@@ -169,7 +169,7 @@ describe('App shell', () => {
     expect(screen.getByText('Showing 26-50 of 345')).toBeTruthy();
 
     fireEvent.click(screen.getByRole('button', { name: 'Qualified' }));
-    expect(screen.getByText('Showing 1-25 of 43')).toBeTruthy();
+    expect(screen.getByText('Showing 1-3 of 3')).toBeTruthy();
   });
 
   it('preserves city selection across tabs', () => {

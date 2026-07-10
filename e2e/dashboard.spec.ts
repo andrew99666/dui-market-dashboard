@@ -37,10 +37,10 @@ test('renders the compact desktop dashboard with correct initial counts and colo
   await expect(page.getByRole('tab', { name: 'U.S. Map' })).toHaveAttribute('aria-selected', 'false');
   await expect(page.getByRole('row')).toHaveCount(26);
   await expect(page.getByText('Showing 1-25 of 345')).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Qualified 43' })).toBeVisible();
-  await expect(page.getByRole('button', { name: 'High CPC 84' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Qualified 3' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'High CPC 81' })).toBeVisible();
   await expect(page.getByRole('button', { name: 'Unknown CPC 148' })).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Low volume 70' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Low volume 113' })).toBeVisible();
 
   expect(await page.locator('.summary-item.status-qualified').evaluate((element) => getComputedStyle(element).borderLeftColor)).toBe('rgb(22, 128, 74)');
   expect(await page.locator('.summary-item.status-high-cpc').evaluate((element) => getComputedStyle(element).borderLeftColor)).toBe('rgb(180, 35, 24)');
@@ -143,9 +143,9 @@ test('filters, sorts, paginates, and exposes a functional keyboard-accessible ma
   await expect(map.locator('[data-state-geometry]').first()).toHaveAttribute('d', /.+/);
   await expect(map.locator('[data-marker]')).toHaveCount(345);
   await page.getByRole('button', { name: 'Toggle low-volume markers' }).click();
-  await expect(map.locator('[data-marker]')).toHaveCount(275);
+  await expect(map.locator('[data-marker]')).toHaveCount(232);
   await page.getByRole('button', { name: 'Toggle low-volume markers' }).click();
-  const mapMarker = map.getByRole('button', { name: /Springfield, Illinois\. Volume 260/ });
+  const mapMarker = map.getByRole('button', { name: /Springfield, Illinois\. Volume 60/ });
   await mapMarker.hover();
   await expect(page.getByRole('tooltip')).toBeVisible();
   await mapMarker.focus();

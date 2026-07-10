@@ -234,6 +234,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === scriptPath) {
     readFile(path.join(projectRoot, 'data', 'source', 'city-metrics.csv'), 'utf8'),
     Promise.resolve(censusEntry.getData().toString('utf8'))
   ]);
+  const manifestPath = path.join(projectRoot, 'data', 'handoff', 'dui-expanded-deduplication-manifest.json');
+  if (!existsSync(manifestPath)) throw new Error('Deduplication manifest is required to prepare dashboard data');
+  const deduplicationManifest = JSON.parse(await readFile(manifestPath, 'utf8'));
   const places = parseCensusPlaces(censusText);
   const metricRows = parseMetricCsv(metricsText);
   const countySubdivisionFallbacks = await loadCountySubdivisionFallbacks(
@@ -248,7 +251,10 @@ if (process.argv[1] && path.resolve(process.argv[1]) === scriptPath) {
     volumeThreshold: 600,
     keywordCount: 144,
     sourceLabel: 'Google Ads Keyword Planner historical metrics',
-    methodology: "Total search volume is the sum across the 144 keyword variants and average CPC is the average of each keyword's low/high top-of-page bid midpoint where bid data exists."
+    rawMetricRecordCount: deduplicationManifest.inputRecordCount,
+    retainedMetricRecordCount: deduplicationManifest.retainedRecordCount,
+    duplicateMetricRecordCount: deduplicationManifest.duplicateRecordCount,
+    methodology: 'The deduplication rule uses exact raw Google Ads metric fingerprints: one unique tuple is counted per city for total search volume. Average CPC is the average retained midpoint for rows with positive low and high top-of-page bid ranges.'
   };
   const outputDirectory = path.join(projectRoot, 'src', 'data');
   await mkdir(outputDirectory, { recursive: true });

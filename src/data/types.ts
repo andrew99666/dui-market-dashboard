@@ -24,5 +24,8 @@ export interface DatasetMetadata {
   volumeThreshold: number;
   keywordCount: number;
   sourceLabel: string;
+  rawMetricRecordCount: number;
+  retainedMetricRecordCount: number;
+  duplicateMetricRecordCount: number;
   methodology: string;
 }
