@@ -116,6 +116,19 @@ describe('UsMap', () => {
     expect(Number(tooltipY)).toBeCloseTo(Math.min(534, Math.max(8, Number(translateY) + pointY * Number(scale) + 12)));
   });
 
+  it('uses pointer coordinates for hover tooltips after zooming', () => {
+    const selected = researchedMetrics.find((metric) => metric.city === 'Springfield' && metric.state === 'Illinois')!;
+    render(<UsMap metrics={researchedMetrics} metadata={metadata} selected={selected} onSelect={() => undefined} />);
+
+    const map = screen.getByTestId('us-map');
+    Object.defineProperty(map, 'getBoundingClientRect', { value: () => ({ left: 0, top: 0, width: 960, height: 600 }) });
+    const marker = map.querySelector(`[data-place-id="${selected.placeId}"]`)!;
+
+    fireEvent.mouseEnter(marker, { clientX: 100, clientY: 200 });
+
+    expect(screen.getByRole('tooltip').getAttribute('transform')).toBe('translate(112 212)');
+  });
+
   it('focuses shared researched selection at four times the national scale and adds an unresearched marker', () => {
     const researched = researchedMetrics.find((metric) => metric.city === 'Springfield' && metric.state === 'Illinois')!;
     const unresearched: UsPlace = { placeId: '99999', city: 'Test place', state: 'Illinois', stateCode: 'IL', latitude: 40.1, longitude: -89.3 };

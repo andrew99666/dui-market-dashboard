@@ -109,6 +109,13 @@ describe('search suggestions', () => {
       { placeId: 'researched-burbank', source: 'researched' },
     ]);
     expect(createSearchSuggestions('mount olive', [], duplicateMountOlivePlaces)).toHaveLength(1);
+    expect(createSearchSuggestions('springfield', [], [
+      { placeId: 'springfield-il', city: 'Springfield', state: 'Illinois', stateCode: 'IL', latitude: 39.8, longitude: -89.6 },
+      { placeId: 'springfield-ma', city: 'Springfield', state: 'Massachusetts', stateCode: 'MA', latitude: 42.1, longitude: -72.5 },
+    ]).map(({ city, state }) => `${city}, ${state}`)).toEqual([
+      'Springfield, Illinois',
+      'Springfield, Massachusetts',
+    ]);
   });
 });
 

@@ -25,10 +25,11 @@
 - Review green: the configured desktop viewport is asserted as `1440x900`; `--update-snapshots` generated both committed PNG baselines and a normal browser run compared them successfully.
 - Final review red: identical Census city/state labels could shadow a researched market, and a focused marker used untransformed projection coordinates for its tooltip.
 - Final review green: Census-only matches now collapse by normalized city/state and never duplicate a researched city/state; focus tooltips derive their position from the current pan/zoom transform.
+- Final review coverage: Census-only Springfield records in Illinois and Massachusetts remain separate, while hover tooltips remain pointer-anchored after zoom.
 
 ## Verification
 
-- `npm test`: passed, 4 files and 54 tests, using one Vitest fork.
+- `npm test`: passed, 4 files and 55 tests, using one Vitest fork.
 - `npm run lint`: passed with no lint output.
 - `npm run build`: passed. Initial application JavaScript is `430.99 kB` (`134.59 kB` gzip); the place index is emitted separately as `dist/assets/usPlaces-BxsTEMak.json` at `3,892.27 kB` (`667.83 kB` gzip) and fetched same-origin after initial render.
 - `npm run test:e2e`: passed, 6 Playwright tests against `vite preview` at `127.0.0.1:4173`, with an asserted `1440x900` desktop viewport and a `390x844` mobile override. Chromium was installed with `npx playwright install chromium`.
