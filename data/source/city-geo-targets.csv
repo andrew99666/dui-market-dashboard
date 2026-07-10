@@ -1,0 +1,346 @@
+City,ST,State,GAds Code
+Henderson,NV,Nevada,1022635
+Irvine,CA,California,1013883
+Santa Ana,CA,California,1014247
+North Las Vegas,NV,Nevada,1022649
+Plano,TX,Texas,1026695
+Gilbert,AZ,Arizona,1013416
+Chandler,AZ,Arizona,1013387
+Chula Vista,CA,California,1013677
+St. Petersburg,FL,Florida,1015206
+Port St. Lucie,FL,Florida,1015182
+Glendale,AZ,Arizona,1013417
+Irving,TX,Texas,1026497
+Winston-Salem,NC,North Carolina,1021377
+Garland,TX,Texas,1026419
+Hialeah,FL,Florida,1015049
+Frisco,TX,Texas,1026407
+Cape Coral,FL,Florida,1014976
+Fremont,CA,California,1013802
+McKinney,TX,Texas,1026607
+Fontana,CA,California,1013790
+Moreno Valley,CA,California,1014033
+Worcester,MA,Massachusetts,1018497
+Grand Prairie,TX,Texas,1026439
+Oxnard,CA,California,1014099
+Peoria,AZ,Arizona,1013461
+Montgomery,AL,Alabama,1013074
+Providence,RI,Rhode Island,1025477
+Huntington Beach,CA,California,1013869
+Brownsville,TX,Texas,1026248
+Glendale,CA,California,1013819
+Cary,NC,North Carolina,1021041
+Aurora,IL,Illinois,1016280
+Pembroke Pines,FL,Florida,1015166
+Eugene,OR,Oregon,1024453
+Rancho Cucamonga,CA,California,1014167
+Garden Grove,CA,California,1013812
+Oceanside,CA,California,1014085
+Surprise,AZ,Arizona,1013500
+Lancaster,CA,California,1013931
+Denton,TX,Texas,1026350
+Roseville,CA,California,1014204
+Palmdale,CA,California,1014108
+Corona,CA,California,1013701
+Salinas,CA,California,1014210
+Paterson,NJ,New Jersey,1022331
+Hollywood,FL,Florida,1015054
+Hayward,CA,California,1013848
+Sunnyvale,CA,California,1014315
+Springfield,MA,Massachusetts,1018421
+Bellevue,WA,Washington,1027509
+Naperville,IL,Illinois,1016710
+Joliet,IL,Illinois,1016584
+Bridgeport,CT,Connecticut,1014679
+Mesquite,TX,Texas,1026619
+Pasadena,TX,Texas,1026680
+Olathe,KS,Kansas,1017588
+Escondido,CA,California,1013771
+Gainesville,FL,Florida,1015033
+Pomona,CA,California,1014155
+Miramar,FL,Florida,9052452
+Lakewood,NJ,New Jersey,9052286
+Coral Springs,FL,Florida,9051769
+Victorville,CA,California,1014370
+Elizabeth,NJ,New Jersey,1022108
+Meridian,ID,Idaho,1016191
+Torrance,CA,California,1014339
+Stamford,CT,Connecticut,1014843
+West Valley City,UT,Utah,9053130
+Orange,CA,California,1014090
+Warren,MI,Michigan,1019647
+Hampton,VA,Virginia,1027156
+New Haven,CT,Connecticut,1014778
+Pasadena,CA,California,1014118
+Kent,WA,Washington,1027623
+Carrollton,TX,Texas,1026271
+Round Rock,TX,Texas,1026748
+Sterling Heights,MI,Michigan,1019612
+Santa Clara,CA,California,1014249
+Columbia,MO,Missouri,1020268
+Pearland,TX,Texas,1026681
+Clovis,CA,California,1013686
+West Palm Beach,FL,Florida,1015229
+North Charleston,SC,South Carolina,1025628
+Simi Valley,CA,California,1014279
+Lakeland,FL,Florida,1015088
+Thousand Oaks,CA,California,1014332
+Vallejo,CA,California,1014363
+Ann Arbor,MI,Michigan,1019126
+Broken Arrow,OK,Oklahoma,1024141
+Fairfield,CA,California,1013778
+Lafayette,LA,Louisiana,1018010
+Hartford,CT,Connecticut,1014743
+Arvada,CO,Colorado,1014434
+Berkeley,CA,California,1013585
+Cambridge,MA,Massachusetts,1018145
+Lowell,MA,Massachusetts,1018276
+High Point,NC,North Carolina,1021149
+Richardson,TX,Texas,1026729
+Goodyear,AZ,Arizona,1013419
+Pompano Beach,FL,Florida,1015176
+Nampa,ID,Idaho,1016202
+West Jordan,UT,Utah,1027010
+New Braunfels,TX,Texas,1026651
+Miami Gardens,FL,Florida,9052425
+Waterbury,CT,Connecticut,1014866
+Provo,UT,Utah,1026980
+Westminster,CO,Colorado,1014651
+Elgin,IL,Illinois,1016439
+Greeley,CO,Colorado,1014529
+Buckeye,AZ,Arizona,1013379
+Tuscaloosa,AL,Alabama,1013139
+Allen,TX,Texas,1026178
+Carlsbad,CA,California,1013651
+Murrieta,CA,California,1014045
+Rio Rancho,NM,New Mexico,1022580
+Temecula,CA,California,1014327
+Concord,NC,North Carolina,1021064
+Davie,FL,Florida,9051808
+Sparks,NV,Nevada,1022656
+Gresham,OR,Oregon,1024471
+Pueblo,CO,Colorado,1014611
+Hillsboro,OR,Oregon,1024479
+Edison,NJ,New Jersey,1022105
+Sugar Land,TX,Texas,1026825
+Downey,CA,California,1013737
+Costa Mesa,CA,California,1013705
+Spokane Valley,WA,Washington,9052898
+Jurupa Valley,CA,California,9197803
+West Covina,CA,California,1014388
+Boulder,CO,Colorado,1014448
+Lee's Summit,MO,Missouri,1020444
+Dearborn,MI,Michigan,1019244
+St. George,UT,Utah,1026999
+Woodbridge,NJ,New Jersey,9053196
+Brockton,MA,Massachusetts,1018136
+Renton,WA,Washington,1027726
+Sandy Springs,GA,Georgia,9052803
+Rialto,CA,California,1014185
+El Monte,CA,California,1013757
+Vacaville,CA,California,1014361
+Yuma,AZ,Arizona,1013523
+Burbank,CA,California,1013622
+Lynn,MA,Massachusetts,1018279
+Quincy,MA,Massachusetts,1018372
+El Cajon,CA,California,1013751
+San Mateo,CA,California,1014237
+Inglewood,CA,California,1013880
+Boca Raton,FL,Florida,1014959
+Hesperia,CA,California,1013857
+Daly City,CA,California,1013718
+Clinton,MI,Michigan,1019219
+Georgetown,TX,Texas,1026424
+New Bedford,MA,Massachusetts,1018318
+Davenport,IA,Iowa,1015736
+Plantation,FL,Florida,9191000
+Deltona,FL,Florida,1015008
+Federal Way,WA,Washington,1027588
+San Angelo,TX,Texas,1026758
+Tracy,CA,California,1014341
+Sunrise,FL,Florida,9052942
+Memphis,TN,Tennessee,1026069
+Sioux Falls,SD,South Dakota,1025858
+Las Cruces,NM,New Mexico,1022549
+Augusta,GA,Georgia,1015256
+Dayton,OH,Ohio,1023657
+Mobile,AL,Alabama,1013071
+Wichita,KS,Kansas,1017673
+Greensboro,NC,North Carolina,1021129
+Baton Rouge,LA,Louisiana,1017934
+Evansville,IN,Indiana,1017086
+Clarksville,TN,Tennessee,1025946
+Philadelphia,PA,Pennsylvania,1025197
+Honolulu,HI,Hawaii,1015579
+Reno,NV,Nevada,1022653
+Louisville,KY,Kentucky,1017825
+Virginia Beach,VA,Virginia,1027320
+Albuquerque,NM,New Mexico,1022494
+Fayetteville,NC,North Carolina,1021108
+Allentown,PA,Pennsylvania,1024620
+Columbia,SC,South Carolina,1025530
+Chico,CA,California,1013671
+Macon,GA,Georgia,1015427
+Richmond,VA,Virginia,1027270
+Springfield,IL,Illinois,1016864
+Peoria,IL,Illinois,1016766
+Chesapeake,VA,Virginia,1027073
+Durham,NC,North Carolina,1021085
+Fargo,ND,North Dakota,1021434
+Lexington,KY,Kentucky,1017818
+Chattanooga,TN,Tennessee,1025943
+Overland Park,KS,Kansas,1017596
+Kansas City,KS,Kansas,1017527
+McAllen,TX,Texas,1026609
+Norman,OK,Oklahoma,1024283
+Athens,GA,Georgia,1015253
+Fort Wayne,IN,Indiana,1017108
+Green Bay,WI,Wisconsin,1027991
+Little Rock,AR,Arkansas,1013268
+South Bend,IN,Indiana,1017310
+Vancouver,WA,Washington,1027790
+Columbus,OH,Ohio,1023640
+Charlotte,NC,North Carolina,1021048
+Modesto,CA,California,1014019
+Spokane,WA,Washington,1027760
+Tulsa,OK,Oklahoma,1024352
+Birmingham,AL,Alabama,1012954
+Milwaukee,WI,Wisconsin,1028087
+Madison,WI,Wisconsin,1028057
+St. Louis,MO,Missouri,1020618
+Waco,TX,Texas,1026867
+Conroe,TX,Texas,1026313
+Raleigh,NC,North Carolina,1021278
+Boston,MA,Massachusetts,1018127
+Bend,OR,Oregon,1024400
+New York,NY,New York,1023191
+Topeka,KS,Kansas,1017653
+New Orleans,LA,Louisiana,1018036
+Chicago,IL,Illinois,1016367
+Huntsville,AL,Alabama,1013042
+Tallahassee,FL,Florida,1015213
+Columbus,GA,Georgia,1015303
+Portland,OR,Oregon,1024543
+Rockford,IL,Illinois,1016813
+Cedar Rapids,IA,Iowa,1015695
+Springfield,MO,Missouri,1020610
+Abilene,TX,Texas,1026170
+Oklahoma City,OK,Oklahoma,1024290
+El Paso,TX,Texas,1026376
+Boise,ID,Idaho,1016131
+Lubbock,TX,Texas,1026578
+Detroit,MI,Michigan,1019250
+Amarillo,TX,Texas,1026182
+Washington,DC,District of Columbia,1014895
+Kansas City,MO,Missouri,1020414
+Atlanta,GA,Georgia,1015254
+Buffalo,NY,New York,1022764
+Salem,OR,Oregon,1024555
+Toledo,OH,Ohio,1024034
+Newport News,VA,Virginia,1027237
+Salt Lake City,UT,Utah,1026990
+Grand Rapids,MI,Michigan,1019316
+Lincoln,NE,Nebraska,1021696
+Las Vegas,NV,Nevada,1022639
+Wilmington,NC,North Carolina,1021374
+Wichita Falls,TX,Texas,1026889
+Newark,NJ,New Jersey,1022300
+Santa Rosa,CA,California,1014257
+Norfolk,VA,Virginia,1027239
+Seattle,WA,Washington,1027744
+Santa Maria,CA,California,1014254
+Cleveland,OH,Ohio,1023631
+Indianapolis,IN,Indiana,1017146
+Jersey City,NJ,New Jersey,1022194
+Fort Collins,CO,Colorado,1014517
+Shreveport,LA,Louisiana,1018057
+Des Moines,IA,Iowa,1015746
+Minneapolis,MN,Minnesota,1019973
+Houston,TX,Texas,1026481
+Fishers,IN,Indiana,1017093
+Fort Worth,TX,Texas,1026411
+Cincinnati,OH,Ohio,1023626
+Dallas,TX,Texas,1026339
+Suffolk,VA,Virginia,1027301
+Charleston,SC,South Carolina,1025521
+Alexandria,VA,Virginia,1027019
+Beaumont,TX,Texas,1026214
+Clearwater,FL,Florida,1014984
+Tampa,FL,Florida,1015214
+Midland,TX,Texas,1026622
+Omaha,NE,Nebraska,1021721
+Knoxville,TN,Tennessee,1026036
+Miami,FL,Florida,1015116
+Fresno,CA,California,1013804
+League City,TX,Texas,1026551
+Tyler,TX,Texas,1026855
+Independence,MO,Missouri,1020403
+College Station,TX,Texas,1026305
+Odessa,TX,Texas,1026661
+Rochester,MN,Minnesota,1020048
+Denver,CO,Colorado,1014485
+Edinburg,TX,Texas,1026373
+Akron,OH,Ohio,1023522
+Stockton,CA,California,1014306
+Carmel,IN,Indiana,1017027
+Los Angeles,CA,California,1013962
+Everett,WA,Washington,1027583
+Manchester,NH,New Hampshire,1021903
+Riverside,CA,California,1014197
+Saint Paul,MN,Minnesota,1020090
+Pittsburgh,PA,Pennsylvania,1025202
+Tucson,AZ,Arizona,1013509
+Arlington,TX,Texas,1026194
+San Jose,CA,California,1014226
+Fort Lauderdale,FL,Florida,1015027
+Orlando,FL,Florida,1015150
+Menifee,CA,California,1014001
+Lansing,MI,Michigan,1019404
+Killeen,TX,Texas,1026528
+Lewisville,TX,Texas,1026556
+San Diego,CA,California,1014218
+Savannah,GA,Georgia,1015501
+Thornton,CO,Colorado,9052979
+San Francisco,CA,California,1014221
+Fayetteville,AR,Arkansas,1013219
+Phoenix,AZ,Arizona,1013462
+Laredo,TX,Texas,1026548
+Santa Clarita,CA,California,1014250
+Colorado Springs,CO,Colorado,1014471
+Rochester,NY,New York,1023315
+Jacksonville,FL,Florida,1015067
+Yonkers,NY,New York,1023517
+San Antonio,TX,Texas,1026759
+Sacramento,CA,California,1014208
+Elk Grove,CA,California,1013763
+Tempe,AZ,Arizona,1013502
+Nashville,TN,Tennessee,1026083
+Mesa,AZ,Arizona,1013445
+Bakersfield,CA,California,1013570
+Aurora,CO,Colorado,1014437
+Billings,MT,Montana,1020854
+Palm Coast,FL,Florida,1015160
+Oakland,CA,California,1014080
+Tacoma,WA,Washington,1027773
+Centennial,CO,Colorado,9051708
+Ontario,CA,California,1014089
+Anchorage,AK,Alaska,1012873
+Scottsdale,AZ,Arizona,1013482
+Baltimore,MD,Maryland,1018511
+Anaheim,CA,California,1013542
+Palm Bay,FL,Florida,1015157
+Visalia,CA,California,1014373
+Long Beach,CA,California,1013958
+Syracuse,NY,New York,1023416
+Lakewood,CO,Colorado,9052284
+Antioch,CA,California,1013548
+Concord,CA,California,1013697
+Albany,NY,New York,1022672
+Fullerton,CA,California,1013808
+Jackson,MS,Mississippi,1020760
+Austin,TX,Texas,1026201
+Murfreesboro,TN,Tennessee,1026082
+Richmond,CA,California,1014187
+Ventura,CA,California,1014369
+San Bernardino,CA,California,1014214
+Corpus Christi,TX,Texas,1026319

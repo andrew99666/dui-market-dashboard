@@ -60,9 +60,20 @@ Enable the site, validate the configuration, and reload Nginx using the VPS oper
 
 ## Data Refresh
 
-1. Replace the canonical CSV at `data/source/city-metrics.csv`.
-2. Regenerate data with `npm run data:prepare -- --refreshed-at YYYY-MM-DD`.
-3. Run `npm test` and `npm run build`.
-4. Replace the deployed contents with the new `dist/` output.
+Run Google Ads collection only from the research workstation. The collector reads credentials from an external `google-ads.yaml` file (by default, `$HOME/google-ads.yaml`); do not commit credentials, OAuth refresh tokens, or developer tokens, and never run this collector on the VPS.
+
+For a targeted verification run, provide an exact city/state pair (case-insensitive):
+
+```powershell
+python scripts/fetch_google_ads_keyword_metrics.py --config $HOME/google-ads.yaml --input data/source/city-geo-targets.csv --output data/source/phoenix-keyword-metrics-raw.csv --city Phoenix --state Arizona
+```
+
+For the full refresh, collect raw metrics, deduplicate them, then refresh the dashboard data:
+
+1. Run `python scripts/fetch_google_ads_keyword_metrics.py --config $HOME/google-ads.yaml --input data/source/city-geo-targets.csv --output data/source/dui-expanded-keyword-metrics-raw.csv` on the research workstation.
+2. Replace the canonical CSV at `data/source/city-metrics.csv` with the deduplicated result.
+3. Regenerate data with `npm run data:prepare -- --refreshed-at YYYY-MM-DD`.
+4. Run `npm test` and `npm run build`.
+5. Replace the deployed contents with the new `dist/` output.
 
 The dashboard methodology uses Google Ads Keyword Planner historical metrics. Census geography attribution covers the 2025 Places Gazetteer plus researched Woodbridge/Edison county-subdivision fallbacks.
