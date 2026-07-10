@@ -1,0 +1,8 @@
+{
+  "refreshedAt": "2026-07-10",
+  "cpcThresholdUsd": 60,
+  "volumeThreshold": 600,
+  "keywordCount": 144,
+  "sourceLabel": "Google Ads Keyword Planner historical metrics",
+  "methodology": "Total search volume is the sum across the 144 keyword variants and average CPC is the average of each keyword's low/high top-of-page bid midpoint where bid data exists."
+}
