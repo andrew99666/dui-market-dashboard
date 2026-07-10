@@ -1,0 +1,8 @@
+{
+  "refreshedAt": "2026-07-10",
+  "inputRecordCount": 49458,
+  "retainedRecordCount": 1185,
+  "duplicateRecordCount": 48273,
+  "cityCount": 345,
+  "methodology": "Within each city, identical raw average monthly searches and low/high top-of-page bid micros are counted once; average CPC uses retained known bid midpoints."
+}
