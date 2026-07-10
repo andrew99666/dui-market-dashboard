@@ -3,6 +3,7 @@ import { scaleSqrt } from 'd3-scale';
 import { feature } from 'topojson-client';
 import statesTopology from 'us-atlas/states-10m.json';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { RotateCcw } from 'lucide-react';
 
 import { classifyCity, type CityStatus } from '../dashboard-domain';
 import type { CityMetric, DatasetMetadata, UsPlace } from '../data/types';
@@ -100,9 +101,9 @@ export function UsMap({ metrics, metadata, selected, onSelect }: UsMapProps) {
             const next = new Set(current);
             if (next.has(status)) next.delete(status); else next.add(status);
             return next;
-          })}>{statusLabels[status]}</button>)}
+          })}><span aria-hidden="true" className={`legend-shape legend-shape-${status}`} data-testid={`legend-shape-${status}`} data-shape={status === 'high-cpc' ? 'diamond' : status === 'unknown-cpc' ? 'triangle' : status === 'low-volume' ? 'square' : 'circle'} />{statusLabels[status]}</button>)}
         </div>
-        <button type="button" className="icon-button map-reset" aria-label="Reset map view" onClick={() => setTransform({ x: 0, y: 0, scale: 1 })}>Reset</button>
+        <button type="button" className="icon-button map-reset" aria-label="Reset map view" title="Reset map view" onClick={() => setTransform({ x: 0, y: 0, scale: 1 })}><RotateCcw size={18} aria-hidden="true" /></button>
       </div>
       <svg ref={svgRef} className="map-canvas" data-testid="us-map" data-zoom-scale={transform.scale} viewBox={`0 0 ${width} ${height}`} onWheel={(event) => {
         event.preventDefault();

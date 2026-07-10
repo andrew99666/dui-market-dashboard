@@ -1,11 +1,22 @@
 // @vitest-environment jsdom
 
-import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
-import { afterEach, describe, expect, it } from 'vitest';
+import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import App from '../src/App';
 
-afterEach(cleanup);
+const fetchMock = vi.fn();
+
+beforeEach(() => {
+  fetchMock.mockReset();
+  fetchMock.mockResolvedValue({ ok: true, json: async () => [] });
+  vi.stubGlobal('fetch', fetchMock);
+});
+
+afterEach(() => {
+  cleanup();
+  vi.unstubAllGlobals();
+});
 
 describe('App shell', () => {
   it('renders the dashboard title', () => {
@@ -13,6 +24,35 @@ describe('App shell', () => {
 
     expect(screen.getByRole('heading', { name: 'DUI Market Opportunity Dashboard' }))
       .toBeTruthy();
+  });
+
+  it('keeps researched suggestions available while the Census index loads', async () => {
+    let resolveIndex: (value: { ok: boolean; json: () => Promise<unknown> }) => void = () => undefined;
+    fetchMock.mockReturnValue(new Promise((resolve) => { resolveIndex = resolve; }));
+    render(<App />);
+    const input = screen.getByRole('combobox', { name: 'Search cities' });
+
+    fireEvent.change(input, { target: { value: 'Springfield' } });
+    expect(screen.getByRole('option', { name: 'Springfield, Illinois' })).toBeTruthy();
+    expect(screen.getByRole('status').textContent).toContain('Loading Census place index');
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+
+    resolveIndex({
+      ok: true,
+      json: async () => [{ placeId: '99999', city: 'Springfield', state: 'Pennsylvania', stateCode: 'PA', latitude: 40.1, longitude: -75.3 }],
+    });
+
+    await waitFor(() => expect(screen.getByRole('option', { name: 'Springfield, Pennsylvania' })).toBeTruthy());
+  });
+
+  it('preserves researched search when the Census index fails to load', async () => {
+    fetchMock.mockRejectedValueOnce(new Error('index unavailable'));
+    render(<App />);
+    const input = screen.getByRole('combobox', { name: 'Search cities' });
+
+    await waitFor(() => expect(screen.getByRole('status').textContent).toContain('Census place index unavailable'));
+    fireEvent.change(input, { target: { value: 'Springfield' } });
+    expect(screen.getByRole('option', { name: 'Springfield, Massachusetts' })).toBeTruthy();
   });
 
   it('formats the refresh date and renders the first 25 table rows', () => {
@@ -36,7 +76,8 @@ describe('App shell', () => {
     expect(screen.getByRole('option', { name: 'Springfield, Missouri' })).toBeTruthy();
   });
 
-  it('selects researched and no-data places from the shared autocomplete', () => {
+  it('selects researched and no-data places from the shared autocomplete', async () => {
+    fetchMock.mockResolvedValueOnce({ ok: true, json: async () => [{ placeId: '99999', city: 'Aaronsburg', state: 'Pennsylvania', stateCode: 'PA', latitude: 40.9, longitude: -77.4 }] });
     render(<App />);
     const input = screen.getByRole('combobox', { name: 'Search cities' });
 
@@ -45,7 +86,8 @@ describe('App shell', () => {
     expect(within(screen.getByRole('region', { name: 'Selected city spotlight' })).getByText('Springfield, Missouri')).toBeTruthy();
 
     fireEvent.change(input, { target: { value: 'Aaronsburg' } });
-    fireEvent.click(screen.getAllByRole('option', { name: /Aaronsburg,/ })[0]);
+    await waitFor(() => expect(screen.getByRole('option', { name: 'Aaronsburg, Pennsylvania' })).toBeTruthy());
+    fireEvent.click(screen.getByRole('option', { name: 'Aaronsburg, Pennsylvania' }));
     expect(screen.getByText('No metrics in current dataset')).toBeTruthy();
     const noDataBadge = within(screen.getByRole('region', { name: 'Selected city spotlight' })).getByText('No data');
     expect(noDataBadge.className).toContain('status-no-data');
@@ -61,6 +103,16 @@ describe('App shell', () => {
     expect(input.value).toBe('Springfield');
     expect(screen.getByText('Showing 1-3 of 3')).toBeTruthy();
     expect(screen.getAllByRole('row')).toHaveLength(4);
+  });
+
+  it('closes autocomplete suggestions after a city is selected', () => {
+    render(<App />);
+    const input = screen.getByRole('combobox', { name: 'Search cities' });
+
+    fireEvent.change(input, { target: { value: 'Springfield' } });
+    fireEvent.click(screen.getByRole('option', { name: 'Springfield, Missouri' }));
+
+    expect(screen.queryByRole('listbox', { name: 'City suggestions' })).toBeNull();
   });
 
   it('navigates autocomplete options with arrows and selects the active option with Enter', () => {
@@ -102,12 +154,14 @@ describe('App shell', () => {
     expect(screen.getByTestId('us-map').getAttribute('data-zoom-scale')).toBe('4');
   });
 
-  it('renders a selected no-data place on the map', () => {
+  it('renders a selected no-data place on the map', async () => {
+    fetchMock.mockResolvedValueOnce({ ok: true, json: async () => [{ placeId: '99999', city: 'Aaronsburg', state: 'Pennsylvania', stateCode: 'PA', latitude: 40.9, longitude: -77.4 }] });
     render(<App />);
     const input = screen.getByRole('combobox', { name: 'Search cities' });
 
     fireEvent.change(input, { target: { value: 'Aaronsburg' } });
-    fireEvent.click(screen.getAllByRole('option', { name: /Aaronsburg,/ })[0]);
+    await waitFor(() => expect(screen.getByRole('option', { name: 'Aaronsburg, Pennsylvania' })).toBeTruthy());
+    fireEvent.click(screen.getByRole('option', { name: 'Aaronsburg, Pennsylvania' }));
     fireEvent.click(screen.getByRole('tab', { name: 'U.S. Map' }));
 
     expect(screen.getByTestId('us-map').getAttribute('data-zoom-scale')).toBe('4');

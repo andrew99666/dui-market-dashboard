@@ -56,6 +56,17 @@ describe('UsMap', () => {
     expect(map.querySelectorAll('[data-marker]').length).toBe(0);
   });
 
+  it('shows status shape swatches in the legend and an icon-only reset control with a title', () => {
+    render(<UsMap metrics={researchedMetrics} metadata={metadata} onSelect={() => undefined} />);
+
+    expect(document.querySelectorAll('[data-testid^="legend-shape-"]')).toHaveLength(4);
+    expect(screen.getByTestId('legend-shape-qualified').getAttribute('data-shape')).toBe('circle');
+    expect(screen.getByTestId('legend-shape-high-cpc').getAttribute('data-shape')).toBe('diamond');
+    expect(screen.getByTestId('legend-shape-unknown-cpc').getAttribute('data-shape')).toBe('triangle');
+    expect(screen.getByTestId('legend-shape-low-volume').getAttribute('data-shape')).toBe('square');
+    expect(screen.getByTitle('Reset map view').querySelector('svg')).toBeTruthy();
+  });
+
   it('shows an accessible tooltip on focus and selects a marker with the keyboard', () => {
     const selected: CityMetric[] = [];
     render(<UsMap metrics={researchedMetrics} metadata={metadata} onSelect={(metric) => selected.push(metric)} />);

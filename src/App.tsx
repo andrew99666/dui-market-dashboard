@@ -1,10 +1,10 @@
-import { Fragment, useMemo, useState } from 'react';
+import { Fragment, useEffect, useMemo, useState } from 'react';
 import { ChevronLeft, ChevronRight, Search, X } from 'lucide-react';
 
 import logo from './assets/tcb-rectangle.png';
 import metrics from './data/cityMetrics.json';
 import metadata from './data/datasetMetadata.json';
-import places from './data/usPlaces.json';
+import placesUrl from './data/usPlaces.json?url';
 import { UsMap } from './components/UsMap';
 import {
   classifyCity,
@@ -17,10 +17,11 @@ import {
   type SearchSuggestion,
   type SortColumn,
 } from './dashboard-domain';
-import type { CityMetric } from './data/types';
+import type { CityMetric, UsPlace } from './data/types';
 
 type Tab = 'table' | 'map';
 type Selection = SearchSuggestion | { source: 'researched'; metric: CityMetric; city: string; state: string; stateCode: string; placeId: string; latitude: number; longitude: number };
+type PlaceIndexState = 'loading' | 'ready' | 'failed';
 
 const researchedMetrics = metrics as CityMetric[];
 const statusLabels: Record<CityStatus, string> = {
@@ -49,28 +50,54 @@ export default function App() {
   const [page, setPage] = useState(1);
   const [selection, setSelection] = useState<Selection>();
   const [activeSuggestionIndex, setActiveSuggestionIndex] = useState<number | null>(null);
-  const suggestions = useMemo(() => createSearchSuggestions(query, researchedMetrics, places), [query]);
+  const [suggestionsOpen, setSuggestionsOpen] = useState(false);
+  const [places, setPlaces] = useState<UsPlace[]>([]);
+  const [placeIndexState, setPlaceIndexState] = useState<PlaceIndexState>('loading');
+  const suggestions = useMemo(() => createSearchSuggestions(query, researchedMetrics, places), [query, places]);
   const table = useMemo(() => getTablePage(researchedMetrics, metadata, { query, state, status, sort, page }), [query, state, status, sort, page]);
   const counts = useMemo(() => getStatusCounts(researchedMetrics, metadata), []);
   const median = useMemo(() => getKnownCpcMedian(researchedMetrics), []);
+  const hasOpenSuggestions = suggestionsOpen && suggestions.length > 0;
+
+  useEffect(() => {
+    let active = true;
+
+    fetch(placesUrl)
+      .then(async (response) => {
+        if (!response.ok) throw new Error(`Census place index request failed (${response.status})`);
+        const index = await response.json() as UsPlace[];
+        if (!Array.isArray(index)) throw new Error('Census place index is not an array');
+        if (!active) return;
+        setPlaces(index);
+        setPlaceIndexState('ready');
+      })
+      .catch(() => {
+        if (active) setPlaceIndexState('failed');
+      });
+
+    return () => { active = false; };
+  }, []);
 
   const resetPage = () => setPage(1);
-  const updateQuery = (value: string) => { setQuery(value); setActiveSuggestionIndex(null); resetPage(); };
+  const updateQuery = (value: string) => { setQuery(value); setSuggestionsOpen(true); setActiveSuggestionIndex(null); resetPage(); };
   const selectPlace = (suggestion: SearchSuggestion) => {
     setSelection(suggestion);
     setQuery(suggestion.city);
+    setSuggestionsOpen(false);
     setActiveSuggestionIndex(null);
     resetPage();
   };
   const selectMapMetric = (metric: CityMetric) => {
     setSelection({ ...metric, source: 'researched', metric });
     setQuery(metric.city);
+    setSuggestionsOpen(false);
     setActiveSuggestionIndex(null);
     resetPage();
   };
   const clear = () => {
     setQuery('');
     setSelection(undefined);
+    setSuggestionsOpen(false);
     setActiveSuggestionIndex(null);
     setState('all');
     setStatus('all');
@@ -104,7 +131,7 @@ export default function App() {
           <label className="search-control">
             <Search size={18} aria-hidden="true" />
             <span className="sr-only">Search cities</span>
-            <input aria-label="Search cities" role="combobox" aria-autocomplete="list" aria-expanded={suggestions.length > 0} aria-controls="city-suggestions" aria-activedescendant={activeSuggestionIndex === null ? undefined : `city-suggestion-${suggestions[activeSuggestionIndex].source}-${suggestions[activeSuggestionIndex].placeId}`} value={query} onChange={(event) => updateQuery(event.target.value)} onKeyDown={(event) => {
+            <input aria-label="Search cities" role="combobox" aria-autocomplete="list" aria-expanded={hasOpenSuggestions} aria-controls="city-suggestions" aria-activedescendant={activeSuggestionIndex === null ? undefined : `city-suggestion-${suggestions[activeSuggestionIndex].source}-${suggestions[activeSuggestionIndex].placeId}`} value={query} onFocus={() => setSuggestionsOpen(true)} onChange={(event) => updateQuery(event.target.value)} onKeyDown={(event) => {
               if (event.key === 'Escape') {
                 clear();
               } else if (event.key === 'ArrowDown' && suggestions.length) {
@@ -120,7 +147,7 @@ export default function App() {
             }} placeholder="Search city or state" />
             {query && <button type="button" className="icon-button" aria-label="Clear search" onClick={clear}><X size={16} /></button>}
           </label>
-          {suggestions.length > 0 && (
+          {hasOpenSuggestions && (
             <ul id="city-suggestions" className="suggestions" role="listbox" aria-label="City suggestions">
               {suggestions.map((suggestion, index) => <Fragment key={`${suggestion.source}-${suggestion.placeId}`}>
                 {(index === 0 || suggestions[index - 1].source !== suggestion.source) && <li className="suggestion-group" role="presentation">{suggestion.source === 'researched' ? 'Researched cities' : 'Other Census places'}</li>}
@@ -130,6 +157,8 @@ export default function App() {
               </Fragment>)}
             </ul>
           )}
+          {placeIndexState === 'loading' && <p className="place-index-status" role="status">Loading Census place index. Researched cities are ready.</p>}
+          {placeIndexState === 'failed' && <p className="place-index-status place-index-error" role="status">Census place index unavailable. Researched cities remain searchable.</p>}
           <label className="select-control">State
             <select value={state} onChange={(event) => { setState(event.target.value); resetPage(); }}>
               <option value="all">All states</option>
@@ -172,6 +201,7 @@ export default function App() {
           </section>
         ) : <section id="map-panel" role="tabpanel" aria-labelledby="map-tab"><UsMap metrics={researchedMetrics} metadata={metadata} selected={selection} onSelect={selectMapMetric} /></section>}
       </div>
+      <footer className="dashboard-footer">Google Ads methodology: {metadata.methodology} Census geography: 2025 Places Gazetteer, with researched Woodbridge/Edison county-subdivision fallbacks.</footer>
     </main>
   );
 }
