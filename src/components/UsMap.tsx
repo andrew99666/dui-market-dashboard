@@ -104,7 +104,7 @@ export function UsMap({ metrics, metadata, selected, onSelect }: UsMapProps) {
         </div>
         <button type="button" className="icon-button map-reset" aria-label="Reset map view" onClick={() => setTransform({ x: 0, y: 0, scale: 1 })}>Reset</button>
       </div>
-      <svg ref={svgRef} className="map-canvas" data-testid="us-map" data-zoom-scale={transform.scale} viewBox={`0 0 ${width} ${height}`} role="img" aria-label="United States map with city opportunity markers" onWheel={(event) => {
+      <svg ref={svgRef} className="map-canvas" data-testid="us-map" data-zoom-scale={transform.scale} viewBox={`0 0 ${width} ${height}`} onWheel={(event) => {
         event.preventDefault();
         setTransform((current) => ({ ...current, scale: Math.min(8, Math.max(1, current.scale * (event.deltaY > 0 ? 0.86 : 1.16))) }));
       }} onPointerDown={(event) => {
@@ -115,7 +115,7 @@ export function UsMap({ metrics, metadata, selected, onSelect }: UsMapProps) {
         if (!start) return;
         setTransform({ ...start.transform, x: start.transform.x + event.clientX - start.x, y: start.transform.y + event.clientY - start.y });
       }} onPointerUp={() => { pointerStart.current = undefined; }}>
-        <g transform={`translate(${transform.x} ${transform.y}) scale(${transform.scale})`}>
+        <g data-map-viewport transform={`translate(${transform.x} ${transform.y}) scale(${transform.scale})`}>
           {states.map((state) => <path key={String(state.id)} data-state-geometry data-state-id={String(state.id).padStart(2, '0')} className="map-state" d={path(state as never) ?? ''}><title>{state.properties?.name}</title></path>)}
           {statusOrder.flatMap((status) => researchedMarkers.filter((marker) => marker.status === status && visibleStatuses.has(status)).flatMap(({ metric, point }) => {
             if (!point) return [];
@@ -125,7 +125,7 @@ export function UsMap({ metrics, metadata, selected, onSelect }: UsMapProps) {
               {markerShape(markerStatus, point, radius(metric.totalSearchVolume), {})}
             </g>;
           }))}
-          {noDataSelection && selectedPoint && <g data-marker="no-data" data-place-id={noDataSelection.placeId} data-status="no-data" role="img" aria-label={`${noDataSelection.city}, ${noDataSelection.state}. Volume Unknown. CPC Unknown. Selected no-data status.`} className="map-marker marker-no-data" onMouseEnter={(event) => showTooltip({ place: noDataSelection, status: 'no-data', point: selectedPoint }, event)} onMouseLeave={() => setTooltip(undefined)}>
+          {noDataSelection && selectedPoint && <g data-marker="no-data" data-place-id={noDataSelection.placeId} data-status="no-data" role="img" tabIndex={0} aria-label={`${noDataSelection.city}, ${noDataSelection.state}. Volume Unknown. CPC Unknown. Selected no-data status.`} className="map-marker marker-no-data" onMouseEnter={(event) => showTooltip({ place: noDataSelection, status: 'no-data', point: selectedPoint }, event)} onMouseMove={(event) => showTooltip({ place: noDataSelection, status: 'no-data', point: selectedPoint }, event)} onMouseLeave={() => setTooltip(undefined)} onFocus={(event) => showTooltip({ place: noDataSelection, status: 'no-data', point: selectedPoint }, event)} onBlur={() => setTooltip(undefined)}>
             {markerShape('no-data', selectedPoint, 8, {})}
           </g>}
         </g>

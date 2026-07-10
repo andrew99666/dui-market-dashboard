@@ -19,10 +19,21 @@ describe('UsMap', () => {
   it('renders state geometry, including Alaska and Hawaii, and all researched markers', () => {
     render(<UsMap metrics={researchedMetrics} metadata={metadata} onSelect={() => undefined} />);
 
-    expect(screen.getByTestId('us-map').querySelectorAll('[data-state-geometry]')).toHaveLength(51);
-    expect(screen.getByTestId('us-map').querySelector('[data-state-id="02"]')).toBeTruthy();
-    expect(screen.getByTestId('us-map').querySelector('[data-state-id="15"]')).toBeTruthy();
-    expect(screen.getByTestId('us-map').querySelectorAll('[data-marker]')).toHaveLength(345);
+    const map = screen.getByTestId('us-map');
+    const statePaths = map.querySelectorAll<SVGPathElement>('[data-state-geometry]');
+    expect(statePaths).toHaveLength(51);
+    expect([...statePaths].every((state) => (state.getAttribute('d')?.length ?? 0) > 0)).toBe(true);
+    expect(map.querySelector('[data-state-id="02"]')).toBeTruthy();
+    expect(map.querySelector('[data-state-id="15"]')).toBeTruthy();
+    expect(map.querySelectorAll('[data-marker]')).toHaveLength(345);
+  });
+
+  it('uses the labelled map region instead of an image role that hides marker controls', () => {
+    render(<UsMap metrics={researchedMetrics} metadata={metadata} onSelect={() => undefined} />);
+
+    expect(screen.getByRole('region', { name: 'Interactive U.S. city map' })).toBeTruthy();
+    expect(screen.getByTestId('us-map').getAttribute('role')).toBeNull();
+    expect(screen.getAllByRole('button', { name: /Volume .* status/i })).toHaveLength(345);
   });
 
   it('maps each researched status to its required marker shape and toggles each legend category', () => {
@@ -59,15 +70,51 @@ describe('UsMap', () => {
     expect(selected[0].state).toBe('Illinois');
   });
 
+  it('shows a tooltip on hover and clamps it inside the map area', () => {
+    render(<UsMap metrics={researchedMetrics} metadata={metadata} onSelect={() => undefined} />);
+
+    const map = screen.getByTestId('us-map');
+    Object.defineProperty(map, 'getBoundingClientRect', { value: () => ({ left: 0, top: 0, width: 960, height: 600 }) });
+    const marker = screen.getByRole('button', { name: /Springfield, Illinois.*Volume.*CPC.*status/i });
+    fireEvent.mouseEnter(marker, { clientX: 4000, clientY: 4000 });
+
+    const tooltip = screen.getByRole('tooltip');
+    expect(tooltip.textContent).toMatch(/Springfield, Illinois.*Volume.*CPC.*status/i);
+    expect(tooltip.getAttribute('transform')).toBe('translate(780 534)');
+    fireEvent.mouseLeave(marker);
+    expect(screen.queryByRole('tooltip')).toBeNull();
+  });
+
   it('focuses shared researched selection at four times the national scale and adds an unresearched marker', () => {
     const researched = researchedMetrics.find((metric) => metric.city === 'Springfield' && metric.state === 'Illinois')!;
     const unresearched: UsPlace = { placeId: '99999', city: 'Test place', state: 'Illinois', stateCode: 'IL', latitude: 40.1, longitude: -89.3 };
     const { rerender } = render(<UsMap metrics={researchedMetrics} metadata={metadata} selected={researched} onSelect={() => undefined} />);
 
-    expect(screen.getByTestId('us-map').getAttribute('data-zoom-scale')).toBe('4');
+    const map = screen.getByTestId('us-map');
+    const marker = map.querySelector(`[data-place-id="${researched.placeId}"]`)!;
+    const shape = marker.querySelector('circle, rect, path')!;
+    const pointX = shape.tagName === 'rect' ? Number(shape.getAttribute('x')) + Number(shape.getAttribute('width')) / 2 : Number(shape.getAttribute('cx'));
+    const pointY = shape.tagName === 'rect' ? Number(shape.getAttribute('y')) + Number(shape.getAttribute('height')) / 2 : Number(shape.getAttribute('cy'));
+    const transform = map.querySelector('[data-map-viewport]')?.getAttribute('transform') ?? '';
+    const [, x, y, scale] = transform.match(/translate\(([-\d.]+) ([-\d.]+)\) scale\(([-\d.]+)\)/) ?? [];
+    expect(map.getAttribute('data-zoom-scale')).toBe('4');
+    expect(Number(x) + pointX * Number(scale)).toBeCloseTo(480);
+    expect(Number(y) + pointY * Number(scale)).toBeCloseTo(300);
     rerender(<UsMap metrics={researchedMetrics} metadata={metadata} selected={unresearched} onSelect={() => undefined} />);
     expect(screen.getByTestId('us-map').getAttribute('data-zoom-scale')).toBe('4');
     expect(screen.getByTestId('us-map').querySelectorAll('[data-marker="no-data"]')).toHaveLength(1);
+  });
+
+  it('makes the selected no-data marker focusable and shows then clears its tooltip', () => {
+    const unresearched: UsPlace = { placeId: '99999', city: 'Test place', state: 'Illinois', stateCode: 'IL', latitude: 40.1, longitude: -89.3 };
+    render(<UsMap metrics={researchedMetrics} metadata={metadata} selected={unresearched} onSelect={() => undefined} />);
+
+    const marker = screen.getByRole('img', { name: /Test place, Illinois.*Selected no-data status/i });
+    expect(marker.getAttribute('tabindex')).toBe('0');
+    fireEvent.focus(marker);
+    expect(screen.getByRole('tooltip').textContent).toMatch(/Test place, Illinois.*Unknown.*Selected no-data status/i);
+    fireEvent.blur(marker);
+    expect(screen.queryByRole('tooltip')).toBeNull();
   });
 
   it('resets the transform without clearing the selected place', () => {

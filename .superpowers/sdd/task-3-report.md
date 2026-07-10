@@ -39,3 +39,11 @@
 ## Concerns
 
 - Vite reports a production JavaScript chunk above 500 kB because bundled U.S. topology is included in the application bundle. The build succeeds; code splitting would be a separate performance task.
+
+## Review Follow-up
+
+- Removed the root SVG `role="img"`; the surrounding labelled map region now owns the map label without making nested marker buttons presentational.
+- Made the selected no-data marker focusable and added focus, blur, and pointer tooltip handling.
+- Added assertions for nonblank state paths, hover tooltip dismissal and clamping, exposed marker button semantics, and numeric 4x transform centering.
+- Red evidence: the new focused map run failed on the root image role, missing viewport transform hook, and missing no-data `tabIndex`.
+- Green evidence: `npx vitest run --pool=forks --poolOptions.forks.singleFork=true` passed 45 tests; `npm run lint` and `npm run build` passed; `git diff --check` found no whitespace errors.
