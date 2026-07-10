@@ -47,7 +47,7 @@ export function aggregateCityMetrics(auditRows) {
       knownCpcCount: 0
     };
     city.totalSearchVolume += row.avgMonthlySearches;
-    if (row.lowBidMicros !== null && row.highBidMicros !== null) {
+    if (row.lowBidMicros > 0 && row.highBidMicros > 0) {
       city.totalCpc += (row.lowBidMicros + row.highBidMicros) / 2 / MICRO_UNITS_PER_USD;
       city.knownCpcCount += 1;
     }

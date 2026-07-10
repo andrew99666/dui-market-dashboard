@@ -53,4 +53,13 @@ describe('aggregateCityMetrics', () => {
 
     expect(city).toEqual([{ City: 'Phoenix', State: 'Arizona', 'Total Search Volume': 17, 'Average CPC': 2 }]);
   });
+
+  it('excludes retained zero bids from the final average CPC', () => {
+    const city = aggregateCityMetrics(deduplicateKeywordMetrics([
+      raw({ keyword: 'known', avgMonthlySearches: 10, lowBidMicros: 1000000, highBidMicros: 3000000 }),
+      raw({ keyword: 'unavailable', avgMonthlySearches: 7, lowBidMicros: 0, highBidMicros: 0 }),
+    ]));
+
+    expect(city).toEqual([{ City: 'Phoenix', State: 'Arizona', 'Total Search Volume': 17, 'Average CPC': 2 }]);
+  });
 });
