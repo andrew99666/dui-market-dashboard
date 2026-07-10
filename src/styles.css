@@ -41,6 +41,7 @@ button:disabled { cursor: not-allowed; opacity: .45; }
 .spotlight p { margin: 0; }
 .eyebrow { color: #52657c; font-size: 11px; font-weight: 800; text-transform: uppercase; }
 .status-line, .no-data-copy { color: #40556d; font-size: 14px; }
+.no-data-copy { color: #4b5563; }
 .spotlight-detail { color: #40556d; font-size: 14px; line-height: 1.5; }
 .methodology { max-width: 230px; color: #52657c; font-size: 12px; line-height: 1.4; }
 

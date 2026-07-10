@@ -37,3 +37,23 @@
 ## Concerns
 
 - Vite reports a 4.16 MB uncompressed JavaScript chunk because the complete Census place index is bundled for autocomplete. The build succeeds; future work could code-split or server-load that index if initial-load performance becomes a priority.
+
+## Review Fixes
+
+### Findings Addressed
+
+- Selection now preserves the city-only table query. Choosing a researched city no longer changes the query to `City, State`, so the researched table remains populated while duplicate city names still resolve to state-specific suggestions.
+- The search combobox now tracks an active suggestion for ArrowDown and ArrowUp navigation, exposes it through `aria-activedescendant`, and selects it with Enter. Enter with no active suggestion still leaves an ambiguous raw city query unselected.
+- No-data selections now display an explicit `No data` badge using the existing gray no-data status treatment.
+
+### Review Red/Green Evidence
+
+- RED: the added app-shell tests failed before the fix: no no-data badge existed, a selected Springfield query became `Springfield, Missouri`, and ArrowDown did not set an active descendant.
+- GREEN: `npm test -- tests/app-shell.test.tsx tests/dashboard-domain.test.ts` passed with 2 files and 21 tests after the targeted changes. The duplicate-name domain test remains covered in `tests/dashboard-domain.test.ts`.
+- A TypeScript build caught the test's generic `HTMLElement` value access. Casting the combobox test handle to `HTMLInputElement` resolved the test type error; the fresh production build passed.
+
+### Review Verification
+
+- `npm test`: passed, 3 files and 35 tests.
+- `npm run lint`: passed with no lint output.
+- `npm run build`: passed; TypeScript and Vite production build completed with the existing large-chunk warning.

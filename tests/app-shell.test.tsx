@@ -47,6 +47,39 @@ describe('App shell', () => {
     fireEvent.change(input, { target: { value: 'Aaronsburg' } });
     fireEvent.click(screen.getAllByRole('option', { name: /Aaronsburg,/ })[0]);
     expect(screen.getByText('No metrics in current dataset')).toBeTruthy();
+    const noDataBadge = within(screen.getByRole('region', { name: 'Selected city spotlight' })).getByText('No data');
+    expect(noDataBadge.className).toContain('status-no-data');
+  });
+
+  it('keeps researched city results visible after selecting a city suggestion', () => {
+    render(<App />);
+    const input = screen.getByRole('combobox', { name: 'Search cities' }) as HTMLInputElement;
+
+    fireEvent.change(input, { target: { value: 'Springfield' } });
+    fireEvent.click(screen.getByRole('option', { name: 'Springfield, Missouri' }));
+
+    expect(input.value).toBe('Springfield');
+    expect(screen.getByText('Showing 1-3 of 3')).toBeTruthy();
+    expect(screen.getAllByRole('row')).toHaveLength(4);
+  });
+
+  it('navigates autocomplete options with arrows and selects the active option with Enter', () => {
+    render(<App />);
+    const input = screen.getByRole('combobox', { name: 'Search cities' });
+
+    fireEvent.change(input, { target: { value: 'Springfield' } });
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+    const firstActiveId = input.getAttribute('aria-activedescendant');
+    expect(firstActiveId).toBeTruthy();
+    expect(document.getElementById(firstActiveId!)?.textContent).toBe('Springfield, Illinois');
+
+    fireEvent.keyDown(input, { key: 'ArrowUp' });
+    const previousActiveId = input.getAttribute('aria-activedescendant');
+    expect(previousActiveId).not.toBe(firstActiveId);
+
+    fireEvent.keyDown(input, { key: 'ArrowDown' });
+    fireEvent.keyDown(input, { key: 'Enter' });
+    expect(screen.getByRole('region', { name: 'Selected city spotlight' }).textContent).toContain('Springfield, Illinois');
   });
 
   it('resets the page when filters change', () => {

@@ -48,21 +48,24 @@ export default function App() {
   const [sort, setSort] = useState<{ column: SortColumn; direction: 'asc' | 'desc' }>({ column: 'totalSearchVolume', direction: 'desc' });
   const [page, setPage] = useState(1);
   const [selection, setSelection] = useState<Selection>();
+  const [activeSuggestionIndex, setActiveSuggestionIndex] = useState<number | null>(null);
   const suggestions = useMemo(() => createSearchSuggestions(query, researchedMetrics, places), [query]);
   const table = useMemo(() => getTablePage(researchedMetrics, metadata, { query, state, status, sort, page }), [query, state, status, sort, page]);
   const counts = useMemo(() => getStatusCounts(researchedMetrics, metadata), []);
   const median = useMemo(() => getKnownCpcMedian(researchedMetrics), []);
 
   const resetPage = () => setPage(1);
-  const updateQuery = (value: string) => { setQuery(value); resetPage(); };
+  const updateQuery = (value: string) => { setQuery(value); setActiveSuggestionIndex(null); resetPage(); };
   const selectPlace = (suggestion: SearchSuggestion) => {
     setSelection(suggestion);
-    setQuery(`${suggestion.city}, ${suggestion.state}`);
+    setQuery(suggestion.city);
+    setActiveSuggestionIndex(null);
     resetPage();
   };
   const clear = () => {
     setQuery('');
     setSelection(undefined);
+    setActiveSuggestionIndex(null);
     setState('all');
     setStatus('all');
     resetPage();
@@ -95,14 +98,27 @@ export default function App() {
           <label className="search-control">
             <Search size={18} aria-hidden="true" />
             <span className="sr-only">Search cities</span>
-            <input aria-label="Search cities" role="combobox" aria-autocomplete="list" aria-expanded={suggestions.length > 0} aria-controls="city-suggestions" value={query} onChange={(event) => updateQuery(event.target.value)} onKeyDown={(event) => { if (event.key === 'Escape') clear(); }} placeholder="Search city or state" />
+            <input aria-label="Search cities" role="combobox" aria-autocomplete="list" aria-expanded={suggestions.length > 0} aria-controls="city-suggestions" aria-activedescendant={activeSuggestionIndex === null ? undefined : `city-suggestion-${suggestions[activeSuggestionIndex].source}-${suggestions[activeSuggestionIndex].placeId}`} value={query} onChange={(event) => updateQuery(event.target.value)} onKeyDown={(event) => {
+              if (event.key === 'Escape') {
+                clear();
+              } else if (event.key === 'ArrowDown' && suggestions.length) {
+                event.preventDefault();
+                setActiveSuggestionIndex((current) => current === null ? 0 : (current + 1) % suggestions.length);
+              } else if (event.key === 'ArrowUp' && suggestions.length) {
+                event.preventDefault();
+                setActiveSuggestionIndex((current) => current === null ? suggestions.length - 1 : (current - 1 + suggestions.length) % suggestions.length);
+              } else if (event.key === 'Enter' && activeSuggestionIndex !== null) {
+                event.preventDefault();
+                selectPlace(suggestions[activeSuggestionIndex]);
+              }
+            }} placeholder="Search city or state" />
             {query && <button type="button" className="icon-button" aria-label="Clear search" onClick={clear}><X size={16} /></button>}
           </label>
           {suggestions.length > 0 && (
             <ul id="city-suggestions" className="suggestions" role="listbox" aria-label="City suggestions">
               {suggestions.map((suggestion, index) => <Fragment key={`${suggestion.source}-${suggestion.placeId}`}>
                 {(index === 0 || suggestions[index - 1].source !== suggestion.source) && <li className="suggestion-group" role="presentation">{suggestion.source === 'researched' ? 'Researched cities' : 'Other Census places'}</li>}
-                <li role="option" tabIndex={0} aria-selected={selection?.placeId === suggestion.placeId} onClick={() => selectPlace(suggestion)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); selectPlace(suggestion); } }}>
+                <li id={`city-suggestion-${suggestion.source}-${suggestion.placeId}`} role="option" tabIndex={0} aria-selected={activeSuggestionIndex === index} onClick={() => selectPlace(suggestion)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); selectPlace(suggestion); } }}>
                   {suggestion.city}, {suggestion.state}
                 </li>
               </Fragment>)}
@@ -121,7 +137,7 @@ export default function App() {
             <div>
               <p className="eyebrow">Selected city</p>
               <h2>{selection.city}, {selection.state}</h2>
-              {selectedMetric ? <p className="status-line"><span className={`status-badge status-${selectedStatus}`}>{statusLabels[selectedStatus]}</span> Volume {selectedMetric.totalSearchVolume.toLocaleString()} - CPC {formatCpc(selectedMetric.averageCpcUsd)}</p> : <p className="no-data-copy">No metrics in current dataset</p>}
+              {selectedMetric ? <p className="status-line"><span className={`status-badge status-${selectedStatus}`}>{statusLabels[selectedStatus]}</span> Volume {selectedMetric.totalSearchVolume.toLocaleString()} - CPC {formatCpc(selectedMetric.averageCpcUsd)}</p> : <p className="no-data-copy"><span className="status-badge status-no-data">No data</span> No metrics in current dataset</p>}
             </div>
             {selectedMetric && <div className="spotlight-detail"><p>Known-CPC median <strong>${median.toFixed(2)}</strong></p><p>{comparison === null ? 'CPC comparison is unavailable because this city has no known CPC.' : `${comparison}% of other known-CPC cities have a higher CPC.`}</p></div>}
             <p className="methodology">Qualification is based only on configured search-volume/CPC thresholds.</p>
